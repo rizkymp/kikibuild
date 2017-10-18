@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+        <link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+        <title>Wisata Jakarta</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria-1.3.6.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria.classic.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria-startup.js"></script>
+    </head>
+
+    <body>
+       <div id="map" style="width: 100%; height: 400px;"></div>
+
+  <script>
+    // Define your locations: HTML content for the info window, latitude, longitude
+    var locations = [
+      ['<h4>Alun-ALun Sumedang<a href="aas.php">Detail</a></h4>', -6.8512939,107.9098525],
+      ['<h4>Kareumbi Masigit<a href="km.php">Detail</a></h4>',-6.9532266,107.9139728],
+      ['<h4>Gunung Kunci<a href="gk.php">Detail</a></h4>',-6.8558326,107.9172855],
+      ['<h4>Gunung Tampomas<a href="gt.php">Detail</a></h4>',-6.7646832,107.9597657],
+      ['<h4>Wisata Batu Dua<a href="batudua.php">Detail</a></h4>',-6.9010545,108.0217867],
+      ['<h4>Wisata Cipanteuneun<a href="cipanteuneun.php">Detail</a></h4>',-6.808597,107.9446489],
+      ['<h4>Pangjugjugan<a href="pangjugjugan.php">Detail</a></h4>',-6.9170148,107.8479941],
+      ['<h4>Taman Endog<a href="te.php">Detail</a></h4>', -6.8473537,107.9239396],
+      ['<h4>Kampung Ladang<a href="ladang.php">Detail</a></h4>', -6.8719778,107.8906406],
+      ['<h4>Wisata Panenjoan<a href="panenjoan.php">Detail</a></h4>', -6.8465043,107.8208276],
+      ['<h4>Saung Budaya Sumedang<a href="sbs.php">Detail</a></h4>', -6.9348576,107.7670775],
+      ['<h4>Kuliner Kampung Tahu<a href="kamtahu.php">Detail</a></h4>', -6.8422151,107.9377455],
+      ['<h4>Bugen Pizza<a href="bupi.php">Detail</a></h4>', -6.8590194,107.917597],
+      ['<h4>Selaz Cafe<a href="sc.php">Detail</a></h4>', -6.8381791,107.9273063],
+      ['<h4>Pesona JatiGede<a href="jatigede.php">Detail</a></h4>', -6.8640354,108.0949975],
+      ['<h4>Museum Prabu Geusan Ulun<a href="museum.php">Detail</a></h4>', -6.8611008,107.9209724],
+      ['<h4>Gedung Kereta<a href="gk.php">Detail</a></h4>', -6.8610898,107.9206627],
+      ['<h4>Gedung Pusaka<a href="gp.php">Detail</a></h4>', -6.8610898,107.9206630],
+      ['<h4>Gedung Srimanganti<a href="gs.php">Detail</a></h4>', -6.8610900,107.9306624],
+      ['<h4>Gedung Gamelan<a href="gg.php">Detail</a></h4>', -6.8610233,107.9206694],
+      ['<h4>Gedung Gendeng<a href="gd.php">Detail</a></h4>', -6.8610798,107.9208824],
+      ['<h4>Menara Loji<a href="menara.php">Detail</a></h4>', -6.9253326,107.7693785],
+      ['<h4>Benteng Gunung Palasari<a href="bgp.php">Detail</a></h4>', -6.8555511,107.9112666],
+      ['<h4>Situs Purbakala Tajimalela<a href="spt.php">Detail</a></h4>', -6.8896495,108.009226],
+      ['<h4>Desa Leuwihideung<a href="dele.php">Detail</a></h4>', -6.9148742,108.0931381],
+      ['<h4>Situs Batu Kasur<a href="sbk.php">Detail</a></h4>', -6.9336349,108.1112198],
+      ['<h4>Makan Cut Nyak Dien<a href="makam.php">Detail</a></h4>', -6.8637123,107.9166125],
+      ['<h4>Bumi Kaler<a href="bumi.php">Detail</a></h4>', -6.7790028,108.1066771],
+      ['<h4>Curug Cigorobog<a href="cg.php">Detail</a></h4>', -6.9136674,107.9604693],
+      ['<h4>Curug Sindulang<br><a href="cs.php">Detail</a></h4>',-6.9630209,107.8821717],
+      ['<h4>Curug Buhud<br><a href="cb.php">Detail</a></h4>',-6.9532266,107.9139728],
+      ['<h4>Curug Ciputrawangi<br><a href="cc.php">Detail</a></h4>',-6.7520629,107.9856485],
+      ['<h4>Rancagoyang<a href="ranca.php">Detail</a></h4>', -6.8418918,107.9394148],
+      ['<h4>pom bensin alam sari<a href="pom.php">Detail</a></h4>', -6.8323739,107.9031452],
+      ['<h4>RSUD Sumedang<a href="rs.php">Detail</a></h4>', -6.8571352,107.9205099],
+      ['<h4>RS Pakuwon Sumedang<a href="rs.php">Detail</a></h4>', -6.8571372,107.9236571],
+      ['<h4>polisi Sumedang<a href="polisi.php">Detail</a></h4>', -6.9075518,107.8136931],
+      ['<h4>polsek Sumedang selatan<a href="polisi.php">Detail</a> </h4>', -6.8606424,107.9164518],
+      ['<h4>polsek militer <a href="polisi.php">Detail</a></h4>', -6.8604036,107.9195681],
+      ['<h4>polsek darmaraja <a href="polisi.php">Detail</a></h4>', -6.9178828,108.0725499],
+    ];
+
+    // Setup the different icons and shadows
+    var iconURLPrefix = 'images/';
+
+    var icons = [
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'alam.png',
+      iconURLPrefix + 'budaya.png',
+      iconURLPrefix + 'budaya.png',
+      iconURLPrefix + 'budaya.png',
+      iconURLPrefix + 'kuliner.png',
+      iconURLPrefix + 'kuliner.png',
+      iconURLPrefix + 'kuliner.png',
+      iconURLPrefix + 'kuliner.png',
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'sejarah.png', 
+      iconURLPrefix + 'air.png',
+      iconURLPrefix + 'air.png',
+      iconURLPrefix + 'air.png',
+      iconURLPrefix + 'air.png',
+      iconURLPrefix + 'air.png',
+      iconURLPrefix + 'pom.png',
+      iconURLPrefix + 'rs.png',
+      iconURLPrefix + 'rs.png',
+      iconURLPrefix + 'polisi.png',
+      iconURLPrefix + 'polisi.png',
+      iconURLPrefix + 'polisi.png',
+      iconURLPrefix + 'polisi.png',
+      
+      
+      
+    ]
+    var iconsLength = icons.length;
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 5,
+      center: new google.maps.LatLng(-6.8067007,107.7001951),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 160
+    });
+
+    var markers = new Array();
+
+    var iconCounter = 0;
+
+    // Add the markers and infowindows to the map
+    for (var i = 0; i < locations.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: icons[iconCounter]
+      });
+
+      markers.push(marker);
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+
+      iconCounter++;
+      // We only have a limited number of possible icon colors, so we may have to restart the counter
+      if(iconCounter >= iconsLength) {
+        iconCounter = 0;
+      }
+    }
+
+    function autoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      for (var i = 0; i < markers.length; i++) {  
+                bounds.extend(markers[i].position);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    autoCenter();
+  </script> 
+        </div>
+        </body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+  <title>Google Maps Wisata Jakarta</title> 
+  <script src="http://maps.google.com/maps/api/js?key=AIzaSyDN7HiGZp43P-jBkedqvN2vi-YpfujgHcY&callback=initMap"></script>
+</head> 
+<body>
+  <div id="map" style="width: 680px; height: 400px;"></div>
+
+  <script>
+    // Define your locations: HTML content for the info window, latitude, longitude
+    var locations = [
+                ['<p id="ko"><center>Kota Tua<br><img src="images/2.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Lada, Pinangsia, Tamansari, RT.7/RW.7, Pinangsia, RT.7/RW.7<br><a href="kotu">Details Kota Tua</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1377363, 106.8112781, 1],
+                ['<p id="mo"><center>Monumen Nasional<br><img src="images/8.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Kebon Sirih No.22 Blok H Lt.IX No.53Jakarta Pusat<br><a href="monas">Details Monumen Nasional</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1753871, 106.8249641, 2],
+                ['<p id="na">Galeri Nasional<br><img src="images/smp.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Medan Merdeka Timur No. 14, Gambir, Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110<br><a href="galnas">Details Monas</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1782479, 106.8298492, 3],
+                ['<p id="an">Taman Impian Jaya Ancol<br><img src="images/3.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Lodan Timur No.7, RW.10, Ancol, Pademangan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14430<br><a href="index.html#ancol">Details Ancol</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1262345, 106.8335165, 4],
+                ['<p id="wa">Museum Wayang<br><img src="images/3.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Pintu Besar Utara No.27, RT.7/RW.7, Tamansari, Pinangsia, RT.7/RW.7, Pinangsia<br><a href="wayang">Details Museum Wayang</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1348764, 106.8103933, 5],
+                ['<p id="ra">Ragunan (Kebun Binatang)<br><img src="images/3.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Harsono No.1, Ragunan, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta<br><a href="ragunan">Details Kebun Binatang Ragunan</a><br><a href="direction">Petunjuk Arah</a></p>', -6.2967856, 106.8037759, 6],
+                ['<p id="tm">Taman Mini Indonesia Indah<br><a href="tamini">tamini</a></p>', -6.3024492, 106.8950258, 7],
+                ['<p id="lb">Museum Lubang Buaya<br><a href="buaya">buaya</a></p>', -6.2904432, 106.9074501, 8],
+                ['<p id="se">Setu Babakan<br><img src="images/setu9.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Srengseng Sawah, Jagakarsa<br><a href="setu">Details Setu Babakan</a><br><a href="direction">Petunjuk Arah</a></p>', -6.3416667, 106.8217002, 9],
+                ['<p id="la">Museum Layang - layang<br><img src="images/setu9.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. H. Kamang No.38, Pondok Labu, RT.8/RW.10, Pondok Labu, Jakarta Selatan, Pd. Labu, Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12450<br><a href="layangan">Details Setu Babakan</a><br><a href="direction">Petunjuk Arah</a></p>', -6.3078789, 106.7883889, 10],
+                ['<p id="ga">Museum Gajah<br><img src="images/1.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Medan Merdeka Barat No.12, Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110<br><a href="gajah">Details Museum Gajah</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1764328,106.8227196, 11],
+                ['<p id="kr">Museum Seni rupa dan Keramik<br><img src="images/kq.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Pos Kota, RT.9/RW.2, Daerah Khusus Ibukota Jakarta, Jakarta Barat, West Jakarta City, Jakarta 11110<br><a href="kramik">Details Museum Seni rupa dan Keramik</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1342199, 106.8122277, 12],
+                ['<p id="bi">Museum Bank Indonesia<br><img src="images/8.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Kebon Sirih No.22 Blok H Lt.IX No.53Jakarta Pusat<br><a href="bank">Details Museum Bank Indonesia</a><br><a href="direction">Petunjuk Arah</a></p>', -6.137103, 106.8108123, 13],
+                ['<p id="mt">Museum Tekstil<br><img src="images/8.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Aipda Ks Tubun No.2-4, Tanah Abang, Petamburan, RT.6/RW.1, Kota Bambu Sel, Palmerah, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 10260<br><a href="tekstil">Details Museum Bank Indonesia</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1879814, 106.8074588, 14],
+                ['<p id="mg">Taman Alam Mangrove<br><img src="images/8.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Garden House, RT.8/RW.1, Kamal Muara, Penjaringan, RT.8/RW.1, Kamal Muara, Penjaringan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14470<br><a href="mangrove">Details Hutan Mangrove</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1053344, 106.7333955, 15],
+                ['<p id="wi">Taman Bunga Wiladatika<br><a href="bunga"></a>bunga</p>', -6.3711578, 106.8909645, 16],
+                ['<p id="wb">Waterboom Jakarta<br><img src="images/8.jpg" alt="" class="img-circle" width="150" height="150"><br>pantai indah kapuk, Jalan Pantai Indah Barat No.1, RT.7/RW.2, Kamal Muara, Penjaringan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14470<br><a href="water">Details Waterboom Jakarta</a><br><a href="direction">Petunjuk Arah</a></p>',-6.1138299, 106.7458027, 17],
+                ['<p id="pt">Planetarium<br><img src="images/44.jpg" alt="" class="img-circle" width="150" height="150"><br>JL.Taman Ismail Marzuki No.73, Jalan Cikini Raya, Menteng, Jakarta Pusat. <br><a href="planet">Details Planetarium</a><br><a href="direction">Petunjuk Arah</a></p>', -6.190171, 106.8369473, 18],
+                ['<p id="cb">Cibubur Garden Diary<br><a href="garden"></a>garden</p>', -6.3568093, 106.9040484, 19],
+                ['<p id="pm">Museum Sumpah Pemuda<br><img src="images/pmd.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Kramat Raya, No.106, Kel. Kwitang, Kec. Senen, Jakarta Pusat<br><a href="pemuda">Details Sumpah Pemuda</a><br><a href="direction">Petunjuk Arah</a></p>', -6.1835768, 106.840982, 20]
+                ];
+
+
+                    // Setup the different icons and shadows
+    var iconURLPrefix = 'images/marker/';
+
+    var icons = [
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'monumen.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'beach.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'paw2.png',      
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'lake.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'museum.png',
+      iconURLPrefix + 'forest.png',
+      iconURLPrefix + 'flowers.png',
+      iconURLPrefix + 'swim3.png',
+      iconURLPrefix + 'planet.png',
+      iconURLPrefix + 'garden2.png',
+      iconURLPrefix + 'museum.png'
+
+
+    ]
+    var iconsLength = icons.length;
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 40,
+      center: new google.maps.LatLng(-6.1932165,106.8829794),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
+      zoomControlOptions: {
+         position: google.maps.ControlPosition.LEFT_BOTTOM
+      }
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      maxWidth: 160
+    });
+
+    var markers = new Array();
+
+    var iconCounter = 0;
+
+    // Add the markers and infowindows to the map
+    for (var i = 0; i < locations.length; i++) {  
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: icons[iconCounter]
+      });
+
+      markers.push(marker);
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+
+      iconCounter++;
+      // We only have a limited number of possible icon colors, so we may have to restart the counter
+      if(iconCounter >= iconsLength) {
+        iconCounter = 0;
+      }
+    }
+
+    function autoCenter() {
+      //  Create a new viewpoint bound
+      var bounds = new google.maps.LatLngBounds();
+      //  Go through each...
+      for (var i = 0; i < markers.length; i++) {  
+                bounds.extend(markers[i].position);
+      }
+      //  Fit these bounds to the map
+      map.fitBounds(bounds);
+    }
+    autoCenter();
+        </script>
+</body>
+</html>
