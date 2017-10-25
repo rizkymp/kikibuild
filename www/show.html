@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="jqm/jquery.mobile-min.css">
+    <link rel="stylesheet" type="text/css" href="css/input_main.less.css" class="main-less">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script type="application/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="jqm/jquery.mobile-min.js" data-ver="0"></script>
+    
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          
+          var IDNE = parse("ID");
+          
+    $.post("http://127.0.0.1/wisjkt/server/edit_action.php?IDNE="+IDNE, function(data){
+              
+        var note = $.parseJSON(data);
+        
+        $('#JUDUL').val(note.JUDUL);
+        $('#CATATAN').val(note.CATATAN);
+        
+        
+          });
+          
+          
+          
+          
+          /***************************/
+
+                  
+$("#EDIT").on('click',function(){
+         
+        var edit = $("#NGESAVE").serialize(); 
+         
+        // alert(edit);
+         
+$.post("http://127.0.0.1/wisjkt/server/edit_action.php?IDNE2="+IDNE, edit, function(data){
+                         
+ 		                   if(data.status == "sukses"){
+  				                 alert('Input Berhasil');
+  				                 window.location='index.html';
+  			                }
+  			                else if(data.status == 'gagal'){
+                                   alert("Error on query!");
+  							}
+                         
+ });
+         
+     
+    }); //onclick edit  
+          
+          
+          
+          
+$("#DELETE").on('click',function(){
+         
+        var hapus = $("#NGESAVE").serialize(); 
+         
+         //alert(hapus);
+         
+$.post("http://127.0.0.1/wisjkt/server/delete_action.php?IDNE="+IDNE, hapus, function(data){
+                         
+ 		                   if(data.status == "sukses"){
+  				                 alert('Delete Berhasil');
+  				                 window.location='index.html';
+  			                }
+  			                else if(data.status == 'gagal'){
+                                   alert("Error on query!");
+  							}
+                         
+ });
+         
+    }); //onclick delete          
+          
+          
+       });//document ready
+        
+        
+/*fungsi untuk mengambil parameter dari link*/    
+function parse(val) {
+    
+    var result = "Not found",
+        tmp = [];
+    location.search
+    //.replace ( "?", "" ) 
+    // this is better, there might be a question mark inside
+    .substr(1)
+        .split("&")
+        .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
+    });
+    return result;
+}
+        
+        
+          
+   
+               
+        
+        
+        
+    </script>
+
+    <script type="application/javascript" src="js/input_user_scripts.js"></script>
+  </head>
+
+  <body>
+    <div class="upage ui-page-theme-b" id="mainpage" data-role="page">
+      <div class="upage-outer">
+        <div data-role="header" class="container-group inner-element uib_w_1" data-uib="jquery_mobile/header" data-ver="0">
+          <h1>Edit Catatan</h1>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content ac0 content-area vertical-col left" id="page_18_50">
+          <form id="NGESAVE">
+            <div class="table-thing with-label widget uib_w_4 d-margins" data-uib="jquery_mobile/input" data-ver="0">
+              <label class="narrow-control label-inline" for="JUDUL">Judul</label>
+              <input disabled class="wide-control" placeholder="Your Username" type="text" id="JUDUL" name="JUDUL">
+            </div>
+            <div class="table-thing with-label widget uib_w_5 d-margins" data-uib="jquery_mobile/textarea" data-ver="0">
+              <label class="narrow-control label-top-left" for="CATATAN" name="CATATAN">Catatan</label>
+              <textarea disabled class="wide-control" name="CATATAN" placeholder="Other details" rows="10" wrap="soft" cols="50" id="CATATAN"></textarea>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+
+          </form>
+        </div>
+        <div data-role="footer" data-position="fixed" class="container-group inner-element uib_w_2" data-uib="jquery_mobile/footer" data-ver="0">
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

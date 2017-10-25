@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+body {
+  background: #eee;
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+ul {
+  width: 320px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+li {
+  display: block;
+}
+
+
+.detail {
+  width: 100%;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.open .detail {
+  background: #333;
+  color: #ccc;
+  border-bottom: 0;
+}
+
+.detail .pic {
+  float: left;
+  left: 10px;
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+}
+
+.detail .text {
+  left: 20px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 225px;
+}
+
+.detail .text span {
+  display: block;
+  font-weight: 400;
+}
+
+.open .detail .text span {
+  color: #fff;
+}
+
+.toolbar {
+  width: 100%;
+  background: #222;
+  height: 0;
+  position: relative;
+  transition: height 0.2s ease-in-out;
+  perspective: 200px;
+  overflow: hidden;
+}
+
+.open .toolbar {
+  width: 100%;
+  height: 40px;  
+}
+
+.fold-top, .fold-bottom {
+  height: 20px;
+  width: 312px;
+  left: 4px;
+  position: absolute;
+  transition: all 0.22s ease-in-out;
+}
+
+.open .fold-top, .open .fold-bottom {
+  background: #5c5c5c;
+  transform: rotateX(0deg);
+  width: 100%;
+  left: 0;
+}
+
+.fold-top {
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+  top: 0;
+  background: #444;
+}
+
+.fold-bottom {
+  transform-origin: bottom center;
+  transform: rotateX(90deg);
+  bottom: 0;
+  background: #666;
+}
+
+.icons {
+  position: absolute;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  transform: rotateX(60deg);
+}
+
+.icons span {
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+.open .icons {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
