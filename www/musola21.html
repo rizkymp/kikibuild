@@ -11,51 +11,31 @@
   <script>
     // Define your locations: HTML content for the info window, latitude, longitude
     var locations = [
-      ['<h4><center>Toilet 1</center></h4>', -6.3400268, 106.8235152],
-      ['<h4><center>Toilet 2</center></h4>', -6.3400268, 106.8235152],
-      ['<h4><center>Toilet 2</center></h4>', -6.338686, 106.825310],
-      ['<h4><center>Toilet 2</center></h4>', -6.339910, 106.822433],
-      ['<h4><center>Toilet 2</center></h4>', -6.3397013, 106.8234027],
-      ['<h4><center>Toilet 2</center></h4>', -6.343992, 106.821481],
-      ['<h4><center>Toilet 2</center></h4>', -6.340899, 106.820740],
-      ['<h4><center>Toilet 2</center></h4>', -6.3415619, 106.8206143],
-      ['<h4><center>Toilet 2</center></h4>', -6.341371, 106.821655],
-      ['<h4><center>Toilet 2</center></h4>', -6.341137, 106.824556],
-      ['<h4><center>Toilet 2</center></h4>', -6.340201, 106.826577],
-      ['<h4><center>Toilet 2</center></h4>', -6.3406877, 106.8239783],
-      ['<h4><center>Toilet 2</center></h4>', -6.340874, 106.822981],
-      ['<h4><center>Toilet 2</center></h4>', -6.339425, 106.822015],
-      ['<h4><center>Toilet 2</center></h4>', -6.342847, 106.823335]
+      ['<h4><center>Musholla 1</center></h4>', -6.3400268, 106.8235152],
+      ['<h4><center>Musholla 2</center></h4>', -6.3400268, 106.8235152],
+      ['<h4><center>Musholla 3</center></h4>', -6.338686, 106.825310],
+      ['<h4><center>Musholla 4</center></h4>', -6.339910, 106.822433],
+      ['<h4><center>Musholla 5</center></h4>', -6.3397013, 106.8234027],
+      ['<h4><center>Musholla 6</center></h4>', -6.343992, 106.821481],
+      ['<h4><center>Musholla 7</center></h4>', -6.340899, 106.820740]
     ];
 
     // Setup the different icons and shadows
     var iconURLPrefix = 'images/marker/';
 
     var icons = [
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png',
-      iconURLPrefix + 'bath.png'
-      
+      iconURLPrefix + 'mosque.png',
+      iconURLPrefix + 'mosque.png',
+      iconURLPrefix + 'mosque.png',
+      iconURLPrefix + 'mosque.png',
+      iconURLPrefix + 'mosque.png',
+      iconURLPrefix + 'mosque.png',
+      iconURLPrefix + 'mosque.png'   
     ]
     var iconsLength = icons.length;
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 70,
+      zoom: 5,
       center: new google.maps.LatLng(-6.3401467, 106.8227692),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
