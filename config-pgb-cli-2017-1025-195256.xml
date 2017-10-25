@@ -16,7 +16,6 @@
 <access origin="*"/>
 <preference name="phonegap-version" value="cli-6.0.0" />
 <preference name="xwalkMultipleApk" value="false" />
-<plugin name="cordova-plugin-crosswalk-webview" spec="undefined"/>
 <plugin name="cordova-plugin-statusbar" spec="2.1.0"/>
 <plugin name="cordova-plugin-device" spec="1.1.1"/>
 <plugin name="cordova-plugin-splashscreen" spec="3.2.0"/>
