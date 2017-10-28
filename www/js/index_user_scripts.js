@@ -258,6 +258,14 @@
          activate_page("#monas"); 
          return false;
     });
+
+    /* button  #bckcol */
+    $(document).on("click", "#bckcol", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#jakut"); 
+         return false;
+    });
     
         /* listitem  National Gallery */
     
@@ -691,7 +699,24 @@
     $(document).on("click", "#out", function(evt)
     {
          /*global activate_page */
-         activate_page("#awalan"); 
+         $(".uib_w_5").modal("toggle"); 
+         return false;
+    });
+    /* button  Ya */
+    $(document).on("click", ".uib_w_7", function(evt)
+    {
+        /* your code goes here */ 
+        navigator.app.exitApp();
+         return false;
+    });
+    /* button  Tidak */
+    $(document).on("click", ".uib_w_9", function(evt)
+    {
+         /* Other options: .modal("show")  .modal("hide")  .modal("toggle")
+         See full API here: http://getbootstrap.com/javascript/#modals 
+            */
+        
+         $(".uib_w_5").modal("toggle");  
          return false;
     });
 
@@ -707,7 +732,7 @@
     $(document).on("click", "#bckevnt", function(evt)
     {
          /*global activate_page */
-         activate_page("#awalan"); 
+         activate_page("#mainpage"); 
          return false;
     });
 
@@ -864,12 +889,281 @@ $(document).ready(function() {
     });
 });
 
-/* tab toilet */
+/* tab collapse objek */
+
+
+// slideToggle() in a stack 
+
+$(document).ready(function(){
+    
+    // start with all boxes hidden
+    $('.box').hide();
+        
+    // make each gray bar open a certain box 
+    $('#b1').on('click', function() {
+        $('.a1').slideToggle('fast');
+    });
+    $('#b2').on('click', function() {
+        $('.a2').slideToggle('fast');
+    });
+    $('#b3').on('click', function() {
+        $('.a3').slideToggle('fast');
+    });
+    $('#b4').on('click', function() {
+        $('.a4').slideToggle('fast');
+    });    
+    $('#b5').on('click', function() {
+        $('.a5').slideToggle('fast');
+    });
+    $('#b6').on('click', function() {
+        $('.a6').slideToggle('fast');
+    });
+    $('#b7').on('click', function() {
+        $('.a7').slideToggle('fast');
+    });
+    $('#b8').on('click', function() {
+        $('.a8').slideToggle('fast');
+    });    
+    $('#b9').on('click', function() {
+        $('.a9').slideToggle('fast');
+    });
+    $('#b10').on('click', function() {
+        $('.a10').slideToggle('fast');
+    });
+    $('#b11').on('click', function() {
+        $('.a11').slideToggle('fast');
+    });
+    $('#b12').on('click', function() {
+        $('.a12').slideToggle('fast');
+    });    
+    $('#b13').on('click', function() {
+        $('.a13').slideToggle('fast');
+    });
+    $('#b14').on('click', function() {
+        $('.a14').slideToggle('fast');
+    });
+    $('#b15').on('click', function() {
+        $('.a15').slideToggle('fast');
+    });
+    $('#b16').on('click', function() {
+        $('.a16').slideToggle('fast');
+    });    
+    $('#b17').on('click', function() {
+        $('.a17').slideToggle('fast');
+    });
+    $('#b18').on('click', function() {
+        $('.a18').slideToggle('fast');
+    });
+    $('#b19').on('click', function() {
+        $('.a19').slideToggle('fast');
+    });
+    $('#b20').on('click', function() {
+        $('.a20').slideToggle('fast');
+    });    
+    $('#b21').on('click', function() {
+        $('.a21').slideToggle('fast');
+    });
+    $('#b22').on('click', function() {
+        $('.a22').slideToggle('fast');
+    });
+    $('#b23').on('click', function() {
+        $('.a23').slideToggle('fast');
+    });
+    $('#b24').on('click', function() {
+        $('.a24').slideToggle('fast');
+    });    
+    $('#b25').on('click', function() {
+        $('.a25').slideToggle('fast');
+    });
+    $('#b26').on('click', function() {
+        $('.a26').slideToggle('fast');
+    });
+    $('#b27').on('click', function() {
+        $('.a27').slideToggle('fast');
+    });
+    $('#b28').on('click', function() {
+        $('.a28').slideToggle('fast');
+    });    
+    $('#b29').on('click', function() {
+        $('.a29').slideToggle('fast');
+    });
+    $('#b30').on('click', function() {
+        $('.a30').slideToggle('fast');
+    });
+    $('#b31').on('click', function() {
+        $('.a31').slideToggle('fast');
+    });
+    $('#b32').on('click', function() {
+        $('.a32').slideToggle('fast');
+    });    
+    $('#b33').on('click', function() {
+        $('.a33').slideToggle('fast');
+    });
+    $('#b34').on('click', function() {
+        $('.a34').slideToggle('fast');
+    });
+    $('#b35').on('click', function() {
+        $('.a35').slideToggle('fast');
+    });
+    $('#b36').on('click', function() {
+        $('.a36').slideToggle('fast');
+    });    
+    
+    
+});
+
+/* text color */
+function wrapString(str) {
+  var output = [];
+  str.split('').forEach(function(letter) {
+    var wrapper = document.createElement('span');
+    wrapper.dataset.content = wrapper.innerHTML = letter;
+
+    output.push(wrapper.outerHTML);
+  });
+
+  return output.join('');
+}
+
+// Replace the original text with the split-color text
+window.onload = function() {
+    var el  = document.querySelector('.split-color'),
+        txt = el.innerHTML;
+    el.innerHTML = wrapString(txt);
+}
+
+
+/*back hp */
+document.addEventListener("backbutton",function(e){
+        
+         if($("#jakbar").is(":visible")){
+             e.preventDefault();
+             activate_page("#awalan");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#jaktim").is(":visible")){
+             e.preventDefault();
+             activate_page("#awalan");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#jakut").is(":visible")){
+             e.preventDefault();
+             activate_page("#awalan");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#jakpus").is(":visible")){
+             e.preventDefault();
+             activate_page("#awalan");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#jaksel").is(":visible")){
+             e.preventDefault();
+             activate_page("#awalan");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#tabpeta").is(":visible")){
+             e.preventDefault();
+             activate_page("#mainpage");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#monas").is(":visible")){
+             e.preventDefault();
+             activate_page("#jakpus");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#eventuser").is(":visible")){
+             e.preventDefault();
+             activate_page("#mainpage");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#event").is(":visible")){
+             e.preventDefault();
+             activate_page("#eventuser");
+         }
+        
+     },false);
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#galnas").is(":visible")){
+             e.preventDefault();
+             activate_page("#mainpage");
+         }
+        
+     },false);
 
 
 
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();
