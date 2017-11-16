@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+
+        <script src="js/snap.svg-min.js"></script>
+        <meta charset="UTF-8">
+        <title>Aplikasi</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+
+         <style>
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
+                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+                .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+                .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+                .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+                .tab-pane { padding: 15px 0; }
+                .asd{
+                height:400px;
+                overflow-y:scroll;
+                width:100%;
+                }
+                .tab-content{padding:30px}
+                .nav-tabs > li  {width:20%; text-align:center;}
+                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+                
+                }
+        </style>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            #myInput {
+              background-image: url('/css/searchicon.png');
+              background-position: 10px 12px;
+              background-repeat: no-repeat;
+              width: 100%;
+              font-size: 16px;
+              padding: 12px 20px 12px 40px;
+              border: 1px solid #ddd;
+              margin-bottom: 12px;
+            }
+            
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+            
+            #myUL li a {
+              border: 1px solid #ddd;
+              margin-top: -1px; /* Prevent double borders */
+              background-color: #f6f6f6;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              color: black;
+              display: block
+            }
+            
+            #myUL li a.header {
+              background-color: #e2e2e2;
+              cursor: default;
+            }
+            
+            #myUL li a:hover:not(.header) {
+              background-color: #eee;
+            }
+        </style>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+
+    </head>
+
+    <body>
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+            
+                    }
+                }
+            }
+        </script>
+		<style type="text/css">
+            @font-face {
+                     font-family: "Font Digital";
+                     src: url('whip.TTF');
+                     }
+             
+               .datatx {
+                     font-family: "Font Digital";
+                     }
+        </style>
+
+        <div class="upage main" id="data1">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_64" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left">
+                        <button class="btn widget uib_w_65 d-margins btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content ac0 content-area vertical-col left" id="page_69_1"></div>
+
+            </div>
+            <div class="container">
+                <center>
+                    <img src="images/wat.jpg" width="100%" height="30%">
+                </center>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Nav tabs -->
+                        <div class="card">
+                            <ul class="nav nav-tabs" role="tablist">
+
+                                <li role="presentation" class="active"><a href="#desc7" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Deskripsi</span></a>
+                                </li>
+                                <li role="presentation"><a href="#lokasi7" aria-controls="lokasi" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Lokasi</span></a>
+                                </li>
+                                <li role="presentation"><a href="#foto7" aria-controls="foto" role="tab" data-toggle="tab"><i class="fa fa-photo"></i>&nbsp; <span>Foto</span></a>
+                                </li>
+								<li role="presentation"><a href="#info7" aria-controls="info" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Informasi</span></a>
+                                </li>
+								<li role="presentation"><a href="#fasilitas7" aria-controls="fasilitas" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Fasilitas</span></a>
+                                </li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane asd active" id="desc7">
+                                    <p style="text-align:justify;" class="datatx">
+                                        <h3 class="datatx"><b>Deskripsi Waterboom Jakarta</b></h3>
+									<p class="datatx">Beberapa fasilitas Waterboom PIK seperti berbagai perlengkapan penunjang telah disediakan secara gratis oleh pengelola setelah membayar harga masuk Waterbom PIK Jakarta. Diantaranya adalah Tube (Ban) dan juga Jaket Pelampung.
+                                Jadi untuk bermain di beberapa wahana air di sini, anda tidak perlu membayar biaya tambahan tube dan pelampung lagi setelah membayar sejumlah harga tiket masuk Waterboom Jakarta.
+								</p>
+								</p>
+                                
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="lokasi7">
+                                    
+                                    <center>
+                                    <h3 class="datatx">Lokasi Waterboom Jakarta</h3>
+                                    <br>
+                                    <iframe src="water.html" width="200px" height="700%"></iframe>
+                                    </center>
+                                </div>
+								
+								<div role="tabpanel" class="tab-pane" id="info7">
+                                   <p style="text-align:justify;" class="datatx">
+                                        <b>Harga Tiket :</b>
+                                                            <br>
+                                                            <h2>Senin - Jum'at</h2>
+                                                            <h4>Anak - anak</h4>
+                                                            <p>Rp 110.000</p>
+                                                            <br>
+                                                            <h4>Dewasa</h4>
+                                                            <p>Rp 170.000</p>
+                                    </p>
+									<p style="text-align:justify;" class="datatx">
+                                        <b>Harga Tiket :</b>
+                                                            <br>
+                                                             <h2>Sabtu - Minggu</h2>
+                                                            <h4>Anak - anak</h4>
+                                                            <p>Rp 200.000</p>
+                                                            <br>
+                                                            <h4>Dewasa</h4>
+                                                            <p>Rp 270.000</p>
+                                    </p>
+									<br>
+									<br>
+                                    <p style="text-align:justify;" class="datatx">
+                                        <b>Jam Operasional :</b>
+                                       <h4>Setiap Hari</h4>
+									   <br>08.00 - 21.00 WIB
+                                    </p>
+                                    
+                                </div>
+								
+									<div role="tabpanel" class="tab-pane" id="fasilitas7">
+                                    
+                                    <center>
+                                    <h3 class="datatx">Lokasi Toilet</h3>
+                                    <br>
+                                    <iframe src="toilet33.html" width="200px" height="700%"></iframe>
+                                    </center>
+									<br>
+									 <center>
+                                    <h3 class="datatx">Lokasi Tempat Ibadah</h3>
+                                    <br>
+                                    <iframe src="musola33.html" width="200px" height="700%"></iframe>
+                                    </center>
+                                </div>
+								
+                                <div role="tabpanel" class="tab-pane" id="foto7">
+                                    <div id="carousel-example7" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-example7" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="1"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="2"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="3"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="4"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="5"></li>
+                                        </ol>
+
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <a href="#">
+                                                    <img src="gallery_wt/2.jpg" width="100%">
+                                                </a>
+
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_wt/3.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_wt/2.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_wt/7.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_wt/6.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_wt/1.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <a class="left carousel-control" href="#carousel-example7" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#carousel-example7" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+			
+			<style>
+            .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
+                .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
+                .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+                .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+                .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
+                .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+				.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
+				.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+				.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+				.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
+				.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
+                .tab-pane { padding: 15px 0; }
+                .asd{
+                height:400px;
+                overflow-y:scroll;
+                width:100%;
+                }
+                .tab-content{padding:30px}
+                .nav-tabs2 > li  {width:100%; text-align:center;}
+                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+                
+                }
+        </style>
+			
+			<div id="exTab2" class="container">
+                    <ul class="nav nav-tabs2">
+					 <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Wahana Air <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#dropdown300" data-toggle="tab">Aquatube</a>
+                                </li>
+                                <li><a href="#dropdown301" data-toggle="tab">Speedslide</a>
+                                </li>
+                                <li><a href="#dropdown302" data-toggle="tab">Hairpin</a>
+                                </li>
+                                <li><a href="#dropdown303" data-toggle="tab">Twitzter</a>
+                                </li>
+                                <li><a href="#dropdown304" data-toggle="tab">The Whizzard</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="dropdown300">
+						<center>
+                            <h3 class="datatx">Aquatube</h3>
+							 <img src="gallery_wt/aq.jpg" alt="" class="img-circle" width="250" height="250">
+                            <p>Seluncuran air dengan dengan kecepatan yang relatif menengah. Dengan tinggi 14,5 meter melintasi areal sepanjang 115 m. Di wahana yang satu ini pengunjung ditwarkan 3 tube yang berbeda, ada yang tertutup, setengah tertutup
+                                dan sepenuhnya terbuka. Buat yang lebih suka tantangan tentu tabung yang tertutup akan sangat memacu adrenalin. Namun buat yang menyukai seluncur sambil menikmati keindahan lanscape sekita waterpark bisa mencoba seluncur
+                                yang terbuka.</p>
+                            <br>
+							</center>
+                           
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown301">
+						<center>
+                            <h3 class="datatx">Speed Slide</h3>
+							<img src="gallery_wt/sp.jpg" alt="" class="img-circle" width="250" height="250">
+                            <p>Dengan rata-rata kecepatan meluncur bebas 70km per jam dipastikan akan memompa adrenalin. Tinggi wahana ini mencapai 20 meter lebih dengan panjang lintasan 118 meter. Terdiri atas 2 wahana yang masing-masing mempunyai keunikan.
+                            </p>
+                            <br>
+							</center>
+                            
+
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown302">
+						<center>
+                            <h3 class="datatx">Hairpin</h3>
+							 <img src="gallery_wt/hp.jpg" alt="" class="img-circle" width="250" height="250">
+                            <p>Seluncuran air yang dinamai hairpin atau tusuk konde karena bentuknya yang memang menyerupai benda tersebut. Mencoba wahana ini dengan menggunakan kapal-kapalan yang berkapasitas 4 orang. Serunya wahana ini karena pengunjung
+                                bisa menikmati seluncuran seperti arum jeram, berputar menuruni slider yang panjangnya tidak kurang dari 17 meter.</p>
+                            <br>
+						</center>
+                           
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown303">
+						<center>
+                            <h3 class="datatx">Twitzler</h3>
+							<img src="gallery_wt/tw.jpg" alt="" class="img-circle" width="250" height="250">
+                            <p>Bentuknya yang menyerupai terowongan raksasa dengan panjang 90 meter akan membawa pengunjung berputar-putar mengelingi wahana ini.</p>
+
+                            <br>
+						</center>
+                            
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown304">
+                            <center>
+							<h3 class="datatx">The Whizzard</h3>
+							 <img src="gallery_wt/wz.jpg" alt="" class="img-circle" width="250" height="250">
+                            <p>Seluncuran kembar sejajar dengan lintasan berbentuk terowongan, berbelok sekali, turun bergelombang dan berhenti di lintasan terbuka. Peluncur menggunakan mat (matras) sebagai alat untuk meluncur.</p>
+							<br>
+							</center>
+                           
+        </div>
+
+    </body>
+
+</html>

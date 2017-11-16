@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+
+        <script src="js/snap.svg-min.js"></script>
+        <meta charset="UTF-8">
+        <title>Aplikasi</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+
+         <style>
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
+                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+                .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+                .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+                .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+                .tab-pane { padding: 15px 0; }
+                .asd{
+                height:400px;
+                overflow-y:scroll;
+                width:100%;
+                }
+                .tab-content{padding:30px}
+                .nav-tabs > li  {width:20%; text-align:center;}
+                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+                
+                }
+        </style>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            #myInput {
+              background-image: url('/css/searchicon.png');
+              background-position: 10px 12px;
+              background-repeat: no-repeat;
+              width: 100%;
+              font-size: 16px;
+              padding: 12px 20px 12px 40px;
+              border: 1px solid #ddd;
+              margin-bottom: 12px;
+            }
+            
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+            
+            #myUL li a {
+              border: 1px solid #ddd;
+              margin-top: -1px; /* Prevent double borders */
+              background-color: #f6f6f6;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              color: black;
+              display: block
+            }
+            
+            #myUL li a.header {
+              background-color: #e2e2e2;
+              cursor: default;
+            }
+            
+            #myUL li a:hover:not(.header) {
+              background-color: #eee;
+            }
+        </style>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+
+    </head>
+
+    <body>
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+            
+                    }
+                }
+            }
+        </script>
+		
+		<style type="text/css">
+            @font-face {
+                     font-family: "Font Digital";
+                     src: url('whip.TTF');
+                     }
+             
+               .datatx {
+                     font-family: "Font Digital";
+                     }
+        </style>
+
+        <div class="upage main" id="data1">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_64" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left">
+                        <button class="btn widget uib_w_65 d-margins btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content ac0 content-area vertical-col left" id="page_69_1"></div>
+
+            </div>
+            <div class="container">
+                <center>
+                    <img src="images/a3.jpg" width="100%" height="30%">
+                </center>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Nav tabs -->
+                        <div class="card">
+                            <ul class="nav nav-tabs" role="tablist">
+
+                                <li role="presentation" class="active"><a href="#desc7" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Deskripsi</span></a>
+                                </li>
+                                <li role="presentation"><a href="#lokasi7" aria-controls="lokasi" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Lokasi</span></a>
+                                </li>
+                                <li role="presentation"><a href="#foto7" aria-controls="foto" role="tab" data-toggle="tab"><i class="fa fa-photo"></i>&nbsp; <span>Foto</span></a>
+                                </li>
+								<li role="presentation"><a href="#info7" aria-controls="info" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Informasi</span></a>
+                                </li>
+								<li role="presentation"><a href="#fasilitas7" aria-controls="fasilitas" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Fasilitas</span></a>
+                                </li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane asd active" id="desc7">
+                                    <p style="text-align:justify;" class="datatx">
+                                        <center><h3 class="datatx"><b>Deskripsi Taman Impian Jaya Ancol</b></h3></center>
+                                        <br>Taman Impian Jaya Ancol i Jakarta Utara sering dijadikan destinasi wisata warga Jakarta dan sekitarnya yang ingin menikmati nuansa pantai. Tempat ini pun sering jadi pusat perayaan tahun baru tiap akhir tahun. Bahkan di hari
+                                biasa, Taman Impian Jaya Ancol jadi primadona karena tempat ini menawarkan banyak wahana menarik. Kawasan Taman Impian Jaya Ancol sangatlah luas hingga mencapai 552 hektar serta begitu identik dengan suasana pantai.
+								</p>
+                                
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="lokasi7">
+                                    
+                                    <center>
+                                    <h3 class="datatx">Lokasi Taman Impian Jaya Ancol</h3>
+                                    <br>
+                                    <iframe src="ancol.html" width="200px" height="700%"></iframe>
+                                    </center>
+                                </div>
+								
+								<div role="tabpanel" class="tab-pane" id="info7">
+                                   <p style="text-align:justify;" class="datatx">
+                                        <b class="datatx">Harga Tiket :</b>
+                                       <br>Rp 25.000
+                                    </p>
+									<br>
+									<br>
+                                    <p style="text-align:justify;" class="datatx">
+                                        <b class="datatx">Jam Operasional :</b>
+                                        <h4>Setiap Hari</h4>
+                                        <br>06.00 - 16.00 WIB
+                                    </p>
+                                    
+                                </div>
+								
+									<div role="tabpanel" class="tab-pane" id="fasilitas7">
+                                    
+                                    <center>
+                                    <h3 class="datatx">Lokasi Toilet</h3>
+                                    <br>
+                                    <iframe src="toilet39.html" width="200px" height="700%"></iframe>
+                                    </center>
+									<br>
+									 <center>
+                                    <h3 class="datatx">Lokasi Tempat Ibadah</h3>
+                                    <br>
+                                    <iframe src="musola39.html" width="200px" height="700%"></iframe>
+                                    </center>
+                                </div>
+								
+                                <div role="tabpanel" class="tab-pane" id="foto7">
+                                    <div id="carousel-example7" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-example7" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="1"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="2"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="3"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="4"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="5"></li>
+                                        </ol>
+
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <a href="#">
+                                                    <img src="gallery_an/2.jpg" width="100%">
+                                                </a>
+
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_an/3.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_an/2.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_an/7.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_an/6.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_an/1.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <a class="left carousel-control" href="#carousel-example7" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#carousel-example7" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+			
+		<style>
+            .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
+                .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
+                .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+                .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+                .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
+                .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+				.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
+				.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+				.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+				.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
+				.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
+                .tab-pane { padding: 15px 0; }
+                .asd{
+                height:400px;
+                overflow-y:scroll;
+                width:100%;
+                }
+                .tab-content{padding:30px}
+                .nav-tabs2 > li  {width:100%; text-align:center;}
+                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+                
+                }
+        </style>
+			
+			<div id="exTab2" class="container">
+			<center>
+                    <img src="images/col.jpg" width="100%" height="30%">
+            </center>
+                    <ul class="nav nav-tabs2">
+					 <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Objek Wisata <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#dropdown1" data-toggle="tab">Dunia Fantasi</a>
+                                </li>
+                                <li><a href="#dropdown2" data-toggle="tab">Sea World</a>
+                                </li>
+                                <li><a href="#dropdown3" data-toggle="tab">Atlantis Waterpark</a>
+                                </li>
+                                <li><a href="#dropdown4" data-toggle="tab">Gelanggang Samudra</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="tab-content ">
+                        <div class="tab-pane fade" id="dropdown1">
+                            <h3 class="datatx">Dunia Fantasi</h3>
+                            <p>Dunia Fantasi mempunyai maskot berupa kera bekantan yang diberi nama Dufan (singkatan dari Dunia Fantasi). Dipilih kera sebagai karakter adalah untuk mengingatkan bahwa Ancol dahulu adalah kawasan kera. Pemilihan kera bekantan
+                                adalah semata-mata untuk mengenalkan jenis satwa langka yang kini dilindungi. Di area objek wisata Dufan, terdapat berbagai macam wahana bermain dengan sentuhan teknologi tinggi, baik untuk anak-anak maupun dewasa. Beberapa
+                                wahana permainan bahkan benar-benar memacu adrenalin, sehingga membuat para peserta berteriak ketakutan. Dufan merupakan theme park pertama dan terbesar di Indonesia, dan telah mendapatkan ISO 9001:2008 sejak 2009.</p>
+                            <br>
+                            <h3 class="datatx">Harga Tiket Masuk</h3>
+                            <p class="datatx">Rp 200.000</p>
+							<br>
+
+                            <h3 class="datatx">Petunjuk Arah</h3>
+                            <p>
+                                <iframe src="dufan.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscrene=""></iframe>
+                            </p>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown2">
+                            <h3 class="datatx">Sea World</h3>
+                            <p>Area Seaworld seluas 3 hektare dengan luas bangunan utama 4.500 m2 berisi berbagai macam akuarium, lorong Antasena (lorong bawah air), perpustakaan, museum, terapi ikan dokter, glow theatre, komputer edukatif layar sentuh berisi
+                                informasi berbagai spesies di Seaworld dan bermacam fasilitas pelengkap untuk pengunjung seperti tempat makan, toko suvenir, dan ruang serba guna.</p>
+                            <p>Akuarium utama memelihara ribuan satwa laut Indonesia. Sebanyak 35.500 ekor ikan laut Indonesia dari 35 spesies yang berbeda dipelihara disini. Ukuran akuarium ini mencapai 38 x 24 m dengan kedalaman yang bervariasi dari 4.5
+                                hingga 6 m dan menyimpan 5 juta liter air laut. Karena besarnya akuarium utama ini tercatat sebagai akuarium air laut terbesar kedua di Asia Tenggara.</p>
+                            <br>
+                            <h3 class="datatx">Harga Tiket Masuk</h3>
+                            <p>Rp 85.000</p>
+							<br>
+
+                            <h3 class="datatx">Petunjuk Arah</h3>
+                            <p class="box a32">
+                                <iframe src="sea.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscrene=""></iframe>
+                            </p>
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown3">
+                            <h3 class="datatx">Atlantis Waterpark</h3>
+                            <p class="datatx">Water park ini berdiri di atas lahan seluas lima hektar. Mulanya taman permainan air itu bernama Taman Rekreasi Air Gelanggang Renang Ancol. Setelah direvitaslisai, namanya berubah sesuai tema yang diusung yakni peradaban Yunani
+                                yang hilang atau Atlantis. Atlantis Water Adventure memiliki delapan kolam utama. Seluruh kolam dinamai sesuai tokoh-tokoh yang kerap muncul dalam legenda Yunani yaitu Poseidon, Antila, Plaza Atlas, dan Aquarius. Ada pula
+                                kolam yang disebut Octopus, Atlantean, dan Kiddy Pool.</p>
+                            <p class="datatx">Tempat wisata ini juga dilengkapi dengan kolam arus. Di wahana tersebut pengunjung bisa bersantai sambil menikmati seluruh pemandangan wahana water park tanpa harus lelah menjelajah. Anda cukup duduk di atas perahu karet yang
+                                bergerak mengkuti di kolam yang mengelilingi taman permainan air.</p>
+                            <br>
+                            <h3 class="datatx">Harga Tiket Masuk</h3>
+                            <p class="datatx">Rp 95.000</p>
+							<br>
+                            <h3 class="datatx">Petunjuk Arah</h3>
+                            <p>
+                                <iframe src="atlantis.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscrene=""></iframe>
+                            </p>
+                        </div>
+
+                        <div class="tab-pane fade" id="dropdown4">
+                            <h3 class="datatx">Gelanggang Samudra</h3>
+                            <p class="datatx">Gelanggang Samudra Ancol merupakan sebuah oseanarium atau oceanarium. Oseanarium merupakan taman mamalia laut dan mahluk laut lainnya. Selain menikmati rekreasi bersama keluarga, di sini Anda akan mendapatkan berbagai pengetahuan
+                                yang menarik mengenai mamalia laut seperti lumba-lumba, paus, singa laut, dan binatang laut lainnya. Gelanggang Samudra Ancol juga menjadi sarana konservasi satwa laut.</p>
+                            <p class="datatx">Ada 4 wahana utama yang terdapat di Gelanggang Samudra, Ancol. Pertama, adalah wahana pertunjukan Aneka Satwa, wahana pertunjukan Singa Laut, wahana pertunjukan Lumba-Lumba dan Paus Putih, serta wahana Sinema 4D atau 4D Theatre.
+                                Dalam 1 hari ada 3 kali pementasan untuk masing-masing wahana, atau di hari libur akan ditambahkan jumlah pementasan untuk setiap wahana. Agar tidak terlewat, Anda dapat melihat jam pertunjukan yang ada di depan wahana.
+                                Setelah selesai menyaksikan satu pertunjukan, petugas akan menganjurkan Anda untuk menyaksikan perunjukan berikutnya. Bila Anda ingin menyaksikan semua pertunjukan, sebaiknya mengikuti petunjuk tersebut agar Anda tidak
+                                tertinggal sehingga harus menunggu lebih lama.</p>
+                            <br>
+                            <h3 class="datatx">Harga Tiket Masuk</h3>
+                            <p>Rp 95.000</p>
+							<br>
+
+                            <h3 class="datatx">Petunjuk Arah</h3>
+                            <p>
+                                <iframe src="samudra.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscrene=""></iframe>
+                            </p>
+
+                        </div>
+			
+			
+        </div>
+
+    </body>
+
+</html>

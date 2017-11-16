@@ -8,1162 +8,235 @@
  function register_event_handlers()
  {
     
-    
-     /* button  #jksn */
-    
-    
-        /* button  #jktm */
-    $(document).on("click", "#jktm", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaktim"); 
-         return false;
-    });
-    
-        /* button  #jkbr */
-    $(document).on("click", "#jkbr", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* button  #jkut */
-    $(document).on("click", "#jkut", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakut"); 
-         return false;
-    });
-    
-        /* button  #jkpt */
-    $(document).on("click", "#jkpt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* button  #allmap */
-    $(document).on("click", "#allmap", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tabpeta"); 
-         return false;
-    });
-    
-        /* button  #bckmap */
-    $(document).on("click", "#bckmap", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#mainpage"); 
-         return false;
-    });
-    
-        /* button  #bcksel */
-    $(document).on("click", "#bcksel", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-    
-        /* button  #bckjp */
-    $(document).on("click", "#bckjp", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-    
-        /* listitem  #listmo */
-    $(document).on("click", "#listmo", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#monas"); 
-         return false;
-    });
-
-
- /* to open maps */
-
-    $(document).on("click", "#mo", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#monas"); 
-         return false;
-    });
-
-    $(document).on("click", "#ko", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#kotu"); 
-         return false;
-    });
-
-    $(document).on("click", "#na", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#galnas"); 
-         return false;
-    });
-
-    $(document).on("click", "#mo", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#monas"); 
-         return false;
-    });
-
-    $(document).on("click", "#an", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#ancol"); 
-         return false;
-    });
-
-    $(document).on("click", "#wa", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#wayang"); 
-         return false;
-    });
-
-    $(document).on("click", "#ra", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#ragunan"); 
-         return false;
-    });
-
-    $(document).on("click", "#ko", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#kotu"); 
-         return false;
-    });
-
-    $(document).on("click", "#tm", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tamini"); 
-         return false;
-    });
-
-    $(document).on("click", "#lb", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#buaya"); 
-         return false;
-    });
-
-    $(document).on("click", "#st", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#setu"); 
-         return false;
-    });
-
-    $(document).on("click", "#la", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#layangan"); 
-         return false;
-    });
-
-    $(document).on("click", "#ga", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#gajah"); 
-         return false;
-    });
-
-    $(document).on("click", "#kr", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#kramik"); 
-         return false;
-    });
-
-    $(document).on("click", "#bi", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#bank"); 
-         return false;
-    });
-    
-    $(document).on("click", "#mt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tekstil"); 
-         return false;
-    });
-
-    $(document).on("click", "#mg", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#mangrove"); 
-         return false;
-    });
-
-    $(document).on("click", "#wi", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#bunga"); 
-         return false;
-    });
-
-    $(document).on("click", "#wb", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#water"); 
-         return false;
-    });
-
-    $(document).on("click", "#pt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#planet"); 
-         return false;
-    });
-
-    $(document).on("click", "#cb", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#garden"); 
-         return false;
-    });
-
-    $(document).on("click", "#pm", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#pemuda"); 
-         return false;
-    });
-
-    /* end page maps */
-
-        /* button  #bckju */
-    $(document).on("click", "#bckju", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-    
-        /* listitem  National Monument */
-    $(document).on("click", ".uib_w_25", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#monas"); 
-         return false;
-    });
-
-    /* button  #bckcol */
-    $(document).on("click", "#bckcol", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakut"); 
-         return false;
-    });
-    
-        /* listitem  National Gallery */
-    
-    
-        /* button  #bckmo */
-    $(document).on("click", "#bckmo", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-
-     /* button  #beruang */
-    $(document).on("click", "#madu", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#beruang"); 
-         return false;
-    });
-
-    /* button  #event */
-    $(document).on("click", "#event", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#login"); 
-         return false;
-    });
-    
-    /* button  #lebaranbetawi */
-    $(document).on("click", "#betawi", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#lebaran"); 
-         return false;
-    });
-
-        /* button  #bckgj */
-    $(document).on("click", "#bckgj", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* listitem  Gajah Museum */
-    
-    
-        /* button  #bckpm */
-    $(document).on("click", "#bckpm", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* listitem  Sumpah Pemuda Museum */
-    
-    
-        /* button  #bckpl */
-    
-    
-        /* button  #bckpl */
-    $(document).on("click", "#bckpl", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* listitem  Planetarium */
-    
-    
-        /* button  #bckgl */
-    $(document).on("click", "#bckgl", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-
-        /* button  #bckjt */
-        $(document).on("click", "#bckjt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-    
-    
-        /* button  #bckjb */
-    $(document).on("click", "#bckjb", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-    
-        /* button  .uib_w_61 */
-    
-    
-        /* button  .uib_w_61 */
-    $(document).on("click", ".uib_w_61", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-    
-        /* button  #jksel */
-    $(document).on("click", "#jksel", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* button  #bckrg */
-    $(document).on("click", "#bckrg", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* button  #bcklgn */
-    $(document).on("click", "#bcklgn", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* button  #jksn */
-    $(document).on("click", "#jksn", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* listitem  Sumpah Pemuda Museum */
-    $(document).on("click", ".uib_w_28", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#pemuda"); 
-         return false;
-    });
-    
-        /* listitem  National Gallery */
-    $(document).on("click", ".uib_w_26", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#galnas"); 
-         return false;
-    });
-    
-        /* listitem  Gajah Museum */
-    $(document).on("click", ".uib_w_27", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#gajah"); 
-         return false;
-    });
-    
-        /* listitem  Planetarium */
-    $(document).on("click", ".uib_w_29", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#planet"); 
-         return false;
-    });
-    
-        /* listitem  Layang - layang Museum */
-    $(document).on("click", ".uib_w_19", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#layangan"); 
-         return false;
-    });
-    
-        /* listitem  Kebun Binatang Ragunan */
-    $(document).on("click", ".uib_w_18", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#ragunan"); 
-         return false;
-    });
-    
-        /* listitem  Danau Setu Babakan */
-    $(document).on("click", ".uib_w_17", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#setu"); 
-         return false;
-    });
-    
-        /* listitem  Lubang Buaya Museum */
-    $(document).on("click", ".uib_w_45", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#buaya"); 
-         return false;
-    });
-    
-        /* listitem  Cibubur Garden Diary */
-    $(document).on("click", ".uib_w_47", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#garden"); 
-         return false;
-    });
-    
-        /* listitem  Taman Bunga Wiladatika */
-    $(document).on("click", ".uib_w_46", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#bunga"); 
-         return false;
-    });
-    
-        /* button  #bckgl */
-    $(document).on("click", "#bckgl", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* button  #bckgj */
-    $(document).on("click", "#bckgj", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* button  #bckpl */
-    $(document).on("click", "#bckpl", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* button  #bckpm */
-    $(document).on("click", "#bckpm", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakpus"); 
-         return false;
-    });
-    
-        /* button  #bckkt */
-    $(document).on("click", "#bckkt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* listitem  Old Town */
-    $(document).on("click", ".uib_w_38", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#kotu"); 
-         return false;
-    });
-    
-        /* button  #bckbi */
-    $(document).on("click", "#bckbi", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* listitem  Indonesia Bank Museum */
-    $(document).on("click", ".uib_w_41", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#bank"); 
-         return false;
-    });
-    
-        /* button  #bckwa */
-    
-    
-        /* button  #bckwa */
-    
-    
-        /* button  #bckwa */
-    $(document).on("click", "#bckwa", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* button  Button */
-    $(document).on("click", ".uib_w_85", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* listitem  Textile Museum */
-    $(document).on("click", ".uib_w_42", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tekstil"); 
-         return false;
-    });
-    
-        /* listitem  Museum seni rupa&keramik */
-    $(document).on("click", ".uib_w_40", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#kramik"); 
-         return false;
-    });
-    
-        /* listitem  Wayang Museum */
-    $(document).on("click", ".uib_w_39", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#wayang"); 
-         return false;
-    });
-
-    /* listitem  koleksi satwa */
-    $(document).on("click", ".uib_w_100", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#satwa"); 
-         return false;
-    });
-    
-    /* listitem  dufan */
-    $(document).on("click", ".uib_w_200", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#dufan"); 
-         return false;
-    });
-
-        /* button  #bckmt */
-    $(document).on("click", "#bckmt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* button  #bckwa */
-    $(document).on("click", "#bckwa", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakbar"); 
-         return false;
-    });
-    
-        /* button  #bckst */
-    $(document).on("click", "#bckst", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* button  #bckly */
-    $(document).on("click", "#bckly", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* button  #bckrg */
-    $(document).on("click", "#bckrg", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaksel"); 
-         return false;
-    });
-    
-        /* listitem  Koleksi Satwa */
-    $(document).on("click", ".uib_w_101", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#satwa"); 
-         return false;
-    });
-    
-        /* button  EVENT WISATA */
-    $(document).on("click", ".uib_w_106", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#login"); 
-         return false;
-    });
-    
-        /* button  Event */
-    
-    
-     /* button mulai */
-    $(document).on("click", "#play", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#awalan"); 
-         return false;
-    });
-
-      /* button peta*/
+        /* graphic button  #petaku*/ 
     $(document).on("click", "#petaku", function(evt)
     {
-         /*global activate_page */
-         activate_page("#tabpeta"); 
+         /*global activate_subpage*/
+         activate_subpage("#page_42_52"); 
          return false;
     });
-
-      /* button event */
+     
+        /* graphic button  #time */
     $(document).on("click", "#time", function(evt)
     {
-         /*global activate_page */
-         activate_page("#eventuser"); 
+         /*global activate_subpage */
+         activate_subpage("#page_87_8"); 
          return false;
     });
-
-  /* button keluar */
-    $(document).on("click", "#out", function(evt)
+     
+      $$('#login').on('click', function () {
+    myApp.alert('Hanya admin yang dapat masuk!', 'Login Admin', function () {
+          activate_subpage("#page_37_8");
+    });
+});
+	
+    /* graphic button  #markpeta */
+    $(document).on("click", "#se", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data1.html"); 
+         return false;
+    });
+     
+	$(document).on("click", "#mo", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data13.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#ko", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data8.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#wa", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data9.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#na", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data14.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#an", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data20.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#ra", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data2.html"); 
+         return false;
+    }); 
+	$(document).on("click", "#tm", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data4.html"); 
+         return false;
+    }); 
+	$(document).on("click", "#lb", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data5.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#la", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data3.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#ga", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data15.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#kr", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data11.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#mt", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data12.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#mg", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data19.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#wi", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data6.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#wb", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data18.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#pt", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data17.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#cb", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data7.html"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#pm", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("baru/data/data16.html"); 
+         return false;
+    }); 
+	
+	  /* graphic button  #petaku */
+    $(document).on("click", "#petaku", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#page_42_52"); 
+         return false;
+    });
+	 
+	 
+      $$('#play').on('click', function () {
+    myApp.showPreloader('Mohon Tunggu')
+    setTimeout(function () {
+        myApp.hidePreloader();
+        window.open("baru/index.html")
+    }, 5000);
+});
+    
+        /* button  #bck-event */
+    $(document).on("click", "#bck-event", function(evt)
     {
          /*global activate_page */
-         $(".uib_w_5").modal("toggle"); 
+         activate_subpage("#page_87_8");  
          return false;
     });
-    /* button  Ya */
-    $(document).on("click", ".uib_w_7", function(evt)
-    {
-        /* your code goes here */ 
-        navigator.app.exitApp();
-         return false;
-    });
-    /* button  Tidak */
-    $(document).on("click", ".uib_w_9", function(evt)
-    {
-         /* Other options: .modal("show")  .modal("hide")  .modal("toggle")
-         See full API here: http://getbootstrap.com/javascript/#modals 
-            */
-        
-         $(".uib_w_5").modal("toggle");  
-         return false;
-    });
-
-        /* button  #bckmain */
-    $(document).on("click", "#bckmain", function(evt)
+    
+	       /* button  #bck-user */
+    $(document).on("click", "#bck-user", function(evt)
     {
          /*global activate_page */
          activate_page("#mainpage"); 
          return false;
     });
-    
-    /* button  #bckevent */
-    $(document).on("click", "#bckevnt", function(evt)
+        /* button  #bck-peta */
+    $(document).on("click", "#bck-peta", function(evt)
     {
          /*global activate_page */
          activate_page("#mainpage"); 
          return false;
     });
 
-    /* button  #bckmangrove */
-    $(document).on("click", "#bckmang", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakut"); 
-         return false;
-    });
 
-     /* button  #bckancol */
-    $(document).on("click", "#bckancol", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakut"); 
-         return false;
-    });
-
-/* button  #bckanjungan */
-     $(document).on("click", "#bckang", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tamini"); 
-         return false;
-    });
-
-     /* button  #anjungan */
-     $(document).on("click", "#anjungan", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#anjungan"); 
-         return false;
-    });
-
-    /* button  #tamini*/
-     $(document).on("click", "#listamini", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#tamini"); 
-         return false;
-    });
-
-     /* button  #bckwaterbom */
-    $(document).on("click", "#bckwater", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jakut"); 
-         return false;
-    });
-    /* button  #listwater */
-     $(document).on("click", "#listwater ", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#water"); 
-         return false;
-    });
-
-    /* button  #listanjungan */
-     $(document).on("click", "#listang ", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#anjungan"); 
-         return false;
-    });
-
-        /* listitem  Taman Alam Mangrove */
-    $(document).on("click", ".uib_w_34", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#mangrove"); 
-         return false;
-    });
-    
-        /* listitem  Waterboom Jakarta */
-    $(document).on("click", ".uib_w_33", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#waterbom"); 
-         return false;
-    });
-    
-        /* listitem  Taman Impian Jaya Ancol */
-    $(document).on("click", ".uib_w_35", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#ancol"); 
-         return false;
-    });
-    
-        /* button  #bck_evnt */
-    $(document).on("click", "#bck_evnt", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#eventuser"); 
-         return false;
-    });
-    
-        /* button  EVENT */
-    $(document).on("click", ".uib_w_204", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#event"); 
-         return false;
-    });
-
-        /* button  #evntbck */
-    $(document).on("click", "#evntbck", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#mainpage"); 
-         return false;
-    });
-    
-       /* button  #bcktmn */
-    $(document).on("click", "#bcktmn", function(evt)
-    {
-         /*global activate_page */
-         activate_page("#jaktim"); 
-         return false;
-    });
-
-    }
-
-$(document).ready(function() {
-$(".btn-pref .btn").click(function () {
-    $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
-    // $(".tab").addClass("active"); // instead of this do the below 
-    $(this).removeClass("btn-default").addClass("btn-primary");   
-});
-});
-   
-$(document).on('click', '.panel-heading span.clickable', function(e){
-    var $this = $(this);
-    if(!$this.hasClass('panel-collapsed')) {
-        $this.parents('.panel').find('.panel-body').slideUp();
-        $this.addClass('panel-collapsed');
-        $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-    } else {
-        $this.parents('.panel').find('.panel-body').slideDown();
-        $this.removeClass('panel-collapsed');
-        $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-    }
-})
-
-$(document).ready(function() {
-  $('.collapse.in').prev('.panel-heading').addClass('active');
-  $('#accordion, #bs-collapse')
-    .on('show.bs.collapse', function(a) {
-      $(a.target).prev('.panel-heading').addClass('active');
-    })
-    .on('hide.bs.collapse', function(a) {
-      $(a.target).prev('.panel-heading').removeClass('active');
-    });
-});
-
-/* tab collapse objek */
-
-
-// slideToggle() in a stack 
-
-$(document).ready(function(){
-    
-    // start with all boxes hidden
-    $('.box').hide();
-        
-    // make each gray bar open a certain box 
-    $('#b1').on('click', function() {
-        $('.a1').slideToggle('fast');
-    });
-    $('#b2').on('click', function() {
-        $('.a2').slideToggle('fast');
-    });
-    $('#b3').on('click', function() {
-        $('.a3').slideToggle('fast');
-    });
-    $('#b4').on('click', function() {
-        $('.a4').slideToggle('fast');
-    });    
-    $('#b5').on('click', function() {
-        $('.a5').slideToggle('fast');
-    });
-    $('#b6').on('click', function() {
-        $('.a6').slideToggle('fast');
-    });
-    $('#b7').on('click', function() {
-        $('.a7').slideToggle('fast');
-    });
-    $('#b8').on('click', function() {
-        $('.a8').slideToggle('fast');
-    });    
-    $('#b9').on('click', function() {
-        $('.a9').slideToggle('fast');
-    });
-    $('#b10').on('click', function() {
-        $('.a10').slideToggle('fast');
-    });
-    $('#b11').on('click', function() {
-        $('.a11').slideToggle('fast');
-    });
-    $('#b12').on('click', function() {
-        $('.a12').slideToggle('fast');
-    });    
-    $('#b13').on('click', function() {
-        $('.a13').slideToggle('fast');
-    });
-    $('#b14').on('click', function() {
-        $('.a14').slideToggle('fast');
-    });
-    $('#b15').on('click', function() {
-        $('.a15').slideToggle('fast');
-    });
-    $('#b16').on('click', function() {
-        $('.a16').slideToggle('fast');
-    });    
-    $('#b17').on('click', function() {
-        $('.a17').slideToggle('fast');
-    });
-    $('#b18').on('click', function() {
-        $('.a18').slideToggle('fast');
-    });
-    $('#b19').on('click', function() {
-        $('.a19').slideToggle('fast');
-    });
-    $('#b20').on('click', function() {
-        $('.a20').slideToggle('fast');
-    });    
-    $('#b21').on('click', function() {
-        $('.a21').slideToggle('fast');
-    });
-    $('#b22').on('click', function() {
-        $('.a22').slideToggle('fast');
-    });
-    $('#b23').on('click', function() {
-        $('.a23').slideToggle('fast');
-    });
-    $('#b24').on('click', function() {
-        $('.a24').slideToggle('fast');
-    });    
-    $('#b25').on('click', function() {
-        $('.a25').slideToggle('fast');
-    });
-    $('#b26').on('click', function() {
-        $('.a26').slideToggle('fast');
-    });
-    $('#b27').on('click', function() {
-        $('.a27').slideToggle('fast');
-    });
-    $('#b28').on('click', function() {
-        $('.a28').slideToggle('fast');
-    });    
-    $('#b29').on('click', function() {
-        $('.a29').slideToggle('fast');
-    });
-    $('#b30').on('click', function() {
-        $('.a30').slideToggle('fast');
-    });
-    $('#b31').on('click', function() {
-        $('.a31').slideToggle('fast');
-    });
-    $('#b32').on('click', function() {
-        $('.a32').slideToggle('fast');
-    });    
-    $('#b33').on('click', function() {
-        $('.a33').slideToggle('fast');
-    });
-    $('#b34').on('click', function() {
-        $('.a34').slideToggle('fast');
-    });
-    $('#b35').on('click', function() {
-        $('.a35').slideToggle('fast');
-    });
-    $('#b36').on('click', function() {
-        $('.a36').slideToggle('fast');
-    });    
-    
-    
-});
-
-/* text color */
-function wrapString(str) {
-  var output = [];
-  str.split('').forEach(function(letter) {
-    var wrapper = document.createElement('span');
-    wrapper.dataset.content = wrapper.innerHTML = letter;
-
-    output.push(wrapper.outerHTML);
+    /*Exit Modals */
+     
+$('#exit').on('click', function () {
+  var modal = myApp.modal({
+    title: '<center>Konfirmasi Keluar</center>',
+    text: '<center>Apakah Anda Yakin ?</center>',
+    afterText:  '<center><img src="images/warning.gif" width="100%" height="150" style="display:block"></center>',
+    buttons: [
+      {
+        text: 'Tidak'
+      },
+      {
+        text: 'Ya !',
+        bold: true,
+        onClick: function () {
+          navigator.app.exitApp();
+        }
+      },
+    ]
   });
-
-  return output.join('');
-}
-
-// Replace the original text with the split-color text
-window.onload = function() {
-    var el  = document.querySelector('.split-color'),
-        txt = el.innerHTML;
-    el.innerHTML = wrapString(txt);
-}
-
-
-/*back hp */
-document.addEventListener("backbutton",function(e){
-        
-         if($("#jakbar").is(":visible")){
-             e.preventDefault();
-             activate_page("#awalan");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#jaktim").is(":visible")){
-             e.preventDefault();
-             activate_page("#awalan");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#jakut").is(":visible")){
-             e.preventDefault();
-             activate_page("#awalan");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#jakpus").is(":visible")){
-             e.preventDefault();
-             activate_page("#awalan");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#jaksel").is(":visible")){
-             e.preventDefault();
-             activate_page("#awalan");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#tabpeta").is(":visible")){
-             e.preventDefault();
-             activate_page("#mainpage");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#monas").is(":visible")){
-             e.preventDefault();
-             activate_page("#jakpus");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#eventuser").is(":visible")){
-             e.preventDefault();
-             activate_page("#mainpage");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#event").is(":visible")){
-             e.preventDefault();
-             activate_page("#eventuser");
-         }
-        
-     },false);
-
-document.addEventListener("backbutton",function(e){
-        
-         if($("#galnas").is(":visible")){
-             e.preventDefault();
-             activate_page("#mainpage");
-         }
-        
-     },false);
-
+});
 
 
 
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        /* button  #back-peta */
+    $(document).on("click", "#back-peta", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage"); 
+         return false;
+    });
+    
+    }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

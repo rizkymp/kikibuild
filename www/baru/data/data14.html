@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+
+        <script src="js/snap.svg-min.js"></script>
+        <meta charset="UTF-8">
+        <title>Aplikasi</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+
+        <style>
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
+                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+                .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+                .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+                .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+                .tab-pane { padding: 15px 0; }
+                .asd{
+                height:400px;
+                overflow-y:scroll;
+                width:100%;
+                }
+                .tab-content{padding:30px}
+                .nav-tabs > li  {width:20%; text-align:center;}
+                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+                
+                }
+        </style>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            #myInput {
+              background-image: url('/css/searchicon.png');
+              background-position: 10px 12px;
+              background-repeat: no-repeat;
+              width: 100%;
+              font-size: 16px;
+              padding: 12px 20px 12px 40px;
+              border: 1px solid #ddd;
+              margin-bottom: 12px;
+            }
+            
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+            
+            #myUL li a {
+              border: 1px solid #ddd;
+              margin-top: -1px; /* Prevent double borders */
+              background-color: #f6f6f6;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              color: black;
+              display: block
+            }
+            
+            #myUL li a.header {
+              background-color: #e2e2e2;
+              cursor: default;
+            }
+            
+            #myUL li a:hover:not(.header) {
+              background-color: #eee;
+            }
+        </style>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+
+    </head>
+
+    <body>
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+            
+                    }
+                }
+            }
+        </script>
+		
+		<style type="text/css">
+            @font-face {
+                     font-family: "Font Digital";
+                     src: url('whip.TTF');
+                     }
+             
+               .datatx {
+                     font-family: "Font Digital";
+                     }
+        </style>
+
+        <div class="upage main" id="data1">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_64" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left">
+                        <button class="btn widget uib_w_65 d-margins btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content ac0 content-area vertical-col left" id="page_69_1"></div>
+
+            </div>
+            <div class="container">
+                <center>
+                    <img src="images/gal.jpg" width="100%" height="30%">
+                </center>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Nav tabs -->
+                        <div class="card">
+                            <ul class="nav nav-tabs" role="tablist">
+
+                                <li role="presentation" class="active"><a href="#desc7" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Deskripsi</span></a>
+                                </li>
+                                <li role="presentation"><a href="#lokasi7" aria-controls="lokasi" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Lokasi</span></a>
+                                </li>
+                                <li role="presentation"><a href="#foto7" aria-controls="foto" role="tab" data-toggle="tab"><i class="fa fa-photo"></i>&nbsp; <span>Foto</span></a>
+                                </li>
+								<li role="presentation"><a href="#info7" aria-controls="info" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Informasi</span></a>
+                                </li>
+								<li role="presentation"><a href="#fasilitas7" aria-controls="fasilitas" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Fasilitas</span></a>
+                                </li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane asd active" id="desc7">
+                                    <p style="text-align:justify;" class="datatx">
+                                        <h3 class="datatx"><b>Deskripsi Galeri Nasional</b></h3>
+                                        <br>Galeri nasional ini adalah sebuah gedung yang berfungsi sebagai tempat koleksi, pameran, dan perhelatan acara seni rupa Indonesia dan mancanegara.Gedung ini merupakan institusi milik pemerintah di bawah Menteri Pendidikan dan
+                                Kebudayaan. Tempat ini sangat cocok bagi kalian pecinta seni dan sejenisnya karena karya-karya yang dipamerkan sangat unik dan sangat mengagumkanPameran yang diselenggarakan di Galeri Nasional Indonesia terdiri dari: Pameran Tetap, Pameran Temporter dan Pameran Keliling. Gedung pameran yang tersedia, terdapat 4 (empat) gedung, yaitu: Gedung A, Gedung B, Gedung C dan
+                                Gedung D. Masing-masing gedung/ruang dikhususkan untuk memajang karya seni rupa modern dan kontemporer, seperti; Lukisan, patung, kria, grafis, fotografi, instalasi, seni media baru, dan lain-lain. Terdapat Pameran penting yang pernah digelar di Galeri Nasional Indonesia antara lain: CP Open Biennale, Pameran Seni Rupa Nusantara, Asean New Media Arts Exhibition, OK Video, Jakarta Biennale, Pameran Besar Seni Rupa Indonesia:
+                                MANIFESTO, Indonesia Art Award Exhibition; Pameran Karya Anak2 Berprestasi; Pameran “The Jakarta International Photo Summit, dll serta pameran lain yang menampilkan karya seniman Indonesia dan mancanegara
+                                    </p>
+									<p style="text-align:justify;" class="datatx">
+                                        <h3 class="datatx"><b>Pameran</b></h3>
+                                        <br>
+                            <h4 class="datatx"><p>Pameran Tetap</p></h4>
+                            <p>Pameran Tetap disajikan dengan penataan berdasarkan periodisasi perjalanan seni rupa Indonesia yang terbagi dalam dua bagian besar, yaitu Galeri 1 dan Galeri 2, yang secara keseluruhan terdiri dari 11 ruang dengan dilengkapi
+                                teks informasi (cetak dan multimedia).</p>
+								<br>
+                            <h4 class="datatx"><p>Pameran Temporer</p></h4>
+                            <p>Pameran Temporer adalah kegiatan-kegiatan pameran seni tematis yang diselenggarakan pada periode-perido tertentu baik oleh Galeri Nasiona maupun atas kerja sama dengan pihak lain. Untuk Pameran Temporer tersedia ruang pameran
+                                Gedung A (1.350 M²), Gedung B (2.800 M²) dan Gedung C (750 M²). Masing-masing gedung/ruang dikhususkan untuk memajang karya seni rupa modern dan kontemporer, seperti; Lukisan, patung, kria, grafis, fotografi, instalasi,
+                                seni media baru, dan lain-lain.</p>
+                            <p>Banyak pameran penting yang pernah digelar di Galeri Nasional Indonesia antara lain: CP Open Biennale, Pameran Seni Rupa Nusantara, Asean New Media Arts Exhibition, OK Video, Jakarta Biennale, Pameran Besar Seni Rupa Indonesia:
+                                MANIFESTO, Indonesia Art Award Exhibition; Pameran Karya Anak2 Berprestasi; Pameran “The Jakarta International Photo Summit, dll serta pameran lain yang menampilkan karya seniman Indonesia dan mancanegara.</p>
+                            <br>
+							<h4 class="datatx"><p>Pameran Keliling</p></h4>
+                            <p>Pameran keliling koleksi Galeri Nasional Indonesia baik yang diselenggarakan di dalam negeri maupun di luar negeri merupakan program yang diselenggarakan secara berkala (minimal setahun sekali). Program ini bertujuan untuk
+                                memperkenalkan eksistensi lembaga dan koleksi seni rupa (state collections) karya koleksi Galeri Nasional Indonesia kepada masyarakat luas. Selain itu juga merupakan ajang untuk peningkatan kreativitas dan apresiasi seni
+                                serta mendorong semangat berkarya bagi perupa daerah.</p>
+								
+								</p>
+                                
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="lokasi7">
+                                    
+                                    <center>
+                                    <h3 class="datatx">Lokasi Galeri Nasional</h3>
+                                    <br>
+                                    <iframe src="galnas.html" width="200px" height="700%"></iframe>
+                                    </center>
+                                </div>
+								
+								<div role="tabpanel" class="tab-pane" id="info7">
+                                   <p style="text-align:justify;" class="datatx">
+                                        <b>Harga Tiket :</b>
+										<br>Gratis
+                                    </p>
+                                    <p style="text-align:justify;" class="datatx">
+                                        <b>Jam Operasional :</b>
+                                        <h4>Selasa - Minggu</h4>
+                                        <br>09.00 - 16.00 WIB
+                                    </p>
+                                    
+                                </div>
+								
+									<div role="tabpanel" class="tab-pane" id="fasilitas7">
+                                    
+                                    <center>
+                                    <h3 class="datatx">Lokasi Toilet</h3>
+                                    <br>
+                                    <iframe src="toilet23.html" width="200px" height="700%"></iframe>
+                                    </center>
+									<br>
+									 <center>
+                                    <h3 class="datatx">Lokasi Tempat Ibadah</h3>
+                                    <br>
+                                    <iframe src="musola23.html" width="200px" height="700%"></iframe>
+                                    </center>
+                                </div>
+								
+                                <div role="tabpanel" class="tab-pane" id="foto7">
+                                    <div id="carousel-example7" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carousel-example7" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="1"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="2"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="3"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="4"></li>
+                                            <li data-target="#carousel-example7" data-slide-to="5"></li>
+                                        </ol>
+
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <a href="#">
+                                                    <img src="gallery_gal/2.jpg" width="100%">
+                                                </a>
+
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_gal/3.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_gal/2.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_gal/7.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_gal/6.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                            <div class="item">
+                                                <a href="#">
+                                                    <img src="gallery_gal/1.jpg" width="100%">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <a class="left carousel-control" href="#carousel-example7" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </a>
+                                        <a class="right carousel-control" href="#carousel-example7" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+    </body>
+
+</html>
