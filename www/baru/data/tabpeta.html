@@ -8,7 +8,7 @@
 
 </head> 
 <body>
-  <center><div id="map" style="width: 540px; height: 400px;"></div>
+  <center><div id="map" style="width: 100%; height: 400px;"></div>
 </center>
   <script>
             // Define your locations: HTML content for the info window, latitude, longitude
@@ -65,8 +65,8 @@
     var iconsLength = icons.length;
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(-6.1932165,106.8829794),
+      zoom: 50,
+      center: new google.maps.LatLng(-6.1753924, 106.8249641),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       streetViewControl: false,

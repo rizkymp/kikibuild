@@ -285,7 +285,7 @@ body#afui .splt {
 @media all {
   .bg-in .page-content {
     background-color: ;
-    background-image: url("../images/abstrak.jpg");
+    background-image: url("../images/wal21.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -529,4 +529,7 @@ body#afui .splt {
 }
 .hd-bg {
   background: linear-gradient(to top, #ffffcc 0%, #9999ff 100%);
+}
+.head {
+  background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%);
 }

@@ -1,614 +1,717 @@
 <!DOCTYPE html>
 <html>
-    <!--
+	<!--
   * Please see the included README.md file for license terms and conditions.
   -->
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
-        <link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+	<head>
+		<link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+		<link rel="stylesheet" type="text/css" href="icon-fonts/font-awesome-4.3.0/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
 
-        <script src="js/snap.svg-min.js"></script>
-        <meta charset="UTF-8">
-        <title>Aplikasi</title>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/snap.svg-min.js"></script>
+		<meta charset="UTF-8">
+		<title>Aplikasi</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+		<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
 
-        <style>
-            .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
-                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
-                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-                .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-                .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
-                .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
-                .tab-pane { padding: 15px 0; }
-                .asd{
-                height:400px;
-                overflow-y:scroll;
-                width:100%;
-                }
-                .tab-content{padding:30px}
-                .nav-tabs > li  {width:20%; text-align:center;}
-                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
-                
-                }
-        </style>
-        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+		<style>
+			.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+			                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%);}
+			                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+			                .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+			                .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+			                .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+			                .tab-pane { padding: 5px 0; }
+			                .asd{
+			                height:400px;
+			                overflow-y:scroll;
+			                width:100%;
+			                }
+			                .tab-content{padding:3px}
+			                .nav-tabs > li  {width:20%; text-align:center;}
+			                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+			                
+			                }
+		</style>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
 
-        <style>
-            /* following three (cascaded) are equivalent to above three meta viewport statements */
-            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
-            /* see http://dev.w3.org/csswg/css-device-adapt/ */
-                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
-                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
-                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
-        </style>
-        <style>
-            * {
-              box-sizing: border-box;
-            }
-            
-           #myInput {
-              background-image: url('/css/searchicon.png');
-              background-position: 10px 12px;
-              background-repeat: no-repeat;
-              width: 100%;
-              font-size: 16px;
-              padding: 12px 20px 12px 40px;
-              border: 1px solid #ddd;
-              margin-bottom: 12px;
-            }
-            
-            #myUL {
-              list-style-type: none;
-              padding: 0;
-              margin: 0;
-            }
-            
-            #myUL li a {
-              border: 1px solid #ddd;
-              margin-top: -1px; /* Prevent double borders */
-              background-color: #f6f6f6;
-              padding: 12px;
-              text-decoration: none;
-              font-size: 18px;
-              color: black;
-              display: block
-            }
-            
-            #myUL li a.header {
-              background-color: #e2e2e2;
-              cursor: default;
-            }
-            
-            #myUL li a:hover:not(.header) {
-              background-color: #eee;
-            }
-        </style>
-        <link rel="stylesheet" href="css/app.css">
-        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+		<style>
+			/* following three (cascaded) are equivalent to above three meta viewport statements */
+			            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+			            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+			                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+			                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+			                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+		</style>
+		<style>
+			* {
+			              box-sizing: border-box;
+			            }
+			            
+			            #myInput {
+			              background-image: url('/css/searchicon.png');
+			              background-position: 10px 12px;
+			              background-repeat: no-repeat;
+			              width: 100%;
+			              font-size: 16px;
+			              padding: 12px 20px 12px 40px;
+			              border: 1px solid #ddd;
+			              margin-bottom: 12px;
+			            }
+			            
+			            #myUL {
+			              list-style-type: none;
+			              padding: 0;
+			              margin: 0;
+			            }
+			            
+			            #myUL li a {
+			              border: 1px solid #ddd;
+			              margin-top: -1px; /* Prevent double borders */
+			              background-color: #f6f6f6;
+			              padding: 12px;
+			              text-decoration: none;
+			              font-size: 18px;
+			              color: black;
+			              display: block
+			            }
+			            
+			            #myUL li a.header {
+			              background-color: #e2e2e2;
+			              cursor: default;
+			            }
+			            
+			            #myUL li a:hover:not(.header) {
+			              background-color: #eee;
+			            }
+		</style>
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
 
-        <script src="cordova.js" id="xdkJScordova_"></script>
+		<script src="cordova.js" id="xdkJScordova_"></script>
 
-        <script src="js/app.js"></script>
-        <!-- for your event code, see README and file comments for details -->
-        <script src="js/init-app.js"></script>
-        <!-- for your init code, see README and file comments for details -->
-        <script src="xdk/init-dev.js"></script>
-        <!-- normalizes device and document ready events, see file for details -->
-        <script type="application/javascript" src="lib/jquery.min.js"></script>
-        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
-        <script type="application/javascript" src="js/index_user_scripts.js"></script>
-        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
-        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+		<script src="js/app.js"></script>
+		<!-- for your event code, see README and file comments for details -->
+		<script src="js/init-app.js"></script>
+		<!-- for your init code, see README and file comments for details -->
+		<script src="xdk/init-dev.js"></script>
+		<!-- normalizes device and document ready events, see file for details -->
+		<script type="application/javascript" src="lib/jquery.min.js"></script>
+		<script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+		<script type="application/javascript" src="js/index_user_scripts.js"></script>
+		<script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+		<script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
 
-    </head>
+	</head>
 
-    <body>
-        <script>
-            function myFunction() {
-                var input, filter, ul, li, a, i;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                ul = document.getElementById("myUL");
-                li = ul.getElementsByTagName("li");
-                for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("a")[0];
-                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-            
-                    }
-                }
-            }
-        </script>
+	<body>
+		<script>
+			function myFunction() {
+			                var input, filter, ul, li, a, i;
+			                input = document.getElementById("myInput");
+			                filter = input.value.toUpperCase();
+			                ul = document.getElementById("myUL");
+			                li = ul.getElementsByTagName("li");
+			                for (i = 0; i < li.length; i++) {
+			                    a = li[i].getElementsByTagName("a")[0];
+			                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			                        li[i].style.display = "";
+			                    } else {
+			                        li[i].style.display = "none";
+			            
+			                    }
+			                }
+			            }
+		</script>
+
 		<style type="text/css">
-            @font-face {
-                     font-family: "Font Digital";
-                     src: url('whip.TTF');
-                     }
-             
-               .datatx {
-                     font-family: "Font Digital";
-                     }
-        </style>
+			@font-face {
+			                     font-family: "Font Digital";
+			                     src: url('whip.TTF');
+			                     }
+			             
+			               .datatx {
+			                     font-family: "Font Digital";
+			                     }
+		</style>
+		<div class="upage main" id="data1">
+			<div class="upage-outer">
+				<div class="uib-header container-group inner-element uib_w_66 head" data-uib="layout/header" data-ver="0">
+					<h2>Wisata Jakarta</h2>
+					<div class="widget-container wrapping-col single-centered"></div>
+					<div class="widget-container content-area horiz-area wrapping-col left"></div>
+					<div class="widget-container content-area horiz-area wrapping-col right">
+						<button class="btn widget uib_w_65 btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
+					</div>
+				</div>
 
-        <div class="upage main" id="data1">
-            <div class="upage-outer">
-                <div class="uib-header header-bg container-group inner-element uib_w_64" data-uib="layout/header" data-ver="0">
-                    <h2></h2>
-                    <div class="widget-container wrapping-col single-centered"></div>
-                    <div class="widget-container content-area horiz-area wrapping-col left">
-                        <button class="btn widget uib_w_65 d-margins btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
-                    </div>
-                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
-                </div>
-                <div class="upage-content ac0 content-area vertical-col left" id="page_69_1"></div>
+				<div class="upage-content ac0 content-area vertical-col left" id="page_69_1"></div>
 
-            </div>
-            <div class="container">
-			<center>
-                    <img src="images/1111.jpg" width="100%" height="30%">
-            </center>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Nav tabs -->
-                        <div class="card">
-                            <ul class="nav nav-tabs" role="tablist">
+			</div>
+			<div class="container">
+				<center>
+					<img src="images/1.jpg" width="100%" height="30%">
+				</center>
 
-                                <li role="presentation" class="active"><a href="#desc7" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Deskripsi</span></a>
-                                </li>
-                                <li role="presentation"><a href="#lokasi7" aria-controls="lokasi" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Lokasi</span></a>
-                                </li>
-                                <li role="presentation"><a href="#foto7" aria-controls="foto" role="tab" data-toggle="tab"><i class="fa fa-photo"></i>&nbsp; <span>Foto</span></a>
-                                </li>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Nav tabs -->
+						<div class="card">
+							<ul class="nav nav-tabs" role="tablist">
+
+								<li role="presentation" class="active"><a href="#desc7" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Deskripsi</span></a>
+								</li>
+								<li role="presentation"><a href="#lokasi7" aria-controls="lokasi" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Lokasi</span></a>
+								</li>
+								<li role="presentation"><a href="#foto7" aria-controls="foto" role="tab" data-toggle="tab"><i class="fa fa-photo"></i>&nbsp; <span>Foto</span></a>
+								</li>
 								<li role="presentation"><a href="#info7" aria-controls="info" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Informasi</span></a>
-                                </li>
+								</li>
 								<li role="presentation"><a href="#fasilitas7" aria-controls="fasilitas" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Fasilitas</span></a>
-                                </li>
+								</li>
 
-                            </ul>
+							</ul>
 
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane asd active" id="desc7">
-                                    <p style="text-align:justify;">
-                                        <h3 class="datatx"><b>Deskripsi Ragunan</h3></b>
-                                       
-                                        <br><p class="datatx">Kebun Binatang Ragunan adalah kebun binatang pertama di Indonesia. Kebun binatang ini didirikan pada tahun 1864 dengan nama Planten En Dierentuin yang berarti "Tanaman dan Kebun Binatang." Terletak pada tanah seluas 10 hektare
-                                di kawasan Cikini, Menteng, Jakarta Pusat yang merupakan pemberian Raden Saleh. Gubernur DKI Jakarta Ali Sadikin meresmikan Taman Margasatwa Ragunan pada 22 Juni 1966.
-                                    </p>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane asd active" id="desc7">
+									<p style="text-align:justify;">
 									</p>
-                                   
-                                    <p style="text-align:justify;">
-                                        <h3 class="datatx"><b>Koleksi Kebun Binatang Ragunan</h3></b>
-                                        <br><p class="datatx">Kebun binatang seluas 140 hektare ini didirikan pada tahun 1864. Di dalamnya, terdapat berbagai koleksi yang terdiri dari 295 spesies dan 4040 spesimen.
-                                    </p>
-									</p>
-									
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="lokasi7">
-                                    
-                                    <center>
-                                    <h3 class="datatx"><b>Lokasi Ragunan</h3></b>
-                                    <br>
-                                    <iframe src="ragunan.html" width="200px" height="700%"></iframe>
-                                    </center>
-                                </div>
-								
-								<div role="tabpanel" class="tab-pane" id="info7">
-                                   <p style="text-align:justify;">
-                                        <b><p class="datatx">Anak - anak :</b>
-                                        <br>Rp 3.000
-										<br>
-										<b>Dewasa :</b>
-                                        <br>Rp 4.000
-                                    </p>
-                                    <p style="text-align:justify;" class="datatx">
-                                        <b>Jam Operasional :</b>
-                                        <br>Selasa - Minggu
-										<br>06.00 - 16.00 WIB
-                                    </p>
-                                    
-                                </div>
-								
-									<div role="tabpanel" class="tab-pane" id="fasilitas7">
-                                    
-                                    <center>
-                                    <h3 class="datatx"><b>Lokasi Toilet</h3></b>
-                                    <br>
-                                    <iframe src="toilet38.html" width="200px" height="700%"></iframe>
-                                    </center>
+									<h3 class="datatx"><b>Deskripsi Ragunan</b></h3>
+
 									<br>
-									 <center>
-                                    <h3 class="datatx">Lokasi Tempat Ibadah</h3></b>
-                                    <br>
-                                    <iframe src="musola38.html" width="200px" height="700%"></iframe>
-                                    </center>
-                                </div>
-								
-                                <div role="tabpanel" class="tab-pane" id="foto7">
-                                    <div id="carousel-example7" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel-example7" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel-example7" data-slide-to="1"></li>
-                                            <li data-target="#carousel-example7" data-slide-to="2"></li>
-                                            <li data-target="#carousel-example7" data-slide-to="3"></li>
-                                            <li data-target="#carousel-example7" data-slide-to="4"></li>
-                                            <li data-target="#carousel-example7" data-slide-to="5"></li>
-                                        </ol>
+									<p class="datatx">Kebun Binatang Ragunan adalah kebun binatang pertama di Indonesia. Kebun binatang ini didirikan pada tahun 1864 dengan nama Planten En Dierentuin yang berarti "Tanaman dan Kebun Binatang." Terletak pada tanah seluas 10 hektare di kawasan Cikini,
+										Menteng, Jakarta Pusat yang merupakan pemberian Raden Saleh. Gubernur DKI Jakarta Ali Sadikin meresmikan Taman Margasatwa Ragunan pada 22 Juni 1966.
+									</p>
+									<p></p>
 
-                                        <div class="carousel-inner">
-                                            <div class="item active">
-                                                <a href="#">
-                                                    <img src="gallery_rg/3.jpg" width="100%">
-                                                </a>
+									<p style="text-align:justify;">
+									</p>
+									<h3 class="datatx"><b>Koleksi Kebun Binatang Ragunan</b></h3>
+									<br>
+									<p class="datatx">Kebun binatang seluas 140 hektare ini didirikan pada tahun 1864. Di dalamnya, terdapat berbagai koleksi yang terdiri dari 295 spesies dan 4040 spesimen.
+									</p>
+									<p></p>
 
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">
-                                                    <img src="gallery_rg/5.jpg" width="100%">
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">
-                                                    <img src="gallery_rg/6.jpg" width="100%">
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">
-                                                    <img src="gallery_rg/7.jpg" width="100%">
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">
-                                                    <img src="gallery_rg/1.jpg" width="100%">
-                                                </a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">
-                                                    <img src="gallery_rg/2.jpg" width="100%">
-                                                </a>
-                                            </div>
-                                        </div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="lokasi7">
 
-                                        <a class="left carousel-control" href="#carousel-example7" data-slide="prev">
-                                            <span class="glyphicon glyphicon-chevron-left"></span>
-                                        </a>
-                                        <a class="right carousel-control" href="#carousel-example7" data-slide="next">
-                                            <span class="glyphicon glyphicon-chevron-right"></span>
-                                        </a>
-                                    </div>
-                                </div>
+									<center>
+										<h3 class="datatx"><b>Lokasi Ragunan</b></h3>
+										<br>
+										<iframe src="ragunan.html" width="100%" height="400px"></iframe>
+									</center>
+								</div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-			
-			  <style>
-            .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
-                .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
-                .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-                .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-                .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
-                .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
-				.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
-				.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-				.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-				.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
-				.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
-                .tab-pane { padding: 15px 0; }
-                .asd{
-                height:400px;
-                overflow-y:scroll;
-                width:100%;
-                }
-                .tab-content{padding:30px}
-                .nav-tabs2 > li  {width:100%; text-align:center;}
-                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
-                
-                }
-        </style>
-		
-			
-			<div id="exTab2" class="container">
-			<center>
-                    <img src="images/zoo.jpg" width="100%" height="30%">
-            </center>
-                    <ul class="nav nav-tabs2">
-                        
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Aneka Satwa <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#dropdown501" data-toggle="tab">Harimau</a>
-                                </li>
-                                <li><a href="#dropdown502" data-toggle="tab">Beruang</a>
-                                </li>
-                                <li><a href="#dropdown503" data-toggle="tab">Orang Utan</a>
-                                </li>
-                                <li><a href="#dropdown504" data-toggle="tab">Singa</a>
-                                </li>
-                                <li><a href="#dropdown505" data-toggle="tab">Gorilla</a>
-                                </li>
-                                <li><a href="#dropdown506" data-toggle="tab">Monyet Kokah</a>
-                                </li>
-                                <li><a href="#dropdown507" data-toggle="tab">Anoa</a>
-                                </li>
-                                <li><a href="#dropdown508" data-toggle="tab">Simpanse</a>
-                                </li>
-                                <li><a href="#dropdown509" data-toggle="tab">Gajah</a>
-                                </li>
-                                <li><a href="#dropdown510" data-toggle="tab">Macan</a>
-                                </li>
-                                <li><a href="#dropdown511" data-toggle="tab">Komodo</a>
-                                </li>
-                                <li><a href="#dropdown512" data-toggle="tab">Biawak</a>
-                                </li>
-                                <li><a href="#dropdown513" data-toggle="tab">Burung Pelikan</a>
-                                </li>
-                                <li><a href="#dropdown514" data-toggle="tab">Burung Flamingo</a>
-                                </li>
-                                <li><a href="#dropdown515" data-toggle="tab">Burung Merak Biru</a>
-                                </li>
-                                <li><a href="#dropdown516" data-toggle="tab">Burung Elang</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="tab-content ">
-                        <div class="tab-pane fade" id="dropdown501">
-						<center>
-                            <h3 class="datatx"><b>Harimau</b></h3>
-                            <img src="gallery_rg/harimau.jpg" alt="" class="img-circle" width="150" height="150">
-                            <br>
+								<div role="tabpanel" class="tab-pane" id="info7">
 
-                            <p style="text-align:justify;"> Harimau sumatera (Panthera tigris sumatrae) adalah subspesies harimau yang habitat aslinya di pulau Sumatera. memiliki ciri kulit loreng coklat kekuning-kuningan dengan garis-garis hitam vertikal dari kepala sampai ekor. Tinggi
-                                dapat mencapai 60 cm, dengan panjang 250 cm. Merupakan sub spesies Harimau terakhir yang ada di Indonesia.
-							</p>
-                            <br>
-                            <center>
-							<h3><b>Lokasi Harimau</b></h3>
-							<iframe src="harimau.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
-							</center>
+									<style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Tiket Masuk
+        </a>
+      </h4>
+												</div>
+												<div id="collapseOne" class="panel-collapse collapse">
+													<div class="panel-body">
+														<b></b>
+														<p class="datatx"><b>Anak - anak :</b>
+															<br>Rp 3.000
+															<br>
+															<b>Dewasa :</b>
+															<br>Rp 4.000
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Waktu Operasional
+        </a>
+      </h4>
+												</div>
+												<div id="collapseTwo" class="panel-collapse collapse">
+													<div class="panel-body">
+														<br>
+														<p class="datatx"><b>Selasa - Minggu</b>
+															<br>06.00 - 16.00 WIB
+														</p>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+
+								</div>
+
+								<div role="tabpanel" class="tab-pane" id="fasilitas7">
+
+									<center>
+										<h3 class="datatx"><b>Lokasi Toilet</b></h3>
+										<br>
+										<iframe src="toilet38.html" width="100%" height="400px"></iframe>
+									</center>
+									<br>
+									<center>
+										<h3 class="datatx"><b>Lokasi Tempat Ibadah</b></h3>
+										<br>
+										<iframe src="musola38.html" width="100%" height="400px"></iframe>
+									</center>
+								</div>
+
+								<div role="tabpanel" class="tab-pane" id="foto7">
+									<div id="carousel-example7" class="carousel slide" data-ride="carousel">
+										<ol class="carousel-indicators">
+											<li data-target="#carousel-example7" data-slide-to="0" class="active"></li>
+											<li data-target="#carousel-example7" data-slide-to="1"></li>
+											<li data-target="#carousel-example7" data-slide-to="2"></li>
+											<li data-target="#carousel-example7" data-slide-to="3"></li>
+											<li data-target="#carousel-example7" data-slide-to="4"></li>
+											<li data-target="#carousel-example7" data-slide-to="5"></li>
+										</ol>
+
+										<div class="carousel-inner">
+											<div class="item active">
+												<a href="#">
+													<img src="gallery_rg/3.jpg" width="100%">
+												</a>
+
+											</div>
+											<div class="item">
+												<a href="#">
+													<img src="gallery_rg/5.jpg" width="100%">
+												</a>
+											</div>
+											<div class="item">
+												<a href="#">
+													<img src="gallery_rg/6.jpg" width="100%">
+												</a>
+											</div>
+											<div class="item">
+												<a href="#">
+													<img src="gallery_rg/7.jpg" width="100%">
+												</a>
+											</div>
+											<div class="item">
+												<a href="#">
+													<img src="gallery_rg/1.jpg" width="100%">
+												</a>
+											</div>
+											<div class="item">
+												<a href="#">
+													<img src="gallery_rg/2.jpg" width="100%">
+												</a>
+											</div>
+										</div>
+
+										<a class="left carousel-control" href="#carousel-example7" data-slide="prev">
+											<span class="glyphicon glyphicon-chevron-left"></span>
+										</a>
+										<a class="right carousel-control" href="#carousel-example7" data-slide="next">
+											<span class="glyphicon glyphicon-chevron-right"></span>
+										</a>
+									</div>
+								</div>
+
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
 
-                        <div class="tab-pane fade" id="dropdown502">
-						<center>
-                            <h3 class="datatx"><b>Beruang Madu</b></h3>
-                            <img src="gallery_rg/beruang.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-						
-                            <p style="text-align:justify;">Beruang madu (Helarctos malayanus) memiliki seluruh tubuh berwarna hitam mengkilap, ekor sangat pendek, moncong abu-abu. Dada atas ada bercak putih kekuningan membentuk huruf “V” atau “C”. Berat tubuh dapat mencapai 60 kg.</p>
-                            <br>
-                            <center>
-							<h3><b>Lokasi Beruang Madu</b></h3>
-							<iframe src="beruang.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
-						</center>
-                        </div>
+			<style>
+				.nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
+				                .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%); }
+				                .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+				                .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+				                .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
+				                .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+								.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
+								.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+								.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+								.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
+								.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
+				                .tab-pane { padding: 5px 0; }
+				                .asd{
+				                height:400px;
+				                overflow-y:scroll;
+				                width:100%;
+				                }
+				                .tab-content{padding:3px}
+				                .nav-tabs2 > li  {width:100%; text-align:center;}
+				                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+								
+					.row{
+    margin-top:40px;
+    padding: 0 10px;
+}
 
-                        <div class="tab-pane fade" id="dropdown503">
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+				          
+			</style>
+			
+			<script>
+			$(document).on('click', '.panel-heading span.clickable', function(e){
+    var $this = $(this);
+	if(!$this.hasClass('panel-collapsed')) {
+		$this.parents('.panel').find('.panel-body').slideUp();
+		$this.addClass('panel-collapsed');
+		$this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+	} else {
+		$this.parents('.panel').find('.panel-body').slideDown();
+		$this.removeClass('panel-collapsed');
+		$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+	}
+})
+</script>
+
+			<div id="exTab2" class="container">
+				<center>
+					<img src="images/zoo.jpg" width="100%" height="30%">
+				</center>
+					<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<ul class="nav nav-tabs2">
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Aneka Satwa <b class="caret"></b></a>
+					<span class="pull-right clickable"></span>
+				
+			
+				
+						<ul class="dropdown-menu">
+							<li><a href="#dropdown501" data-toggle="tab">Harimau</a>
+							</li>
+							<li><a href="#dropdown502" data-toggle="tab">Beruang</a>
+							</li>
+							<li><a href="#dropdown503" data-toggle="tab">Orang Utan</a>
+							</li>
+							<li><a href="#dropdown504" data-toggle="tab">Singa</a>
+							</li>
+							<li><a href="#dropdown505" data-toggle="tab">Gorilla</a>
+							</li>
+							<li><a href="#dropdown506" data-toggle="tab">Monyet Kokah</a>
+							</li>
+							<li><a href="#dropdown507" data-toggle="tab">Anoa</a>
+							</li>
+							<li><a href="#dropdown508" data-toggle="tab">Simpanse</a>
+							</li>
+							<li><a href="#dropdown509" data-toggle="tab">Gajah</a>
+							</li>
+							<li><a href="#dropdown510" data-toggle="tab">Macan</a>
+							</li>
+							<li><a href="#dropdown511" data-toggle="tab">Komodo</a>
+							</li>
+							<li><a href="#dropdown512" data-toggle="tab">Biawak</a>
+							</li>
+							<li><a href="#dropdown513" data-toggle="tab">Burung Pelikan</a>
+							</li>
+							<li><a href="#dropdown514" data-toggle="tab">Burung Flamingo</a>
+							</li>
+							<li><a href="#dropdown515" data-toggle="tab">Burung Merak Biru</a>
+							</li>
+							<li><a href="#dropdown516" data-toggle="tab">Burung Elang</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="panel-body">Panel content
+				<div class="tab-content ">
+					<div class="tab-pane fade" id="dropdown501">
 						<center>
-                            <h3 class="datatx"><b>Orang Utan</b></h3>
-                            <img src="gallery_rg/orgutan.jpg" alt="" class="img-circle" width="150" height="150">
+							<h3 class="datatx"><b>Harimau</b></h3>
+							<img src="gallery_rg/harimau.jpg" alt="" class="img-circle" width="150" height="150">
 							<br>
 							
-                            <p style="text-align:justify;">Orangutan adalah sejenis kera besar dengan lengan panjang dan berbulu kemerahan atau cokelat, yang hidup di hutan tropika Indonesia dan Malaysia, khususnya di Pulau Kalimantan dan Sumatera. Orangutan memiliki tubuh yang gemuk
-                                dan besar, berleher besar, lengan yang panjang dan kuat, kaki yang pendek dan tertunduk, dan tidak mempunyai ekor.</p>
-                            <br>
-                            <center>
-							<h3 class="datatx"><b>Lokasi Orang Utan</b></h3>
-							<iframe src="orgutan.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+							<p style="text-align:justify;">Harimau sumatera (Panthera tigris sumatrae) adalah subspesies harimau yang habitat aslinya di pulau Sumatera. memiliki ciri kulit loreng coklat kekuning-kuningan dengan garis-garis hitam vertikal dari kepala sampai ekor. Tinggi dapat mencapai 60
+								cm, dengan panjang 250 cm. Merupakan sub spesies Harimau terakhir yang ada di Indonesia.
+							</p>
+							<br>
+							<center>
+								<h3><b>Lokasi Harimau</b></h3>
+								<iframe src="harimau.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
 						</center>
-                        </div>
+					</div>
 
-                        <div class="tab-pane fade" id="dropdown504">
+					<div class="tab-pane fade" id="dropdown502">
 						<center>
-                            <h3 class="datatx"><b>Singa</b></h3>
-                            <img src="gallery_rg/singa.jpg" alt="" class="img-circle" width="150" height="150">
+							<h3 class="datatx"><b>Beruang Madu</b></h3>
+							<img src="gallery_rg/beruang.jpg" alt="" class="img-circle" width="150" height="150">
 							<br>
-                            <p style="text-align:justify;">Singa (Panthera leo) adalah spesies hewan dari keluarga felidae atau jenis kucing. Singa merupakan hewan yang hidup berkelompok. Biasanya terdiri dari seekor jantan dan banyak betina. Kelompok ini menjaga daerah kekuasaannya.</p>
-                            <br>
-                            <center>
-							<h3 class="datatx"><b>Lokasi Singa</b></h3>
-							<iframe src="singa.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
-						</center>
-                        </div>
 
-                        <div class="tab-pane fade" id="dropdown505">
-						<center>						
-						   <h3 class="datatx"><b>Gorilla</b></h3>
-                            <img src="gallery_rg/gorilla.jpg" alt="" class="img-circle" width="150" height="150">
+							<p style="text-align:justify;">Beruang madu (Helarctos malayanus) memiliki seluruh tubuh berwarna hitam mengkilap, ekor sangat pendek, moncong abu-abu. Dada atas ada bercak putih kekuningan membentuk huruf “V” atau “C”. Berat tubuh dapat mencapai 60 kg.</p>
 							<br>
-                            <p style="text-align:justify;">Gorila adalah jenis primata yang terbesar. Gorila berasal dari hutan tropis di Afrika. 97-98% DNA gorila identik dengan DNA manusia. Gorila adalah spesies kedua setelah simpanse yang terdekat dengan manusia. Ada dua spesies
-                                dalam genus gorila, yaitu gorila timur (eastern gorila) dan gorilla barat (western gorila).</p>
-                            <br>
-                            <center>
-							<h3 class="datatx"><b>Lokasi Gorilla</b></h3>
-							<iframe src="gorilla.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+							<center>
+								<h3><b>Lokasi Beruang Madu</b></h3>
+								<iframe src="beruang.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 							</center>
-                        </div>
+						</center>
+					</div>
 
-                        <div class="tab-pane fade" id="dropdown506">
+					<div class="tab-pane fade" id="dropdown503">
 						<center>
-                            <h3 class="datatx"><b>Monyet Kokah</b></h3>
-                            <img src="gallery_rg/kokah.jpg" alt="" class="img-circle" width="150" height="150">
+							<h3 class="datatx"><b>Orang Utan</b></h3>
+							<img src="gallery_rg/orgutan.jpg" alt="" class="img-circle" width="150" height="150">
 							<br>
-                            <p style="text-align:justify;">Monyet Kokah (Presbytis siamensis) adalah spesies primata dalam keluarga Cercopithecidae. Mereka tersebar di Thailand-Semenanjung Malaya, Kepulauan Riau dan Sumatra. Empat subspesies, siamensis (mencalonkan), Kana, paenulata
-                                dan rhionis, diakui di sini, tapi taxonomyis sengketa dan membutuhkan tinjauan, dan sudah termasuk P. natunae sebagai subspesies, atau alternatif keduanya telah dianggap subspesies dari P. femoralis.</p>
-                            <br>
-                            <center>
-							<h3 class="datatx"><b>Lokasi Monyet Kokah</b></h3>
-							<iframe src="kokah.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
-							</center>
-                        </div>
 
-                        <div class="tab-pane fade" id="dropdown507">
-                        	<center>
-                            <h3 class="datatx"><b>Anoa</b></h3>
-                            <img src="gallery_rg/anoa.jpg" alt="" class="img-circle" width="150" height="150">
+							<p style="text-align:justify;">Orangutan adalah sejenis kera besar dengan lengan panjang dan berbulu kemerahan atau cokelat, yang hidup di hutan tropika Indonesia dan Malaysia, khususnya di Pulau Kalimantan dan Sumatera. Orangutan memiliki tubuh yang gemuk dan besar, berleher
+								besar, lengan yang panjang dan kuat, kaki yang pendek dan tertunduk, dan tidak mempunyai ekor.</p>
 							<br>
-                            <p style="text-align:justify;">Anoa adalah hewan endemik Sulawesi, sekaligus maskot provinsi Sulawesi Tenggara. Anoa biasa disebut sapihutan adalah subgenus dari Bubalus terdiri dari dua spesies asli Indonesia. Mereka hidup di hutan hujan, semak, dan rawa.</p>
-                            <br>
-                            <center>
-							<h3 class="datatx"><b>Lokasi Anoa</b></h3>
-							<iframe src="anoa.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown508">
-                        	<center>
-                            <h3 class="datatx"><b>Simpanse</b></h3>
-                            <img src="gallery_rg/simpanse.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Simpanse (Pan troglodytes) adalah anggota dari keluarga Hominidae, bersama dengan gorila, manusia, dan orangutan. Simpanse terpisah dengan manusia dalam ranting keluarga sekitar 4 – 6 juta tahun lalu. Dua spesies simpanse di
-                                atas adalah kerabat terdekat manusia, semuanya anggota dari suku Hominini (berikut dengan spesies yang punah dari sub-suku Hominina). Simpanse satu-satunya anggota yang diketahui dari sub-suku Panina. Kedua spesies Pan
-                                tersebut terpisah sekitar 1 juta tahun lalu.</p>
-                            <br>
 							<center>
-							<h3 class="datatx"><b>Lokasi Simpanse</b></h3>
-                            <iframe src="simpanse.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
+								<h3 class="datatx"><b>Lokasi Orang Utan</b></h3>
+								<iframe src="orgutan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown509">
-                        	<center>
-                            <h3 class="datatx"><b>Gajah Sumatera</b></h3>
-                            <img src="gallery_rg/gajah.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Gajah sumatera adalah subspesies dari gajah asia yang hanya berhabitat di pulau Sumatera. Gajah sumatera berpostur lebih kecil daripada subspesies gajah india. Populasinya semakin menurun dan menjadi spesies yang sangat terancam.</p>
-                            <br>
-                            <h3 class="datatx"><b>Lokasi Gajah</b></h3>
-							<center>
-							<h3><b>Lokasi Gajah Sumatera</b></h3>
-							<iframe src="gajah.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown510">
-                        	<center>
-                            <h3 class="datatx"><b>Macan Tutul</b></h3>
-                            <img src="gallery_rg/macan.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Macan tutul (Panthera pardus) adalah salah satu dari lima kucing besar dalam genus Panthera. Ini adalah anggota dari keluarga Felidae dengan berbagai di beberapa bagian sub-Sahara Afrika, Asia Barat, Timur Tengah, Asia Selatan
-                                dan Asia Tenggara ke Siberia.</p>
-                            <br>
-							<center>
-							<h3 class="datatx"><b>Lokasi Macan Tutul</b></h3>
-                            <iframe src="macan.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown511">
-                        	<center>
-                            <h3 class="datatx"><b>Komodo</b></h3>
-                            <img src="gallery_rg/komodo.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                           <p style="text-align:justify;">Komodo adalah spesies kadal besar yang ditemukan di pulau-pulau Indonesia Komodo, Rinca, Flores, Gili Motang, dan Padar. Merupakan anggota keluarga biawak (Varanidae), dan spesies kadal terbesar yang masih hidup, panjang maksimalnya
-                                dalap mencapai 3 meter (10 kaki) dan beratnya bisa mencapai 70 kilogram.</p>
-                            <br>
-							<center>
-							<h3 class="datatx"><b>Lokasi Komodo</b></h3>
-                            <iframe src="komodo.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown512">
-                        	<center>
-                            <h3 class="datatx"><b>Biawak</b></h3>
-                            <img src="gallery_rg/biawak.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Biawak Salvador (Varanus salvator) merupakan salah satu kadal terbesar di Asia Selatan dan Tenggara. Spesies biawak ini banyak ditemukan di Bangladesh, Sri Lanka and India, Semenanjung Malaya, dan berbagai pulau di Indonesia.
-                                Habitat biawak ini tinggal di daerah dekat dengan air.</p>
-                            <br>
-							<center>
-							<h3 class="datatx"><b>Lokasi Biawak</b></h3>
-                            <iframe src="biawak.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown513">
-                        	<center>
-                            <h3 class="datatx"><b>Burung Pelikan</b></h3>
-                            <img src="gallery_rg/pelikan.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Burung undan atau pelikan adalah burung air yang memiliki kantung di bawah paruhnya, dan merupakan bagian dari keluarga burung Pelecanidae. Bersama burung pecuk, pecuk ular, gannet, angsa batu, dan cikalang, mereka membentuk
-                                ordo Pelecaniformes. Pelikan modern ditemukan di semua benua kecuali Antartika. Mereka hidup umumnya di wilayah hangat, dan mereka tidak dijumpai di wilayah kutub, laut dalam, kepulauan samudra, dan benua Amerika Selatan.</p>
-                            <br>
-							<center>
-							<h3 class="datatx"><b>Lokasi Burung Pelikan</b></h3>
-                            <iframe src="pelikan.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown514">
-                        	<center>
-                            <h3 class="datatx"><b>Burung Flamingo</b></h3>
-                            <img src="gallery_rg/flamingo.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Flamingo adalah spesies burung berkaki jenjang yang hidup berkelompok. Mereka berasal dari genus Phoenicopterus dan familia Phoenicopteridae. Burung ini ditemukan di belahan bumi barat dan timur, namun lebih banyak terdapat
-                                di belahan timur. Terdapat 4 spesies flamingo di Amerika dan 2 jenis flamingo di Dunia Lama</p>
-                            <br>
-							<center>
-							<h3 class="datatx"><b>Lokasi Burung Flamingo</b></h3>
-                            <iframe src="flamingo.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-							</center>
-                        </div>
-
-                        <div class="tab-pane fade" id="dropdown515">
-                        	<center>
-                            <h3 class="datatx"><b>Burung Merak Biru</b></h3>
-                            <img src="gallery_rg/merak.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-                            <p style="text-align:justify;">Merak biru (Pavo cristatus) adalah burung besar dan berwarna cerah dari keluarga asli burung dari Asia Selatan, namun diperkenalkan di banyak bagian lain dunia seperti Amerika Serikat, Meksiko, Honduras, Kolombia, Guyana, Suriname,
-                                Brazil, Uruguay, Argentina, Afrika Selatan, Madagaskar, Papua, dan Australia.</p>
-                            <br>
-							<center>
-							<h3 class="datatx"><b>Lokasi Burung Merak Biru</b></h3>
-                            <iframe src="merak.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            
-                        </center>
 						</center>
-                        </div>
+					</div>
 
-                        <div class="tab-pane fade" id="dropdown516">
-                        	<center>
-                            <h3 class="datatx"><b>Burung Elang Bondol</b></h3>
-                            <img src="gallery_rg/elang.jpg" alt="" class="img-circle" width="150" height="150">
+					<div class="tab-pane fade" id="dropdown504">
+						<center>
+							<h3 class="datatx"><b>Singa</b></h3>
+							<img src="gallery_rg/singa.jpg" alt="" class="img-circle" width="150" height="150">
 							<br>
-                            <p style="text-align:justify;">Elang bondol atau dalam nama ilmiahnya adalah Haliastur Indus adalah spesies dari genus dari Haliastur. Burung Elang Bondol berukuran sedang (45 cm), berwarna putih dan coklat pirang. Elang bondol yang remaja berkarakter seluruh
-                                tubuh kecoklatan dengan coretan pada dada. Warna berubah putih keabu-abuan pada tahun kedua, dan mencapai bulu dewasa sepenuhnya pada tahun ketiga. Ujung ekor bundar. Iris coklat, paruh dan sera abu-abu kehijauan, kaki
-                                dan tungkai kuning suram.</p>
-                            <br>
+							<p style="text-align:justify;">Singa (Panthera leo) adalah spesies hewan dari keluarga felidae atau jenis kucing. Singa merupakan hewan yang hidup berkelompok. Biasanya terdiri dari seekor jantan dan banyak betina. Kelompok ini menjaga daerah kekuasaannya.</p>
+							<br>
 							<center>
-							<h3 class="datatx"><b>Lokasi Burung Elang Bondol</b></h3>
-                            <iframe src="elang.html" width="200px" height="500%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-                        </center>
-                        </div>
+								<h3 class="datatx"><b>Lokasi Singa</b></h3>
+								<iframe src="singa.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
 
+					<div class="tab-pane fade" id="dropdown505">
+						<center>
+							<h3 class="datatx"><b>Gorilla</b></h3>
+							<img src="gallery_rg/gorilla.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Gorila adalah jenis primata yang terbesar. Gorila berasal dari hutan tropis di Afrika. 97-98% DNA gorila identik dengan DNA manusia. Gorila adalah spesies kedua setelah simpanse yang terdekat dengan manusia. Ada dua spesies dalam genus gorila,
+								yaitu gorila timur (eastern gorila) dan gorilla barat (western gorila).</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Gorilla</b></h3>
+								<iframe src="gorilla.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
 
-                        <!-- end tab ragunan-->
-			
-        </div>
+					<div class="tab-pane fade" id="dropdown506">
+						<center>
+							<h3 class="datatx"><b>Monyet Kokah</b></h3>
+							<img src="gallery_rg/kokah.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Monyet Kokah (Presbytis siamensis) adalah spesies primata dalam keluarga Cercopithecidae. Mereka tersebar di Thailand-Semenanjung Malaya, Kepulauan Riau dan Sumatra. Empat subspesies, siamensis (mencalonkan), Kana, paenulata dan rhionis, diakui
+								di sini, tapi taxonomyis sengketa dan membutuhkan tinjauan, dan sudah termasuk P. natunae sebagai subspesies, atau alternatif keduanya telah dianggap subspesies dari P. femoralis.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Monyet Kokah</b></h3>
+								<iframe src="kokah.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
 
-    </body>
+					<div class="tab-pane fade" id="dropdown507">
+						<center>
+							<h3 class="datatx"><b>Anoa</b></h3>
+							<img src="gallery_rg/anoa.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Anoa adalah hewan endemik Sulawesi, sekaligus maskot provinsi Sulawesi Tenggara. Anoa biasa disebut sapihutan adalah subgenus dari Bubalus terdiri dari dua spesies asli Indonesia. Mereka hidup di hutan hujan, semak, dan rawa.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Anoa</b></h3>
+								<iframe src="anoa.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown508">
+						<center>
+							<h3 class="datatx"><b>Simpanse</b></h3>
+							<img src="gallery_rg/simpanse.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Simpanse (Pan troglodytes) adalah anggota dari keluarga Hominidae, bersama dengan gorila, manusia, dan orangutan. Simpanse terpisah dengan manusia dalam ranting keluarga sekitar 4 – 6 juta tahun lalu. Dua spesies simpanse di atas adalah kerabat
+								terdekat manusia, semuanya anggota dari suku Hominini (berikut dengan spesies yang punah dari sub-suku Hominina). Simpanse satu-satunya anggota yang diketahui dari sub-suku Panina. Kedua spesies Pan tersebut terpisah sekitar 1 juta tahun lalu.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Simpanse</b></h3>
+								<iframe src="simpanse.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown509">
+						<center>
+							<h3 class="datatx"><b>Gajah Sumatera</b></h3>
+							<img src="gallery_rg/gajah.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Gajah sumatera adalah subspesies dari gajah asia yang hanya berhabitat di pulau Sumatera. Gajah sumatera berpostur lebih kecil daripada subspesies gajah india. Populasinya semakin menurun dan menjadi spesies yang sangat terancam.</p>
+							<br>
+							<h3 class="datatx"><b>Lokasi Gajah</b></h3>
+							<center>
+								<h3><b>Lokasi Gajah Sumatera</b></h3>
+								<iframe src="gajah.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown510">
+						<center>
+							<h3 class="datatx"><b>Macan Tutul</b></h3>
+							<img src="gallery_rg/macan.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Macan tutul (Panthera pardus) adalah salah satu dari lima kucing besar dalam genus Panthera. Ini adalah anggota dari keluarga Felidae dengan berbagai di beberapa bagian sub-Sahara Afrika, Asia Barat, Timur Tengah, Asia Selatan dan Asia Tenggara
+								ke Siberia.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Macan Tutul</b></h3>
+								<iframe src="macan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown511">
+						<center>
+							<h3 class="datatx"><b>Komodo</b></h3>
+							<img src="gallery_rg/komodo.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Komodo adalah spesies kadal besar yang ditemukan di pulau-pulau Indonesia Komodo, Rinca, Flores, Gili Motang, dan Padar. Merupakan anggota keluarga biawak (Varanidae), dan spesies kadal terbesar yang masih hidup, panjang maksimalnya dalap mencapai
+								3 meter (10 kaki) dan beratnya bisa mencapai 70 kilogram.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Komodo</b></h3>
+								<iframe src="komodo.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown512">
+						<center>
+							<h3 class="datatx"><b>Biawak</b></h3>
+							<img src="gallery_rg/biawak.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Biawak Salvador (Varanus salvator) merupakan salah satu kadal terbesar di Asia Selatan dan Tenggara. Spesies biawak ini banyak ditemukan di Bangladesh, Sri Lanka and India, Semenanjung Malaya, dan berbagai pulau di Indonesia. Habitat biawak ini
+								tinggal di daerah dekat dengan air.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Biawak</b></h3>
+								<iframe src="biawak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown513">
+						<center>
+							<h3 class="datatx"><b>Burung Pelikan</b></h3>
+							<img src="gallery_rg/pelikan.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Burung undan atau pelikan adalah burung air yang memiliki kantung di bawah paruhnya, dan merupakan bagian dari keluarga burung Pelecanidae. Bersama burung pecuk, pecuk ular, gannet, angsa batu, dan cikalang, mereka membentuk ordo Pelecaniformes.
+								Pelikan modern ditemukan di semua benua kecuali Antartika. Mereka hidup umumnya di wilayah hangat, dan mereka tidak dijumpai di wilayah kutub, laut dalam, kepulauan samudra, dan benua Amerika Selatan.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Burung Pelikan</b></h3>
+								<iframe src="pelikan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown514">
+						<center>
+							<h3 class="datatx"><b>Burung Flamingo</b></h3>
+							<img src="gallery_rg/flamingo.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Flamingo adalah spesies burung berkaki jenjang yang hidup berkelompok. Mereka berasal dari genus Phoenicopterus dan familia Phoenicopteridae. Burung ini ditemukan di belahan bumi barat dan timur, namun lebih banyak terdapat di belahan timur. Terdapat
+								4 spesies flamingo di Amerika dan 2 jenis flamingo di Dunia Lama</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Burung Flamingo</b></h3>
+								<iframe src="flamingo.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown515">
+						<center>
+							<h3 class="datatx"><b>Burung Merak Biru</b></h3>
+							<img src="gallery_rg/merak.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Merak biru (Pavo cristatus) adalah burung besar dan berwarna cerah dari keluarga asli burung dari Asia Selatan, namun diperkenalkan di banyak bagian lain dunia seperti Amerika Serikat, Meksiko, Honduras, Kolombia, Guyana, Suriname, Brazil, Uruguay,
+								Argentina, Afrika Selatan, Madagaskar, Papua, dan Australia.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Burung Merak Biru</b></h3>
+								<iframe src="merak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+
+							</center>
+						</center>
+					</div>
+
+					<div class="tab-pane fade" id="dropdown516">
+						<center>
+							<h3 class="datatx"><b>Burung Elang Bondol</b></h3>
+							<img src="gallery_rg/elang.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<p style="text-align:justify;">Elang bondol atau dalam nama ilmiahnya adalah Haliastur Indus adalah spesies dari genus dari Haliastur. Burung Elang Bondol berukuran sedang (45 cm), berwarna putih dan coklat pirang. Elang bondol yang remaja berkarakter seluruh tubuh kecoklatan
+								dengan coretan pada dada. Warna berubah putih keabu-abuan pada tahun kedua, dan mencapai bulu dewasa sepenuhnya pada tahun ketiga. Ujung ekor bundar. Iris coklat, paruh dan sera abu-abu kehijauan, kaki dan tungkai kuning suram.</p>
+							<br>
+							<center>
+								<h3 class="datatx"><b>Lokasi Burung Elang Bondol</b></h3>
+								<iframe src="elang.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+							</center>
+						</center>
+					</div>
+					</div>
+					</div>
+					
+
+					<!-- end tab ragunan-->
+
+				</div>
+			</div>
+			</div>
+		</div>
+
+		</div>
+	</body>
 
 </html>

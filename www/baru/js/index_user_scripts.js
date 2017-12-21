@@ -8,7 +8,28 @@
  function register_event_handlers()
  {
     
-    
+        /*Exit Modals */
+     
+$('#exit').on('click', function () {
+  var modal = myApp.modal({
+    title: '<center>Konfirmasi Keluar</center>',
+    text: '<center>Apakah Anda Yakin ?</center>',
+    afterText:  '<center><img src="images/warning.gif" width="30%" height="30px" style="display:block"></center>',
+    buttons: [
+      {
+        text: 'Tidak'
+      },
+      {
+        text: 'Ya !',
+        bold: true,
+        onClick: function () {
+          navigator.app.exitApp();
+        }
+      },
+    ]
+  });
+});
+
      /* graphic button  #play */
     $(document).on("click", "#play", function(evt)
     {
@@ -17,11 +38,7 @@
          return false;
     });
     
-        /* graphic button  #time */
-    
-    
-        /* graphic button  #petaku */
-    
+
     
         /* graphic button  #petaku */
     $(document).on("click", "#petaku", function(evt)
@@ -241,6 +258,140 @@ $$('#list-data20').on('click', function () {
         window.open("data/data20.html")
     }, 7000);
 });
+
+
+/* graphic button  #setu */
+    $(document).on("click", "#se", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#page_12_1"); 
+         return false;
+    });
+     
+	$(document).on("click", "#mo", function(evt)
+    {
+         /*global activate_subpage */
+        activate_page("#monas"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#ko", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#kotu");
+         return false;
+    }); 
+	
+	$(document).on("click", "#wa", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#wayang");
+         return false;
+    }); 
+	
+	$(document).on("click", "#na", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#galnas"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#an", function(evt)
+    {
+         /*global activate_subpage */
+        activate_page("#ancol"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#ra", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#ragunan"); 
+         return false;
+    }); 
+	$(document).on("click", "#tm", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#tamini");
+         return false;
+    }); 
+	$(document).on("click", "#lb", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#buaya");
+         return false;
+    }); 
+	
+	$(document).on("click", "#la", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#layangan");
+         return false;
+    }); 
+	
+	$(document).on("click", "#ga", function(evt)
+    {
+         /*global activate_subpage */
+        activate_page("#gajah");
+         return false;
+    }); 
+	
+	$(document).on("click", "#kr", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#kramik"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#mt", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#tekstil");
+         return false;
+    }); 
+	
+	$(document).on("click", "#mg", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#mangrove");
+         return false;
+    }); 
+	
+	$(document).on("click", "#wi", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#bunga"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#wb", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#waterbom");
+         return false;
+    }); 
+	
+	$(document).on("click", "#pt", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#planet"); 
+         return false;
+    }); 
+	
+	$(document).on("click", "#cb", function(evt)
+    {
+         /*global activate_subpage */
+         activate_page("#garden");
+         return false;
+    }); 
+	
+	$(document).on("click", "#pm", function(evt)
+    {
+         /*global activate_subpage */
+        activate_page("#pemuda"); 
+         return false;
+    }); 
+	
 	
     }
  document.addEventListener("app.Ready", register_event_handlers, false);

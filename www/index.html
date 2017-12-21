@@ -5,6 +5,7 @@
   -->
 
     <head>
+        <link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
         <link rel="stylesheet" type="text/css" href="framework7/css/framework7.ios.colors.min.css">
         <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
         <meta charset="UTF-8">
@@ -67,6 +68,15 @@
         <script type="application/javascript" src="framework7/js/framework7.min.js"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
         <script type="application/javascript" src="xdk/ad/fw7_subpage.js"></script>
+        <script type="application/javascript" src="sidebar/js/hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script src="js/galleria-1.4.7/.js></script>
+        <script type="application/javascript" src="galleria/galleria-1.3.6.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria.classic.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria-startup.js"></script>
     </head>
 
     <body onload="loading()">
@@ -88,7 +98,7 @@
              
                .headerbg {
                      font-family: "Font Digital";
-                        color: #999966;
+                        color: white;
                      }
         </style>
         <style type="text/css">
@@ -99,372 +109,164 @@
              
                .txhead {
                      font-family: "Font Digital1";
-                   color: "white";
+                   color: "black";
                      }
         </style>
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
         <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
         <div class="uwrap views">
-            <div class="upage view-main view bg-in bghd" id="mainpage">
+            <div class="panel-overlay"></div>
+            <div class="upage view-main view bghd" id="mainpage">
                 <div class="pages">
 
-                    <div class="page navbar-fixed toolbar-fixed">
-                        <div class="navbar inner-element uib_w_1 hd-bg1 bg-hdd" data-uib="framework7/header" data-ver="0">
+                    <div class="page toolbar-fixed">
+                        <div class="navbar inner-element uib_w_1 head" data-uib="framework7/header" data-ver="0">
                             <div class="navbar-inner">
                                 <div class="left">
-                                    <div class="widget-container content-area horiz-area wrapping-col"></div>
+                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_2 link" data-uib="framework7/button" data-ver="0" id="btn-side"><span></span><i class="icon-bars icon" data-position="icon only"></i></a>
+                                    </div>
                                 </div>
-                                <div class="center headerbg"></div>
+                                <div class="center labeltext">Wisata Jakarta</div>
                                 <div class="right">
                                     <div class="widget-container content-area horiz-area wrapping-col"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="upage-content ac0 content-area vertical-col left page-content" id="page_77_6">
-                            <div class="uib-grid widget uib_w_2 grid-text grid-height d-margins mg2" data-uib="layout/grid" data-ver="1">
-                                <div class="uib-grid-row">
-                                    <div class="uib-grid-cell widget-container"></div>
-                                    <div class="uib-grid-cell widget-container">
-                                        <a class="uib-graphic-button widget uib_w_3 margin1 imsiz default-graphic-sizing mg imsize sizing media-button-text-bottom" data-uib="media/graphic_button" data-ver="0" href="#" id="play">
-                                            <img src="images/01mulai.png">
-                                            <span class="uib-caption">  </span>
-                                        </a>
-                                    </div>
-                                    <div class="uib-grid-cell widget-container"></div>
+                        
+
+                        <div class="upage-content ac0 content-area vertical-col left page-content" id="page_33_6"></div>
+
+                        <div class="inner-element uib_w_3 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':250, 'side':'left', 'dur':200}" id="sidebar21">
+                            <div class="sidebar-content content-area vertical-col">
+
+                                <div class="widget uib_w_4 imgsz mg2" data-uib="media/img" data-ver="0">
+                                    <figure class="figure-align">
+                                        <img src="images/marker/jkt3.png">
+
+                                        <figcaption data-position="bottom"></figcaption>
+                                    </figure>
                                 </div>
-                                <div class="uib-grid-row">
-                                    <div class="uib-grid-cell widget-container"></div>
-                                    <div class="uib-grid-cell widget-container">
-                                        <a class="uib-graphic-button widget uib_w_4 margin1 imsiz default-graphic-sizing sizing imsize mg media-button-text-bottom" data-uib="media/graphic_button" data-ver="0" href="#" id="time">
-                                            <img src="images/01event.png">
-                                            <span class="uib-caption">  </span>
-                                        </a>
+                                <div class="card_col widget uib_w_22 d-margins card-columns-22" data-uib="layout/card_columns" data-ver="0">
+                                    <div class="widget widget-container content-area vertical-col uib-card uib_w_23 cpad-0 abc123 section-dimension-23" data-uib="layout/card" data-ver="0">
+                                        <div class="content-block-title"></div>
+                                        <div class="list-block media-list inset">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="item-link item-content">
+                                                        <div class="item-media">
+                                                            <img src="images/marker/bag.png" width="30">
+                                                        </div>
+                                                        <div class="item-inner">
+                                                            <div class="item-title-row">
+                                                                <div class="item-title" id="play">MASUK</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#" class="item-link item-content">
+                                                        <div class="item-media">
+                                                            <img src="images/marker/event.png" width="30">
+                                                        </div>
+                                                        <div class="item-inner">
+                                                            <div class="item-title-row">
+                                                                <div class="item-title" id="time">EVENT</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#" class="item-link item-content">
+                                                        <div class="item-media">
+                                                            <img src="images/marker/map22.png" width="30">
+                                                        </div>
+                                                        <div class="item-inner">
+                                                            <div class="item-title-row">
+                                                                <div class="item-title" id="petaku">PETA WISATA</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                            <br>
+                                            <br>
+                                            <ul>
+                                                <li>
+
+                                                    <a href="#" class="item-link item-content">
+                                                        <div class="item-media">
+                                                            <img src="images/marker/exit2.png" width="30">
+                                                        </div>
+                                                        <div class="item-inner">
+                                                            <div class="item-title-row">
+                                                                <div class="item-title" id="exit">KELUAR</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+
                                     </div>
-                                    <div class="uib-grid-cell widget-container"></div>
+
                                 </div>
-                                <div class="uib-grid-row">
-                                    <div class="uib-grid-cell widget-container"></div>
-                                    <div class="uib-grid-cell widget-container">
-                                        <a class="uib-graphic-button default-graphic-sizing widget uib_w_5 imsiz margin1 sizing imsize mg media-button-text-bottom" data-uib="media/graphic_button" data-ver="0" href="#" id="petaku">
-                                            <img src="images/01peta.png">
-                                            <span class="uib-caption">  </span>
-                                        </a>
-                                    </div>
-                                    <div class="uib-grid-cell widget-container"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="upage vertical-col left hidden view bghd" id="peta">
+                <div class="pages">
+
+                    <div class="page">
+                        <div class="navbar inner-element uib_w_24 head" data-uib="framework7/header" data-ver="0">
+                            <div class="navbar-inner">
+                                <div class="left">
+                                    <div class="widget-container content-area horiz-area wrapping-col"></div>
                                 </div>
-                                <div class="uib-grid-row">
-                                    <div class="uib-grid-cell widget-container"></div>
-                                    <div class="uib-grid-cell widget-container">
-                                        <a class="uib-graphic-button default-graphic-sizing widget uib_w_6 margin1 imsiz sizing imsize mg media-button-text-bottom" data-uib="media/graphic_button" data-ver="0" href="#" id="exit">
-                                            <img src="images/01out.png">
-                                            <span class="uib-caption">    </span>
-                                        </a>
+                                <div class="center labeltext">Wisata Jakarta</div>
+                                <div class="right">
+                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_26 link" data-uib="framework7/button" data-ver="0" id="bck-map"><span></span><i class="icon-back icon" data-position="icon only"></i></a>
                                     </div>
-                                    <div class="uib-grid-cell widget-container"></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="page-content upage-content content-area" id="page_42_52">
+                            <div class="widget uib_w_25 birdmr" data-uib="media/img" data-ver="0">
+                                <figure class="figure-align">
+                                    <img src="images/cb.png">
+                                    <figcaption data-position="bottom"></figcaption>
+                                </figure>
+                            </div>
+                            <center>
+                                <iframe src="baru/data/tabpeta.html" width="100%" height="400px" frameborder="70" style="border:0" allowfullscreen=""></iframe>
+                            </center>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <!--div class="upage vertical-col left hidden view bg-in" id="awalan">
+            <div class="upage vertical-col left hidden view bghd" id="eventuser">
                 <div class="pages">
 
-                    <div class="page navbar-fixed">
-                        <div class="navbar inner-element uib_w_7" data-uib="framework7/header" data-ver="0">
+                    <div class="page">
+                        <div class="navbar inner-element uib_w_27 head" data-uib="framework7/header" data-ver="0">
                             <div class="navbar-inner">
                                 <div class="left">
                                     <div class="widget-container content-area horiz-area wrapping-col"></div>
                                 </div>
-                                <div class="center labeltext headerbg">Wisata Jakarta</div>
+                                <div class="center labeltext">Wisata Jakarta</div>
                                 <div class="right">
-                                    <div class="widget-container content-area horiz-area wrapping-col"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="page-content upage-content content-area" id="page_84_90"></div>
-                        <div class="page-content upage-content content-area hide-navbar-on-scroll" id="page_47_32">
-
-                            <!-- Search Bar>
-                            <center>
-                                <h2>Silahkan Cari Tempat Wisata</h2>
-                            </center>
-
-                            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
-                                <div class="searchbar-input">
-                                    <input type="search" placeholder="Cari Suku">
-                                    <a href="#" class="searchbar-clear"></a>
-                                </div><a href="#" class="searchbar-cancel">Batal</a>
-                            </form>
-
-                            <!-- Search Bar overlay>
-
-                            <div class="page-content hide-navbar-on-scroll">
-                                <!-- This block will be displayed if nothing found>
-                                <div class="content-block searchbar-not-found">
-                                    <div class="content-block-inner">Suku Tidak Tersedia</div>
-                                </div>
-
-                                <!-- This block will be displayed if anything found, and this list block is used a searbar target>
-                                <div class="list-block list-block-search searchbar-found inset">
-                                    <ul>
-                                        <li class="item-divider"><i>Jakarta Selatan</i>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data1">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Danau Setu Babakan</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="item-link item-content" id="list-data2">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Kebun Binatang Ragunan</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="item-link item-content" id="list-data3">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Layang - layang</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-
-                                        <li class="item-divider">Jakarta Timur</li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data4">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Taman Mini Indonesia Indah</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data5">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Lubang Buaya</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data6">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Taman Bunga Wiladatika</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data7">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Taman Cibubur</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-
-                                        <li class="item-divider">Jakarta Barat</li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data8">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Kota Tua</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data9">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Wayang</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data10">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum seni rupa dan keramik</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data11">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Bank Indonesia</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data12">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Tekstil</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-
-                                        <li class="item-divider">Jakarta Pusat</li>
-
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data13">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Monumen Nasional</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data14">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Galeri Nasional</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data15">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Gajah</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data16">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Museum Sumpah Pemuda</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data17">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Planetarium</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-
-                                        <li class="item-divider">Jakarta Utara</li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data18">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Waterboom Jakarta</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data19">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Taman Alam Mangrove</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="#" class="item-link item-content" id="list-data20">
-                                                <div class="item-media"><i class="icon icon-f7"></i>
-                                                </div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">Taman Impian Jaya Ancol</div>
-                                                    <div class="item-after">Lihat</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- POP OVER SEARCH !! >
-                        <!-- SEARCH !!>
-
-                    </div>
-
-                </div>
-            </div-->
-            <div class="upage vertical-col left hidden view" id="eventuser">
-                <div class="pages">
-
-                    <div class="page navbar-fixed">
-                        <div class="navbar inner-element uib_w_8 hd-bg1 bg-hdd" data-uib="framework7/header" data-ver="0">
-                            <div class="navbar-inner">
-                                <div class="left">
-                                    <div class="widget-container content-area horiz-area wrapping-col"></div>
-                                </div>
-                                <div class="center labeltext headerbg"></div>
-                                <div class="right">
-                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_15 d-margins link" data-uib="framework7/button" data-ver="0" id="bck-user"><span></span><i class="icon-back icon" data-position="icon only"></i></a>
+                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_15 link" data-uib="framework7/button" data-ver="0" id="bck-user"><span></span><i class="icon-back icon" data-position="icon only"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -472,12 +274,13 @@
                         <div class="page-content upage-content content-area" id="page_87_8">
                             <iframe src="http://cennaboutique.pe.hu/rizky/boostrap.php" width="100%" height="700px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
-                        <div class="page-content upage-content content-area" id="page_77_96"></div>
-                        <div class="toolbar inner-element uib_w_9" data-uib="framework7/footer" data-ver="0">
+
+                        <div class="page-content upage-content content-area" id="page_48_22"></div>
+                        <div class="toolbar inner-element uib_w_28 head" data-uib="framework7/footer" data-ver="0">
                             <div class="toolbar-inner container-group">
                                 <div class="widget-container content-area horiz-area wrapping-col left"></div>
                                 <div class="widget-container wrapping-col single-centered"></div>
-                                <div class="widget-container content-area horiz-area wrapping-col right"><a class="widget uib_w_10 d-margins link color-yellow" data-uib="framework7/button" data-ver="0" id="login"><span>Login Admin</span></a>
+                                <div class="widget-container content-area horiz-area wrapping-col right"><a class="widget uib_w_29 link color-blue" data-uib="framework7/button" data-ver="0" id="login"><span>Login Admin</span><i class="icon-form-name icon" data-position="right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -485,18 +288,18 @@
 
                 </div>
             </div>
-            <div class="upage vertical-col left hidden view" id="event">
+            <div class="upage vertical-col left hidden view bghd" id="event">
                 <div class="pages">
 
-                    <div class="page navbar-fixed">
-                        <div class="navbar inner-element uib_w_11 hd-bg1 bg-hdd" data-uib="framework7/header" data-ver="0">
+                    <div class="page">
+                        <div class="navbar inner-element uib_w_30 head" data-uib="framework7/header" data-ver="0">
                             <div class="navbar-inner">
                                 <div class="left">
                                     <div class="widget-container content-area horiz-area wrapping-col"></div>
                                 </div>
-                                <div class="center labeltext headerbg"></div>
+                                <div class="center labeltext">Wisata Jakarta</div>
                                 <div class="right">
-                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_13 d-margins link" data-uib="framework7/button" data-ver="0" id="bck-event"><span></span><i class="icon-back icon" data-position="icon only"></i></a>
+                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_13 link" data-uib="framework7/button" data-ver="0" id="bck-event"><span></span><i class="icon-back icon" data-position="icon only"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -504,42 +307,15 @@
                         <div class="page-content upage-content content-area" id="page_37_8">
                             <iframe src="http://cennaboutique.pe.hu/rizky/" width="100%" height="700px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
-
-                        <div class="page-content upage-content content-area" id="page_77_64"></div>
                     </div>
 
                 </div>
             </div>
 
-            <div class="upage vertical-col left hidden view bghd" id="peta">
-                <div class="pages">
+            <!-- page wisata-->
 
-                    <div class="page navbar-fixed">
-                        <div class="navbar inner-element uib_w_16 hd-bg1 bg-hdd" data-uib="framework7/header" data-ver="0">
-                            <div class="navbar-inner">
-                                <div class="left">
-                                    <div class="widget-container content-area horiz-area wrapping-col"></div>
-                                </div>
-                                <div class="center labeltext headerbg"></div>
-                                <div class="right">
-                                    <div class="widget-container content-area horiz-area wrapping-col"><a class="widget uib_w_17 d-margins link" data-uib="framework7/button" data-ver="0" id="back-peta"><i class="icon-back icon" data-position="left"></i><span>  </span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="page-content upage-content content-area" id="page_42_52">
-                            <center>
-                                <h1 class="txhead"><b>Peta Wisata Jakarta</b></h1>
-                            </center>
-                            <center>
-                                <iframe src="baru/data/tabpeta.html" width="300px" height="600px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                            </center>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </div>
+
         <script type="application/javascript" src="framework7/my-app.js"></script>
     </body>
 

@@ -394,7 +394,7 @@ body#afui .splt {
 @media all {
   .main {
     background-color: ;
-    background-image: url("../img/bg/1bg.png");
+    background-image: url("../images/wal21.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -2035,4 +2035,7 @@ h4.list-group-item-heading {
   background-size: 85% 105%;
   background-repeat: no-repeat;
   min-height: 0px;
+}
+.head {
+  background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%);
 }

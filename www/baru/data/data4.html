@@ -19,18 +19,18 @@
 
         <style>
             .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
-                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
+                .nav-tabs > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%);}
                 .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
                 .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
                 .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
                 .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
-                .tab-pane { padding: 15px 0; }
+                .tab-pane { padding: 5px 0; }
                 .asd{
                 height:400px;
                 overflow-y:scroll;
                 width:100%;
                 }
-                .tab-content{padding:30px}
+                .tab-content{padding:3px}
                 .nav-tabs > li  {width:20%; text-align:center;}
                 .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
                 
@@ -128,8 +128,8 @@
                 }
             }
         </script>
-		
-		<style type="text/css">
+
+        <style type="text/css">
             @font-face {
                      font-family: "Font Digital";
                      src: url('whip.TTF');
@@ -142,11 +142,19 @@
 
         <div class="upage main" id="data1">
             <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_66 head" data-uib="layout/header" data-ver="0">
+                    <h2>Wisata Jakarta</h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right">
+                    <button class="btn widget uib_w_65 d-margins btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
+                    </div>
+                </div>
                 <div class="uib-header header-bg container-group inner-element uib_w_64" data-uib="layout/header" data-ver="0">
                     <h2></h2>
                     <div class="widget-container wrapping-col single-centered"></div>
                     <div class="widget-container content-area horiz-area wrapping-col left">
-                        <button class="btn widget uib_w_65 d-margins btn-link" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Back</button>
+                        
                     </div>
                     <div class="widget-container content-area horiz-area wrapping-col right"></div>
                 </div>
@@ -156,7 +164,7 @@
             <div class="container">
                 <center>
                     <img src="images/tam.jpg" width="100%" height="30%">
-            </center>
+                </center>
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Nav tabs -->
@@ -169,9 +177,9 @@
                                 </li>
                                 <li role="presentation"><a href="#foto7" aria-controls="foto" role="tab" data-toggle="tab"><i class="fa fa-photo"></i>&nbsp; <span>Foto</span></a>
                                 </li>
-								<li role="presentation"><a href="#info7" aria-controls="info" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Informasi</span></a>
+                                <li role="presentation"><a href="#info7" aria-controls="info" role="tab" data-toggle="tab"><i class="fa fa-info"></i>&nbsp; <span>Informasi</span></a>
                                 </li>
-								<li role="presentation"><a href="#fasilitas7" aria-controls="fasilitas" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Fasilitas</span></a>
+                                <li role="presentation"><a href="#fasilitas7" aria-controls="fasilitas" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i>&nbsp; <span>Fasilitas</span></a>
                                 </li>
 
                             </ul>
@@ -180,28 +188,101 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane asd active" id="desc7">
                                     <p style="text-align:justify;" class="datatx">
-                                        <h3 class="datatx"><b>Deskripsi Taman Mini Indonesia</b></h3>
-                                        <br>Taman ini merupakan rangkuman kebudayaan bangsa Indonesia, yang mencakup berbagai aspek kehidupan sehari-hari masyarakat 33 provinsi Indonesia (pada tahun 1975) yang ditampilkan dalam anjungan daerah berarsitektur tradisional,
-                                serta menampilkan aneka busana, tarian dan tradisi daerah.
                                     </p>
+                                    <h3 class="datatx"><b>Deskripsi Taman Mini Indonesia</b></h3>
+                                    <br>
+                                    <p style="text-align:justify;" class="datatx">Taman ini merupakan rangkuman kebudayaan bangsa Indonesia, yang mencakup berbagai aspek kehidupan sehari-hari masyarakat 33 provinsi Indonesia (pada tahun 1975) yang ditampilkan dalam anjungan daerah berarsitektur tradisional,
+                                    serta menampilkan aneka busana, tarian dan tradisi daerah.
+                                    <p></p>
                                     <p style="text-align:justify;" class="datatx">
-									<h3 class="datatx"><b>Koleksi Taman Mini Indonesia</b></h3>
-                                        <br>Di TMII, gambaran tersebut diwujudkan melalui Anjungan Daerah, yang mewakili suku-suku bangsa yang berada di 33 Provinsi Indonesia. Anjungan provinsi ini dibangun di sekitar danau dengan miniatur Kepulauan Indonesia, secara
-                                tematik dibagi atas enam zona; Jawa, Sumatera, Kalimantan, Sulawesi, Bali dan Nusa Tenggara, Maluku dan Papua. Tiap anjungan menampilkan bangunan khas setempat.
                                     </p>
-                                   
-                                    
+                                    <h3 class="datatx"><b>Koleksi Taman Mini Indonesia</b></h3>
+                                    <br>
+                                    <p style="text-align:justify;" class="datatx">Di TMII, gambaran tersebut diwujudkan melalui Anjungan Daerah, yang mewakili suku-suku bangsa yang berada di 33 Provinsi Indonesia. Anjungan provinsi ini dibangun di sekitar danau dengan miniatur Kepulauan Indonesia,
+                                    secara tematik dibagi atas enam zona; Jawa, Sumatera, Kalimantan, Sulawesi, Bali dan Nusa Tenggara, Maluku dan Papua. Tiap anjungan menampilkan bangunan khas setempat.
+                                    <p></p>
+
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lokasi7">
-                                    
+
                                     <center>
-                                    <h3 <h3 class="datatx">>Lokasi Taman Mini Indonesia</h3>
-                                    <br>
-                                    <iframe src="tamini.html" width="200px" height="700%"></iframe>
+                                        <h3 class="datatx">Lokasi Taman Mini Indonesia</h3>
+                                        <br>
+                                        <iframe src="tamini.html" width="100%" height="400px"></iframe>
                                     </center>
                                 </div>
-								
-								<div role="tabpanel" class="tab-pane" id="info7">
+                                <div role="tabpanel" class="tab-pane" id="info7">
+
+                                    <style>
+                                        .panel-heading .accordion-toggle:after {
+      /* symbol for "opening" panels */
+      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+      float: right; /* adjust as needed */
+      color: grey; /* adjust as needed */
+    }
+    .panel-heading .accordion-toggle.collapsed:after {
+      /* symbol for "collapsed" panels */
+      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+    }
+                                    </style>
+                                    <!-- Latest compiled and minified Bootstrap CSS -->
+                                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+                                    <div class="container">
+
+                                        <div class="panel-group" id="accordion">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title datatx">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Tiket Masuk
+        </a>
+      </h4>
+                                                </div>
+                                                <div id="collapseOne" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <b >Perorangan</b>
+                                                        <br>Rp 10.000
+                                                        <br>
+                                                        <b>Mobil</b>
+                                                        <br>Rp 10.000
+                                                        <br>
+                                                        <b>Motor</b>
+                                                        <br>Rp 6.000
+                                                        <br>
+                                                        <b>Sepeda</b>
+                                                        <br>Rp 1.000
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Waktu Operasional
+        </a>
+      </h4>
+                                                </div>
+                                                <div id="collapseTwo" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <b>Setiap Hari</b>
+                                                        <br>07.00 - 22.00 WIB
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!-- end container -->
+
+                                    <!-- Latest compiled and minified JavaScript -->
+
+                                </div>
+
+                                <!--div role="tabpanel" class="tab-pane" id="info7">
                                    <p style="text-align:justify;" class="datatx">
                                         <b>Harga Tiket :</b>
 										<br>
@@ -223,23 +304,23 @@
 										<br>07.00 - 22.00 WIB
                                     </p>
                                     
-                                </div>
-								
-									<div role="tabpanel" class="tab-pane" id="fasilitas7">
-                                    
+                                </div-->
+
+                                <div role="tabpanel" class="tab-pane" id="fasilitas7">
+
                                     <center>
-                                    <h3 <h3 class="datatx">Lokasi Toilet</h3>
-                                    <br>
-                                    <iframe src="toilet40.html" width="200px" height="700%"></iframe>
+                                        <h3 h3="" class="datatx">Lokasi Toilet</h3>
+                                        <br>
+                                        <iframe src="toilet40.html" width="100%" height="400px"></iframe>
                                     </center>
-									<br>
-									 <center>
-                                    <h3 <h3 class="datatx">Lokasi Tempat Ibadah</h3>
                                     <br>
-                                    <iframe src="musola40.html" width="200px" height="700%"></iframe>
+                                    <center>
+                                        <h3 class="datatx">Lokasi Tempat Ibadah</h3>
+                                        <br>
+                                        <iframe src="musola40.html" width="100%" height="400px"></iframe>
                                     </center>
                                 </div>
-								
+
                                 <div role="tabpanel" class="tab-pane" id="foto7">
                                     <div id="carousel-example7" class="carousel slide" data-ride="carousel">
                                         <ol class="carousel-indicators">
@@ -254,33 +335,33 @@
                                         <div class="carousel-inner">
                                             <div class="item active">
                                                 <a href="#">
-                                                    <img src="gallery_ly/2.jpg" width="100%">
+                                                    <img src="gallery_tm/2.jpg" width="100%">
                                                 </a>
 
                                             </div>
                                             <div class="item">
                                                 <a href="#">
-                                                    <img src="gallery_ly/3.jpg" width="100%">
+                                                    <img src="gallery_tm/3.jpg" width="100%">
                                                 </a>
                                             </div>
                                             <div class="item">
                                                 <a href="#">
-                                                    <img src="gallery_ly/2.jpg" width="100%">
+                                                    <img src="gallery_tm/4.jpg" width="100%">
                                                 </a>
                                             </div>
                                             <div class="item">
                                                 <a href="#">
-                                                    <img src="gallery_ly/7.jpg" width="100%">
+                                                    <img src="gallery_tm/7.jpg" width="100%">
                                                 </a>
                                             </div>
                                             <div class="item">
                                                 <a href="#">
-                                                    <img src="gallery_ly/6.jpg" width="100%">
+                                                    <img src="gallery_tm/6.jpg" width="100%">
                                                 </a>
                                             </div>
                                             <div class="item">
                                                 <a href="#">
-                                                    <img src="gallery_ly/1.jpg" width="100%">
+                                                    <img src="gallery_tm/1.jpg" width="100%">
                                                 </a>
                                             </div>
                                         </div>
@@ -298,11 +379,95 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <br>
-			
-			<style>
+                <br>
+
+                <!---  baru -->
+
+                <style>
+                    .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
+                        .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%);}
+                        .nav-tabs2 > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
+                        .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+                        .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
+                        .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+                        .tab-pane { padding: 5px 0; }
+                        .asd{
+                        height:400px;
+                        overflow-y:scroll;
+                        width:100%;
+                        }
+                        .tab-content2{padding:3px}
+                        .nav-tabs2 > li  {width:20%; text-align:center;}
+                        .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+                        
+                        }
+                </style>
+                <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+                <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+                <style>
+                    /* following three (cascaded) are equivalent to above three meta viewport statements */
+                    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+                    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+                </style>
+                <style>
+                    * {
+                      box-sizing: border-box;
+                    }
+                    
+                    #myInput {
+                      background-image: url('/css/searchicon.png');
+                      background-position: 10px 12px;
+                      background-repeat: no-repeat;
+                      width: 100%;
+                      font-size: 16px;
+                      padding: 12px 20px 12px 40px;
+                      border: 1px solid #ddd;
+                      margin-bottom: 12px;
+                    }
+                    
+                    #myUL {
+                      list-style-type: none;
+                      padding: 0;
+                      margin: 0;
+                    }
+                    
+                    #myUL li a {
+                      border: 1px solid #ddd;
+                      margin-top: -1px; /* Prevent double borders */
+                      background-color: #f6f6f6;
+                      padding: 12px;
+                      text-decoration: none;
+                      font-size: 18px;
+                      color: black;
+                      display: block
+                    }
+                    
+                    #myUL li a.header {
+                      background-color: #e2e2e2;
+                      cursor: default;
+                    }
+                    
+                    #myUL li a:hover:not(.header) {
+                      background-color: #eee;
+                    }
+                </style>
+
+                <style type="text/css">
+                    @font-face {
+                             font-family: "Font Digital";
+                             src: url('whip.TTF');
+                             }
+                     
+                       .datatx {
+                             font-family: "Font Digital";
+                             }
+                </style>
+
+                <!--style>
             .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
                 .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom, #33ccff 0%, #9966ff 100%); }
                 .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
@@ -314,22 +479,22 @@
 				.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
 				.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
 				.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
-                .tab-pane { padding: 15px 0; }
+                .tab-pane { padding: 5px 0; }
                 .asd{
                 height:400px;
                 overflow-y:scroll;
                 width:100%;
                 }
-                .tab-content{padding:30px}
+                .tab-content{padding:3px}
                 .nav-tabs2 > li  {width:100%; text-align:center;}
                 .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
                 
                 }
-        </style>
-			
-			<div id="exTab2" class="container">
+        </style-->
+
+                <div id="exTab2" class="container">
                     <ul class="nav nav-tabs2">
-                        
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Anjungan <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -444,49 +609,46 @@
 
                     <div class="tab-content ">
                         <div role="tabpanel" class="tab-pane fade" id="dropdown200">
-						<center>
-                            <h3 class="datatx">Nanggroe Aceh Darussalam</h3>
-                            <img src="gallery_tm/aceh.jpg" alt="" style="width:100%;">
-                            <br>
-                            <p style="text-align:justify;" class="datatx">Pemerintah Aceh terletak di ujung barat laut pulau Sumatera.Wilayahnya seluas 55.390 km2 dengan jumlah penduduk 3.087.308 juta jiwa.Penduduk daerah yang beriklim tropis ini pada umumnya memiliki mata pencaharian sebagai petani,
-                                selebihnya pedagang, nelayan, pegawai dan buruh.Kini kehidupan perekonomian Aceh mulai bergerak kea rah perindustrian, dengan didirikannya pabrik gas alam (LNG), pabrik pupuk, pabrik kertas dan lain-lain.</p>
-                            
-                            <br>
-                            <iframe src="aceh.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-                        </center>
-						</div>
+                            <center>
+                                <iframe>&lt;h3 class="datatx"&gt;Nanggroe Aceh Darussalam&lt;/h3&gt; &lt;img src="gallery_tm/aceh.jpg" alt="" style="width:100%;"&gt; &lt;br&gt; &lt;p style="text-align:justify;" class="datatx"&gt;Pemerintah Aceh terletak di ujung
+                                    barat laut pulau Sumatera.Wilayahnya seluas 55.390 km2 dengan jumlah penduduk 3.087.308 juta jiwa.Penduduk daerah yang beriklim tropis ini pada umumnya memiliki mata pencaharian sebagai petani, selebihnya pedagang,
+                                    nelayan, pegawai dan buruh.Kini kehidupan perekonomian Aceh mulai bergerak kea rah perindustrian, dengan didirikannya pabrik gas alam (LNG), pabrik pupuk, pabrik kertas dan lain-lain.&lt;/p&gt; &lt;br&gt;
+                                </iframe>
+                                <iframe src="aceh.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            </center>
+                        </div>
 
                         <div role="tabpanel" class="tab-pane fade" id="dropdown201">
                             <center>
-							<h3 class="datatx">Nusa Tenggara Barat</h3>
-                            <img src="gallery_tm/ntb.jpg" alt="" style="width:100%;">
-                            <br>
-                            <p style="text-align:justify;" class="datatx">Provinsi Nusa Tenggara barat (NTB) adalah provinsi yang terdiri dari dua pulau utama, yaitu Pulau Lombok dan Pulau Sumbawa. Ibukota provinsi ini adalah kota Mataram yang berada di pulau Lombok. Penduduk asli NTB terdiri dari
-                                tiga suku asli utama, yakni sasak, Mbojo dan Sumbawa. Suku bangsa Sasak berasal dari pulau Lombok, sedangkan dua lainnya, Mbojo dan Sumbawa merupakan etnik terbesar di pulau Sumbawa.Suku bangsa Sumbawa disebut juga Tau
-                                Samawa (Orang Sumbawa), sedangkan suku bangsa Mbojo adalah penduduk asli Bima dan Dompu.</p>
-                            <p>Secara berkala anjungan NTB memamerkan upacara adat, seperti khitanan dan pernikahan.Pementasan kesenian berupa tari-tarian daerah dan aneka tarian nusantaram diselenggarakan dua atau tiga kali dalam satu bulan pada hari Minngu,
-                                serta pada hari libu nasional.Setiap minggu dan libur, kanting anjungan juga menyediakan makanan tradisional yang dapat dinikmati pengunjung.</p>
-                            <br>
-                            <iframe src="ntb.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
+                                <h3 class="datatx">Nusa Tenggara Barat</h3>
+                                <img src="gallery_tm/ntb.jpg" alt="" style="width:100%;">
+                                <br>
+                                <p style="text-align:justify;" class="datatx">Provinsi Nusa Tenggara barat (NTB) adalah provinsi yang terdiri dari dua pulau utama, yaitu Pulau Lombok dan Pulau Sumbawa. Ibukota provinsi ini adalah kota Mataram yang berada di pulau Lombok. Penduduk asli NTB terdiri
+                                    dari tiga suku asli utama, yakni sasak, Mbojo dan Sumbawa. Suku bangsa Sasak berasal dari pulau Lombok, sedangkan dua lainnya, Mbojo dan Sumbawa merupakan etnik terbesar di pulau Sumbawa.Suku bangsa Sumbawa disebut
+                                    juga Tau Samawa (Orang Sumbawa), sedangkan suku bangsa Mbojo adalah penduduk asli Bima dan Dompu.</p>
+                                <p>Secara berkala anjungan NTB memamerkan upacara adat, seperti khitanan dan pernikahan.Pementasan kesenian berupa tari-tarian daerah dan aneka tarian nusantaram diselenggarakan dua atau tiga kali dalam satu bulan pada hari
+                                    Minngu, serta pada hari libu nasional.Setiap minggu dan libur, kanting anjungan juga menyediakan makanan tradisional yang dapat dinikmati pengunjung.</p>
+                                <br>
+                                <iframe src="ntb.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            </center>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown202">
-						<center>
-                            <h3 class="datatx">Jawa Tengah</h3>
-                            <img src="gallery_tm/jateng.jpg" alt="" style="width:100%;">
-                            <br>
-                            <p style="text-align:justify;" class="datatx">Propinsi Jawa Tengah, dengan Semarang sebagai Ibukotanya dikenal sebagai 'Daerah Seribu Candi', karena banyaknya candi yang terdapat disana, seperti Candi Borobudur, Prambanan, Mendut dan lain-lain. Hal tersebut membuktikan
-                                bahwa dahulu agama Hidu dan Budha pernah berkembang di daerah ini, walau sejarah pun mencatatbahwa dari daerah ini pula awal kerajaan Islam di Jawa, setelah jatuhnya kerajaan Hindu Majapahit di Jawa Timur.Masjid Demak,
-                                yang konon dibuat oleh para wali, merupakan bukti sejarah yang sampai sekrang ini masih ada dan terpelihara.Dengan demikian, sangat wajar apabila budaya daerah ini sangat beragam. Anjungan Jawa Tengah diisi oleh beberapa
-                                bangunan, dimana bangunan induknya adalah sebuah pendopo agung, tiruan dari pendopo agung 'Istana Mangkunegaran' Surakarta, yang diakui sebagai salah satu pusat kebudayaan Jawa. Penampilan bangunan berbentuk 'Joglo Trajumas'
-                                itu berkesan anggun.</p>
-                            <p style="text-align:justify;" class="datatx">Propinsi Jawa Tengah memiliki beberapa objek wisata yang menarik seperti Pegunungan Dieng, Tawangmangu, kompleks Keraton Mangunegaran dan lain-lain. Keseniannya antara lain Calung banyumasan, Dalang Jemblung, Kuda Lumping dan
-                                lain-lain, dimana semuanya dapat disaksikan di anjungan pada hari Minggu atau libur.</p>
-                            <br>
-                            <iframe src="jateng.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
+                            <center>
+                                <h3 class="datatx">Jawa Tengah</h3>
+                                <img src="gallery_tm/jateng.jpg" alt="" style="width:100%;">
+                                <br>
+                                <p style="text-align:justify;" class="datatx">Propinsi Jawa Tengah, dengan Semarang sebagai Ibukotanya dikenal sebagai 'Daerah Seribu Candi', karena banyaknya candi yang terdapat disana, seperti Candi Borobudur, Prambanan, Mendut dan lain-lain. Hal tersebut membuktikan
+                                    bahwa dahulu agama Hidu dan Budha pernah berkembang di daerah ini, walau sejarah pun mencatatbahwa dari daerah ini pula awal kerajaan Islam di Jawa, setelah jatuhnya kerajaan Hindu Majapahit di Jawa Timur.Masjid Demak,
+                                    yang konon dibuat oleh para wali, merupakan bukti sejarah yang sampai sekrang ini masih ada dan terpelihara.Dengan demikian, sangat wajar apabila budaya daerah ini sangat beragam. Anjungan Jawa Tengah diisi oleh beberapa
+                                    bangunan, dimana bangunan induknya adalah sebuah pendopo agung, tiruan dari pendopo agung 'Istana Mangkunegaran' Surakarta, yang diakui sebagai salah satu pusat kebudayaan Jawa. Penampilan bangunan berbentuk 'Joglo
+                                    Trajumas' itu berkesan anggun.</p>
+                                <p style="text-align:justify;" class="datatx">Propinsi Jawa Tengah memiliki beberapa objek wisata yang menarik seperti Pegunungan Dieng, Tawangmangu, kompleks Keraton Mangunegaran dan lain-lain. Keseniannya antara lain Calung banyumasan, Dalang Jemblung, Kuda Lumping
+                                    dan lain-lain, dimana semuanya dapat disaksikan di anjungan pada hari Minggu atau libur.</p>
+                                <br>
+                                <iframe src="jateng.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            </center>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown203">
@@ -501,17 +663,17 @@
                                 sembahyang), pir (alat transportasi dari bangkalan), perahu-perahu nelayan dan pagupon (tempat memelihara burung Merpati) dalam penampilan yang khas. Di tempat-tempat tertentu ditanam pohon-poho yang ditemukan di jawa Timur,
                                 antara lain: Maja, Srikaya, Kelapa gading, Sawo Kecik, Mangga, Kayu Jati dan lain-lain.</p>
                             <br>
-                            <iframe src="jatim.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="jatim.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown204">
                             <h3 class="datatx">Jawa Barat</h3>
                             <img src="gallery_tm/jabar.jpg" alt="" style="width:100%;">
                             <br>
-                            <p>Anjungan Jawa Barat di TMII dibangun berdasarkan model kasepuhan Keraton Cirebon.Pemilihan model itu beralasan, sebabdahulu Cirebon merupakan daerah pengembangan agama Islam yang pertama di Jawa Barat, dan hingga kini sebagian
+                            <p style="text-align:justify;" class="datatx">Anjungan Jawa Barat di TMII dibangun berdasarkan model kasepuhan Keraton Cirebon.Pemilihan model itu beralasan, sebabdahulu Cirebon merupakan daerah pengembangan agama Islam yang pertama di Jawa Barat, dan hingga kini sebagian
                                 besar penduduknya merupakan pemeluk agama Islam. Sesuai dengan bangunan aslinya, bangunan induk anjungan ini dibagi atas beberapa ruangan yang kini dimanfaatkan sebagai sarana untuk memperkenalkan berbagai aspek budaya.</p>
                             <br>
-                            <iframe src="jabar.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="jabar.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown205">
@@ -524,7 +686,7 @@
                                 di TMII kolong bawahnya telah dirubah menjadi ruang perkantoran, tempat aktifitas pengelolaan anjungan ini berlangsung, sejak pukul 08.00 wib s/d 18.00 wib setiap hari. Ruang atas bangunan dipakai untuk memperkenalkan berbagai
                                 aspek tradisional, antara lain: busana adat, pelaminan pengantin Padang Pariaman, kain Songket Silungkang, dan seperangkat musik Talempong.</p>
                             <br>
-                            <iframe src="sumbar.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="sumbar.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown206">
@@ -536,7 +698,7 @@
                                 berupa bangunan tanpa dinding dengan 4 Soko Guru (tiang pokok) yang didukung oleh tiang-tiang pembantu di seputarnya.Semua tiang tersebut terbuat dari kayu berukir, dengan corak ragam hias yang berasal dari alirang Hindu,
                                 Budha dan Islam. Seperangkat Gamelan Jawa yang digelar, yaitu Kyai Shanti Mulyo (Laras Pelog), dan Kyai Rajah (Laras Slendro) nampak menghiasi pendopo agung yang megah.</p>
                             <br>
-                            <iframe src="sumut.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="sumut.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown207">
@@ -548,7 +710,7 @@
                                 berupa bangunan tanpa dinding dengan 4 Soko Guru (tiang pokok) yang didukung oleh tiang-tiang pembantu di seputarnya.Semua tiang tersebut terbuat dari kayu berukir, dengan corak ragam hias yang berasal dari alirang Hindu,
                                 Budha dan Islam. Seperangkat Gamelan Jawa yang digelar, yaitu Kyai Shanti Mulyo (Laras Pelog), dan Kyai Rajah (Laras Slendro) nampak menghiasi pendopo agung yang megah.</p>
                             <br>
-                            <iframe src="diy.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="diy.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -565,7 +727,7 @@
                                 bisa naik ke tingkat atas dengan mudah.Secara keseluruhan, bangunan ini dibagi menjadi dua bagian memanjang, dimana satu sisi merupakan ruangan tertutup berpetak-petak, yang merupakan bilik-bilik keluarga (selasar).Sedangkan
                                 bagian lain yang yang beruba ruangan memanjang sepanjang bentang di sebut tajuk datu jungkat yang berfungsi serba guna.</p>
                             <br>
-                            <iframe src="kalbar.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="kalbar.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -582,7 +744,7 @@
                                 berjenjang meninggi sampai ke bubungan, untuk kemudian turun kembali.Bagian depan disebut sebagai Palatar, yang dipergunakan untuk tempat berangin-angin.</p>
 
                             <br>
-                            <iframe src="kalsel.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="kalsel.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -596,10 +758,10 @@
                                 yang menarik adalah tekhnik menyambung bangunan yang tidak menggunakan paku, melainkan menggunakan bor yang kemudian dipasak.Sebagian hanya diikat dengan tali rotan.Lantai rumah cukup tinggi, sehingga membutuhkan tangga
                                 pada pintu gerbangnya. Seperti halnya cara hidup yang berkelompok, dahulu rumah lamin dihuni oleh beberapa keluarga.
                             </p>
-                            <p>Namun perkembangan selanjutnya, pada masa sekarang ini rumah tersebut hanya dihuni oleh sebagian kecil masyarakat disana.Rumah lamin pada dasarnya mencerminkan kegotong royongan masyarakat Dayak.Pembangunan rumah ini mengharuskan
+                           <p style="text-align:justify;" class="datatx">Namun perkembangan selanjutnya, pada masa sekarang ini rumah tersebut hanya dihuni oleh sebagian kecil masyarakat disana.Rumah lamin pada dasarnya mencerminkan kegotong royongan masyarakat Dayak.Pembangunan rumah ini mengharuskan
                                 partisipasi masyarakat yang tinggal di sekitar pembangunan rumah tersebut.</p>
                             <br>
-                            <iframe src="kaltim.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="kaltim.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -610,11 +772,11 @@
                             <p style="text-align:justify;" class="datatx">Anjungan Kalimantan tengah di TMII menjadikan Betang atau rumah panjang sebagai bangunan induknya. Bangunan dengan pola arsitektur tradisional Kalimantan tengah ini merupakan tiruan rumah adat yang masih ada sampai saat sekarang
                                 ini seperti di Desa Tumbang Gagu, Kecamatan Mentaya Hulu, Kabupaten Kota Waringin Timur, yang didirikan tahun 1880 oleh Antang Aklang bersama sanak keluarganya. Betang sendiri merupakan gambaran kerukunan hidup.Betang didirikan
                                 dengan alat-alat yang masih sederhana dan dibangun oleh orang-orang yang tidak memiliki ilmu pengetahuan arsitektur modern. Rumah ini juga dihuni secara beramai-ramai, yang secara otomati smembangun perasaan yang sama pada
-                                saat senang maupun susah.</p>
-                            <p>Khasanah budaya Kalimantan Tengah pun diperkaya oleh beberapa cabang seni tradisional yang sampai kini tetap diupayakan pelestarian dan pengembangannya, missal seni patung, seni relief, seni tari, dan upacara adat.</p>
-                            <br>
-
-                            <iframe src="kalteng.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                saat senang maupun susah.
+                            Khasanah budaya Kalimantan Tengah pun diperkaya oleh beberapa cabang seni tradisional yang sampai kini tetap diupayakan pelestarian dan pengembangannya, missal seni patung, seni relief, seni tari, dan upacara adat.</p>
+                        <br>
+                            
+                            <iframe src="kalteng.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -627,7 +789,7 @@
                                 laut di sekitarnya. Tempat wisata yang lain adalah Taman Laut Sebuku, Pantai Merak Blantung, Pantai Tegal, dan masih banyak lagi yang lain. Anjungan Lampung di TMII menampilkan dua rumah adat sebagai bangunan induknya.Masing-masing
                                 adalah 'Nuwou Balak' dan 'Nuwou Sesat'.Kedua rumah tersebut digunakan untuk memperkenalkan berbagai aspek budaya tradisionalnya.</p>
                             <br>
-                            <iframe src="lampung.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="lampung.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -642,21 +804,21 @@
                                 juga menarik untuk dikenal.Karena itulah, propinsi Bengkulu membangun anjungannya di TMII agar dapat lebih dikenal oleh khalayak.</p>
 
                             <br>
-                            <iframe src="bengkulu.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="bengkulu.html"width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown214">
                             <h3>Kepulauan Riau</h3>
                             <img src="gallery_tm/riau.jpg" alt="" style="width:100%;">
                             <br>
-                           <p style="text-align:justify;" class="datatx">Propinsi Riau dengan ibukotanya Pekan Baru, terletak di pantai timur pulau Sumatera.Wilayahnya meliputi 3214 pulau, yang terletak diantara pulau Sumatera dan Selat malaka, serta laut Cina Selatan. Penduduknya, yang hanya sekitar
+                            <p style="text-align:justify;" class="datatx">Propinsi Riau dengan ibukotanya Pekan Baru, terletak di pantai timur pulau Sumatera.Wilayahnya meliputi 3214 pulau, yang terletak diantara pulau Sumatera dan Selat malaka, serta laut Cina Selatan. Penduduknya, yang hanya sekitar
                                 dua seperempat juta jiwa menempati daerah yang luas dan subur, menghasilkan minyak bumi yang melimpah ruah, tak heran apabila perkembangan daerah ini maju pesat, sebab 'urat nadi' perekonomian cukup tersedia sejak dulu,
                                 berupa sungai-sungai besar seperti Kampar, Siak, Rokan, dan Indagiri.</p>
                             <p style="text-align:justify;" class="datatx">Di TMII, anjungan Riau menempati areal yang cukup luas. Halamannya dihiasi dengan beberapa patung Gajah, harimau, dan Beruang sebagai gambaran penghuni hutannya yang sebagian besarnya belum terjamah. Pada sudut yang lain tampak
                                 sebuah kilang minyak, hal ini sekilas menunjukan kepada kita akan masa lalu daerah ini yang memeberi sentuhan pada kebudayaan Riau sekarang. Pada bagian lain, tampak sebuah buku besar dengan tulisan 'Gurindam Duabelas'
                                 karya raja Ali Haji, yang memberi gambaran jelas arti Riaudalam perkembangan bahasa dan sastera.</p>
                             <br>
-                            <iframe src="riau.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="riau.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown215">
@@ -676,7 +838,7 @@
                                 perhiasa, batu satam dip[ercaya memiliki khasiat sebagai obat dan mampu melindungi si pemakainya dari gangguan gaib.
                             </p>
                             <br>
-                            <iframe src="bangka.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="bangka.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
 
                         </div>
 
@@ -696,7 +858,7 @@
                             <p>Kerbau yang dianggap sebagai kendaraan roh di akhirat, oleh karena itu, fungsinya sebagai kurban di upacara pemakaman sangat penting. 'laki padada'., tokoh legendaris yang menurut sejarah merupakan turunan raja-raja Sulawesi
                                 selatan juga digambarkan mengendarai seekor kerbau putih sebagai kendaraan mengelilingi alam untuk mencari kedamaian.</p>
                             <br>
-                           <iframe src="sulsel.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="sulsel.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown217">
@@ -708,10 +870,10 @@
                                 tiang ini mempunyai beberapa ruangan. Ruangan depan, yang dinamakan lonta karavana sesuai dengan aslinya digunakan sebagai ruang tamu. Ruang tengah (lonta tatangana), aslinya berfusngsi sebagai ruangan keluarga, namun di
                                 anjungan berfungsi sebagai tempat peragaan pengantin bangsawan kaili.Sedang ruang dalamnya yang dinamakan lonta riarana, ditata sesuai fungsi aslinya, yaitu kamar tidur pengantin, kamar anak gadis dan kamar keluarga.Dengan
                                 sebuah jembatan, rumah souraja ini masih dihubungkan dengan avu (dapur) yang terletak di belakangnya.</p>
-                            </p>
+                            <p></p>
                             <br>
 
-                            <iframe src="sulteng.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="sulteng.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown218">
@@ -722,10 +884,10 @@
                                 Ibukota provinsi ini adalah mamuju dengan luas wilayah sekitar 11.057,81 km2 berada di pesisir pantai Sulawesi barat dan letaknya sangat strategis karena merupakan pintu gerbang segitiga yang menghubungkan provinsi Sulawesi
                                 Selatan-Sulawesi Tengah-Kalimantan Timur, sehingga daerah ini sebelum pemekaran sering disebut sebagai kawasan segitiga emas. Sulawesi barat memiliki daya tarik wisata alam yang fantastis dengan panorama pegunungan, keunikan
                                 budaya dan peninggalan sejarah yang unik.Selain kakao, daerah ini juga merupakan penghasil kopi, baik robusta maupun arabika, kelapa dan cengkeh. Di sector pertambangan terdapat kandungan emas, batubara, dan minyak bumi.</p>
-                            
+
                             <br>
 
-                            <iframe src="sulbar.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="sulbar.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown219">
@@ -741,7 +903,7 @@
                             </p>
 
                             <br>
-                            <iframe src="ntt.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="ntt.html"width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown220">
@@ -750,29 +912,29 @@
                             <br>
                             <p style="text-align:justify;" class="datatx">Provinsi Papua terletak di wilayah paling timur dan paling luas wilayahnya dari seluruh provinsi di Indonesia. Provinsi ini sebelumnya dikenal dengan nama Irian barat sejak tahun 1969 hingga 1973, kemudian namanya diganti menjadi
                                 Irian Jaya hingga tahun 2002. Nama provinsi ini diganti menjadi Papua sesuai dengan UU No 21/2001 Otonomi Khusus Oaoua.Selanjutnya provinsi papua dimekarkan menjadi dua provinsi, yaitu provinsi Papuayang beribukota jayapura
-                                dan provinsi Papua barat yang beribukota Manokwari.</p>                
+                                dan provinsi Papua barat yang beribukota Manokwari.</p>
                             <p style="text-align:justify;" class="datatx">Kebudayaan penduduk Papua amat beraneka ragam, baik suku bangsa (kelompok etnik), bahasa, adat istiadat dan tata kehidupannya.Budaya penduduk yang beraneka ragam itu ditandai oleh jumlah bahasa loka yang banyaknya kurang lebih
                                 250 macam sesuai dengan kelompok suku bangsa yang berada di daerah ini. Bahasa di Papua dapat digolongkan kedalam bahasa Melanesia dan diklasifikasikan dalam 31 kelompok bahasa, yaitu : Tobati, Kuimen Sewan, Kauwerawet,
                                 Pauwi, Ambai, Turu, Wondama, Roon, Hatam, Arfak, Karon, Kapaur, Waosiran, mimika, Kapauku, Moni, Ingkipilu, Pasecehem, Teliformin, Awin, Mandobo, Auyu, Sohur, Boazi, Klader, Komoron, Jap, Marind-Anim, Jenan dan Serki.</p>
                             <br>
-                            <iframe src="papua.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="papua.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                         </div>
 
                         <!-- end tab anjungan-->
 
                         <div class="tab-pane fade" id="dropdown101">
                             <h3>Museum Transportasi</h3>
-           
+
                             <p style="text-align:justify;" class="datatx">Museum ini menampilkan berbagai moda transportasi yang mengandung nilai sejarah dan perannya dalam perjuangan bangsa. Keberadaan museum ini juga dimaksudkan untuk memberikan informasi sekaligus sebagai tempat rekreasi yang
                                 edukatif. Pemran diselenggarakan di dalam dan di luar ruangan. Pameran di dalam ruang dibagi menjadi beberapa tempat yang seolah-olah merupakan bangunan tersendiri yang disebut dengan modul, terdiri atas modul pusat, modul
                                 darat, modul laut dan modul udara, baik dengan benda asli, tiruan, miniatur, foto, maupun diorama.</p>
                             <br>
                             <h3>Harga Tiket Masuk</h3>
                             <p>Rp 5.000</p>
-							<br>
+                            <br>
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="transportasi.html" width="100%" height="700px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="transportasi.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
                         </div>
 
@@ -789,7 +951,7 @@
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="energi.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="energi.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
 
                         </div>
@@ -808,7 +970,7 @@
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="olahraga.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="olahraga.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
                         </div>
 
@@ -829,7 +991,7 @@
 
                             <h3>Petunjuk Arah</h3>
                             <p class="box a16">
-                                <iframe src="prangko.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="prangko.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
                         </div>
 
@@ -845,14 +1007,15 @@
                                 tercatat sebagai awal berdirinya TVRI dan mesin cetak tiga zaman.</p>
                             <br>
 
-                            <p style="text-align:justify;" class="datatx"><h3>Harga Tiket Masuk</h3>
+                            <p style="text-align:justify;" class="datatx"></p>
+                            <h3>Harga Tiket Masuk</h3>
                             <p>Gratis</p>
 
                             <h3 id="b18">Petunjuk Arah</h3>
                             <p>
-                                <iframe src="penerangan.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="penerangan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
 
                         </div>
 
@@ -874,57 +1037,58 @@
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="minyak.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="minyak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown107">
                             <h3>Museum peragaan IPTEK</h3>
-                           <p style="text-align:justify;" class="datatx">Pusat Peragaan Ilmu Pengetahuan dan Teknologi ( Science Center) atau disingkat PP-IPTEK Adalah sarana pembelajaran luar sekolah untuk menumbuh kembangkan budaya ilmu pengetahuan dan teknologi secara mudah, menghibur, berkesan
+                            <p style="text-align:justify;" class="datatx">Pusat Peragaan Ilmu Pengetahuan dan Teknologi ( Science Center) atau disingkat PP-IPTEK Adalah sarana pembelajaran luar sekolah untuk menumbuh kembangkan budaya ilmu pengetahuan dan teknologi secara mudah, menghibur, berkesan
                                 dan kreatif. Gagasan pendiriannya berawal dari Mentri Riset dan Teknologi Republik Indonesia, Prof.Dr.B.J.Habibie, yang berkeinginan bagaimana mencerdaskan masyarakat Indonesia melalui ilmu pengetahuan dan teknologi. Dibangunlah
                                 PP-IPTEK digedung terminal B Skylift-TMII di atas lahan seluas 1000 m2 dan diresmikan oleh Presiden Soeharto pada tanggal 20 April 1991.</p>
-                           
+
                             <p style="text-align:justify;" class="datatx">Pusat peragaan ini dibangun dengan maksud menyadarkan masyarakat mengenai perkembangan ilmu pengetahuan dan teknologi dunia secara sangat cepat.Arah perkembangan ini harus disadari agar kita dapat mengikutinya untuk kemudian
                                 maju bersama perkembangan tersebut.peragaan di PP-IPTEK dibuat sangat menyenangkan dan menghibur, melalui berbagai program dan peragaan interaktif yang dapat disentuh dan dimainkan. Melalui interaksi ini, diharapkan mampu
                                 mendorong tumbuhnya pemikiran tentang apa, mengapa dan bagaimana iptek digali dan dimanfaatkan bagi umat manusia agar lebih nyaman dan sejahtera.</p>
                             <br>
-                            <p style="text-align:justify;" class="datatx"><h3>Harga Tiket Masuk</h3>
+                            <p style="text-align:justify;" class="datatx"></p>
+                            <h3>Harga Tiket Masuk</h3>
                             <p class="box a21">Rp 16.500</p>
-							<br>
+                            <br>
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="iptek.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="iptek.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown108">
                             <h3>Museum Bayt Al-Quran dan Istiqlal</h3>
                             <p style="text-align:justify;" class="datatx">Bayt Al-Qur'an dan museum Istiqlal (BQ dan MI) merupakan kesatuan dari dua lembaga yang berbeda.bayt Al-Qur'an yang erarti rumah Al-Qur'an dengan materi pokok berupa peragaan yang berkaitan dengan Al-Qur'an, sedangkan Museum
-                                Istiqlal menampilkan hasil-hasil kebudayaan Islam Indonesia.
-								Karya-karya unggulan para ulama dan intelektual muslim Nusantara sejak abad ke-17 sampai ke-20 yang bernilai historis dapat disaksikan disini. Warisan budaya berupa musyaf, manuskrip Al-Qur'an, arsitektur, seni rupa Islami
-                                yang memiliki keindahan seni juga tersimpan. Bayt Al-Qur'an dan museum Istiqlal, memang menghadirkan pesona untuk direnungkan.
-                          Bangunan ini memiliki 4 lantai dengan lingkungan yang jauh dari polusi. Selain itu, tempat ini juga memiliki fasilitas ruangan yang lengkap seperti ruang serba guna (main hall), auditorium, audio visual, ruang kelas, pameran,
-                                balkon, dan lain-lain. Semua itu dapat digunakan untuk mengadakan kegiatan seperti seminar, pertunjukan, pameran, perlombaan, forum ilmiah, syukuran, dan lain-lain.
-                           
-                            <br>
+                                Istiqlal menampilkan hasil-hasil kebudayaan Islam Indonesia. Karya-karya unggulan para ulama dan intelektual muslim Nusantara sejak abad ke-17 sampai ke-20 yang bernilai historis dapat disaksikan disini. Warisan budaya
+                                berupa musyaf, manuskrip Al-Qur'an, arsitektur, seni rupa Islami yang memiliki keindahan seni juga tersimpan. Bayt Al-Qur'an dan museum Istiqlal, memang menghadirkan pesona untuk direnungkan. Bangunan ini memiliki 4 lantai
+                                dengan lingkungan yang jauh dari polusi. Selain itu, tempat ini juga memiliki fasilitas ruangan yang lengkap seperti ruang serba guna (main hall), auditorium, audio visual, ruang kelas, pameran, balkon, dan lain-lain. Semua
+                                itu dapat digunakan untuk mengadakan kegiatan seperti seminar, pertunjukan, pameran, perlombaan, forum ilmiah, syukuran, dan lain-lain.
+
+                                <br>
+                            </p>
                             <h3>Harga Tiket Masuk</h3>
                             <p class="box a23">Gratis</p>
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="quran.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="quran.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
-
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown109">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Museum Keprajuritan Indonesia</h3>
                             <p>Arsitekturnya berbentuk benteng persegi lima di atas tanah seluas 4,5Ha dengan luas bangunan 5.500,7 meter persegi. Di dalam bangunan tersebut menggambarkan jiwa dan semangat keprajuritan Bangsa Indonesia yang merupakan dinamika
                                 penggerak dan perjuangan mengusir penjajah dalam upaya menegakkan martabat dan kedaulatan wilayah tanah air.</p>
@@ -935,17 +1099,18 @@
                             <br>
                             <h3>Harga Tiket Masuk</h3>
                             <p>Rp 2.500</p>
-<br>
+                            <br>
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="prajurit.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="prajurit.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown110">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Museum Pusaka</h3>
                             <p>Museum pusaka berada di jalur selatan antara Museum Keprajuritan Indonesia dan Museum Serangga, berupa bangunan khas karena di atas atapnya terdapat bentuk Keris yang menjulang. Luas bangunannya 1.535 m2.</p>
                             <p>Museum memiliki beberapa ruang sebagai sarana dan pendukung bagi sebuah museum, yakni ruang pameran, ruang informasi, ruang pengelola, ruang sarasehan, ruang perpustakaan, ruang konservasi, ruang preservasi, ruang bursa dan
@@ -953,21 +1118,22 @@
                                 pusaka dari zaman ke zaman, dan pusaka hasil temuan. Jenis-jenis kayu untuk membuat pusaka serta ruang besalen (tempat kerja empu pembuat keris) dan peralatannya menlengkapi pameran.</p>
                             <br>
                             <h3>Harga Tiket Masuk</h3>
-                            <br><p>Rp 10.000</p>
-							<br>
+                            <br>
+                            <p>Rp 10.000</p>
+                            <br>
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="pusaka.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="pusaka.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
 
                         </div>
-						
 
                         <!-- en dtab museum-->
 
                         <div class="tab-pane fade" id="dropdown400">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Masjid Pangeran Diponegoro</h3>
                             <img src="gallery_tm/dipone.jpg" alt="" style="width:100%;">
                             <br>
@@ -975,13 +1141,14 @@
                                 belajar al-qur'an. Masjid ini berdiri di atas lahan 2.850 m2 dengan luas bangunan 760 m2 dan terdiri dari dua lantai. Lantai satu untuk para jamaah, tempat wudhu, kamar mandi, ruang tunggu, perpustakaan, gudang dan dapur
                                 ; sedangkan lantai dua tempat imam, khatib, mihrap, serta menara berbentuk kubah berketinggian 26 meter untuk mengumandangkan adzan.</p>
                             <br>
-                            <iframe src="diponegoro.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="diponegoro.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown401">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Wihara Arya Dwipa Arama</h3>
                             <img src="gallery_tm/wihara.jpg" alt="" style="width:100%;">
                             <br>
@@ -989,13 +1156,14 @@
                                 kehidupan manusia berputar seperti sebuah roda. Ceiling ruang ibadah berbentuk setengah lingkaran berwarna kuning emas agar tercipta suasana seperti di dalam nirwana.Patung Budha ditempatkan di sebelah barat.Gedung ibadah
                                 dikelilingi kolam air. Selain penting bagi umat Budha, keberadaan kolam air dari segi a</p>
                             <br>
-                            <iframe src="wihara.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="wihara.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown402">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Gereja Khatolik Santa Catharina</h3>
                             <img src="gallery_tm/katolik.jpg" alt="" style="width:100%;">
                             <br>
@@ -1004,13 +1172,14 @@
                             <p>Secara keseluruhan rumah ibadah ini terdiri dua bangunan, yakni bangunan utama dan aula. Bangunan utama untuk ruang jemaat dan ruang pengampunan dosa, di depannya terdapat menara lengkap dengan lonceng gereja dan puncaknya
                                 bersalib; sedang aula sekaligus menjadi ruang perpustakaan, kantor, ruang pastor, dan toilet. Jika sedang ada misa/ruang perpustakaan digunakan untuk Sekolah MInggu bagi anak-anak di bawah umur 10 tahun.</p>
                             <br>
-                            <iframe src="katolik.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="katolik.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown403">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Klenteng Kong Miao</h3>
                             <img src="gallery_tm/klenteng.jpg" alt="" style="width:100%;">
                             <br>
@@ -1018,12 +1187,13 @@
                                 Gereja Kristen Protestan Haleluya, Pura Hindu Darma,Wihara Arya Dwipa Arama, dan Sasana Adirasa mencerminkan keragaman dan kerukunan umat beragama di Indonesia.</p>
                             <p>Kelenteng Kong Miao dilengkapi ornamen pendukung antara lain: Xiang Lu (Hio Lo) atau tempat pembakaran hio, Pintu Gerbang sepasang Singa, Naga, Kilin, Patung 12 Shio, dan Kura-kura Kepala Naga terdapat di halaman.</p>
                             <br>
-                            <iframe src="klenteng.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="klenteng.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown404">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Pura Penataran Agung Kertabhumi</h3>
                             <img src="gallery_tm/pura.jpg" alt="" style="width:100%;">
                             <br>
@@ -1032,12 +1202,13 @@
                             <p>Bengunan utama terdiri atas pintu gerbang utama Candi Bentar, Balai Gong dan Kul-Kul, Padu Rasa, dan Atlar tempat pemujaan (pad masana). Masing-masing bangunan memiliki fungsi terdiri : gerbang utama sebagai pintu masuk pada
                                 saat upacara besar (yadnya), balai kul-kul untuk tempat kentongan, dan balai gong untuk pertunjukan kesenian.</p>
                             <br>
-                            <iframe src="pura.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="pura.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown405">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Gereja Kristen Protestan Haleluya</h3>
                             <img src="gallery_tm/kristen.jpg" alt="" style="width:100%;">
                             <br>
@@ -1047,12 +1218,13 @@
                             <p>Sebagaimana halnya gereja di luar TMII, selain untuk kebaktian, Gereja Haleluya juga digunakan untuk pemberkatan pernikahan. Kegiatan lain yang bersifat keagamaan pun dilaksanakan disini, antara lain perayaan Paskah, Natal,
                                 dan kegiatan retret. Hari Minggu digunakan untuk ibadat jemaat GPIB, sedang hari sabtu oleh Jemaat Advent.</p>
                             <br>
-                            <iframe src="kristen.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="kristen.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown406">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Sasono Adiroso Pangeran Sambernyowo</h3>
                             <img src="gallery_tm/sasana.jpg" alt="" style="width:100%;">
                             <br>
@@ -1063,15 +1235,16 @@
                                 atas dua bangunan utama, yakni pendopo dan Gedung Pasucen. Pendopo untuk sarasehan, sedangkan Pasucen untuk menyucikan diri di hadapan Tuhan Yang Maha Esa. Pendopo besar yang beratap susun tiga mencerminkan tiga tingkatan
                                 Ilmu Ketuhanan, yaitu Ilmu Kanuragan, Ilmu Sangkan Paraning Dumadi, dan Ilmu Kasampurnaning Dumadi.</p>
                             <br>
-                            <iframe src="sasono.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                            <iframe src="sasono.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                            <p></p>
 
                         </div>
 
                         <!-- end tab ibadah tmii-->
 
                         <div class="tab-pane fade" id="dropdown121">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Istana Anak-anak</h3>
                             <img src="gallery_tm/istana.jpg" alt="" style="width:100%;">
                             <br>
@@ -1085,16 +1258,17 @@
                             <br>
                             <h3>Harga Tiket Masuk</h3>
                             <p>Rp 10.000</p>
-							<br>
+                            <br>
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="istana.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="istana.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
                         </div>
 
                         <div class="tab-pane fade" id="dropdown122">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Waterpark Snowbay</h3>
                             <img src="gallery_tm/snow.jpg" alt="" style="width:100%;">
                             <br>
@@ -1105,17 +1279,18 @@
                             <br>
                             <h3 id="b3">Harga Tiket Masuk</h3>
                             <p>Rp 180.000</p>
-							<br>
+                            <br>
                             <h3 id="b4">Petunjuk Arah</h3>
                             <p>
-                                <iframe src="snowbay.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</p>
+                                <iframe src="snowbay.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown123">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Kereta Gantung</h3>
                             <img src="gallery_tm/k.jpg" alt="" style="width:100%;">
                             <br>
@@ -1124,18 +1299,19 @@
                             <!-- panels can be divs or any block element -->
                             <h3>Harga Tiket Masuk</h3>
                             <p>Rp 40.000</p>
-							<br>
+                            <br>
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="gantung.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="gantung.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
 
                         </div>
 
                         <div class="tab-pane fade" id="dropdown124">
-						<p style="text-align:justify;" class="datatx">
+                            <p style="text-align:justify;" class="datatx">
+                            </p>
                             <h3>Keong Emas</h3>
                             <img src="gallery_tm/keong.jpg.jpg" alt="" style="width:100%;">
                             <br>
@@ -1145,22 +1321,41 @@
                             <br>
                             <h3>Harga Tiket Masuk</h3>
                             <p>Rp 35.000</p>
-							<br>
+                            <br>
 
                             <h3>Petunjuk Arah</h3>
                             <p>
-                                <iframe src="keong.html" width="200px" height="700%" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+                                <iframe src="keong.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
                             </p>
-							</p>
+                            <p></p>
 
                         </div>
 
                         <!-- end tab rekreasi-->
-			
-			
-			
-        </div>
 
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+            
+                    }
+                }
+            }
+        </script>
     </body>
 
 </html>
