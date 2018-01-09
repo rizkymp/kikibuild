@@ -8,6 +8,13 @@
  function register_event_handlers()
  {
     
+        /* graphic button  #petaku*/ 
+    $(document).on("click", "#petaku", function(evt)
+    {
+         /*global activate_subpage*/
+         activate_subpage("#page_42_52"); 
+         return false;
+    });
      
         /* graphic button  #time */
     $(document).on("click", "#time", function(evt)
@@ -162,14 +169,6 @@
     setTimeout(function () {
         myApp.hidePreloader();
         window.open("baru/index.html")
-    }, 5000);
-});
-
-	$$('#petaku').on('click', function () {
-    myApp.showPreloader('Mohon Tunggu')
-    setTimeout(function () {
-        myApp.hidePreloader();
-        window.open("baru2/index.html")
     }, 5000);
 });
     

@@ -11,7 +11,7 @@
         /* button  .uib_w_65 */
     $(document).on("click", ".uib_w_65", function(evt)
     {
-        window.open("../index.html");
+        window.open("../../index.html");
          return false;
     });
     
