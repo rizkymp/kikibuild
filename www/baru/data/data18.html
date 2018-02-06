@@ -379,108 +379,299 @@
             <br>
             <br>
 
-            <style>
-                .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
-                    .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%); }
-                    .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-                    .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-                    .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
-                    .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
-    				.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
-    				.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-    				.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-    				.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
-    				.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
-                   .tab-pane { padding: 5px 0; }
-				                .asd{
-				                height:400px;
-				                overflow-y:scroll;
-				                width:100%;
-				                }
-				                .tab-content{padding:3px}
-				                .nav-tabs2 > li  {width:100%; text-align:center;}
-				                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
-				                
-            </style>
+           <div class="wrapper">
+    <style type="text/css">
+        
+        /**
+ * Responsive Bootstrap Tabs by @hayatbiralem
+ * 15 May 2015
+ */
 
-            <div id="exTab2" class="container">
-                <ul class="nav nav-tabs2">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Wahana Air <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#dropdown300" data-toggle="tab">Aquatube</a>
-                            </li>
-                            <li><a href="#dropdown301" data-toggle="tab">Speedslide</a>
-                            </li>
-                            <li><a href="#dropdown302" data-toggle="tab">Hairpin</a>
-                            </li>
-                            <li><a href="#dropdown303" data-toggle="tab">Twitzter</a>
-                            </li>
-                            <li><a href="#dropdown304" data-toggle="tab">The Whizzard</a>
-                            </li>
+@mixin ellipsis(){
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
+}
 
-                        </ul>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade" id="dropdown300">
-                        <center>
+@mixin icon-styles(){
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@media screen and (max-width: 479px) {
+  .nav-tabs-responsive {
+    > li {
+      display: none;
+      width: 23%;
+      > a {
+        @include ellipsis();
+        width: 100%;
+        text-align: center;
+        vertical-align: top;
+      }
+      &.active {
+        width: 54%;
+        &:first-child {
+          margin-left: 23%;
+        }
+      }
+      &.active,
+      &.prev,
+      &.next {
+        display: block;
+      }
+      &.prev,
+      &.next {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+      &.next > a,
+      &.prev > a {
+        -webkit-transition: none;
+        transition: none;
+        .text {
+          display: none;
+        }
+        &:after,
+        &:after {
+          @include icon-styles();
+        }
+      }
+      &.prev > a:after {
+        content: "\e079";
+      }
+      &.next > a:after {
+        content: "\e080";
+      }
+      &.dropdown {
+        > a > .caret {
+          display: none;
+        }
+        > a:after {
+          content: "\e114";
+        }
+        &.active > a {
+          &:after {
+            display: none;
+          }
+          > .caret {
+            display: inline-block;
+          }
+        }
+
+        .dropdown-menu {
+          &.pull-xs-left {
+            left: 0;
+			
+			
+			
+            right: auto;
+          }
+          &.pull-xs-center {
+            right: auto;
+            left: 50%;
+            @include transform(translateX(-50%));
+          }
+          &.pull-xs-right {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Demo Styles
+ */
+
+.wrapper {
+  padding: 15px 0;
+}
+
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 479px) {
+  #narrow-browser-alert {
+    display: none;
+  }
+}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+    </style>
+<script type="text/javascript">
+    
+(function($) {
+
+  'use strict';
+
+  $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function(e) {
+    var $target = $(e.target);
+    var $tabs = $target.closest('.nav-tabs-responsive');
+    var $current = $target.closest('li');
+    var $parent = $current.closest('li.dropdown');
+        $current = $parent.length > 0 ? $parent : $current;
+    var $next = $current.next();
+    var $prev = $current.prev();
+    var updateDropdownMenu = function($el, position){
+      $el
+        .find('.dropdown-menu')
+        .removeClass('pull-xs-left pull-xs-center pull-xs-right')
+        .addClass( 'pull-xs-' + position );
+    };
+
+    $tabs.find('>li').removeClass('next prev');
+    $prev.addClass('prev');
+    $next.addClass('next');
+    
+    updateDropdownMenu( $prev, 'left' );
+    updateDropdownMenu( $current, 'center' );
+    updateDropdownMenu( $next, 'right' );
+  });
+
+})(jQuery);
+
+</script>
+  <div class="container">
+
+    <div class="bs-example bs-example-tabs card" role="tabpanel" data-example-id="togglable-tabs">
+      <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+            <span class="text">Home</span>
+          </a>
+        </li>
+        
+        <li role="presentation" class="dropdown">
+          <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">
+            <span class="text">Dropdown</span>
+            <span class="caret">
+            </span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+            <li>
+              <a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">
+                <span>Aquatube</span>
+              </a>
+            </li>
+            <li>
+              <a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">
+                <span>Speedslide</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown3" tabindex="-1" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="dropdown3">
+                <span>Hairpin</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown4" tabindex="-1" role="tab" id="dropdown4-tab" data-toggle="tab" aria-controls="dropdown4">
+                <span>Twitzter</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown5" tabindex="-1" role="tab" id="dropdown5-tab" data-toggle="tab" aria-controls="dropdown5">
+                <span>The Whizzard</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+		
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+         <center> <h3>Objek Wisata Waterboom</h3></center>
+		 <p> Terdapat beberapa wahana air di Waterboom Jakarta.</p>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
+         <center>
+                            <h3 class="datatx">Speed Slide</h3>
+                            <img src="gallery_wt/sp.jpg" alt="" class="img-circle" width="150" height="150">
+							</center>
+							<br>
+							<br>
+                            <p>Dengan rata-rata kecepatan meluncur bebas 70km per jam dipastikan akan memompa adrenalin. Tinggi wahana ini mencapai 20 meter lebih dengan panjang lintasan 118 meter. Terdiri atas 2 wahana yang masing-masing mempunyai keunikan.
+                            </p>
+                            <br>
+                        
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="dropdown3" aria-labelledby="dropdown3-tab">
+           <center>
+                            <h3 class="datatx">Hairpin</h3>
+                            <img src="gallery_wt/hp.jpg" alt="" class="img-circle" width="150" height="150">
+							<br>
+							<br>
+                            <p>Seluncuran air yang dinamai hairpin atau tusuk konde karena bentuknya yang memang menyerupai benda tersebut. Mencoba wahana ini dengan menggunakan kapal-kapalan yang berkapasitas 4 orang. Serunya wahana ini karena pengunjung
+                                bisa menikmati seluncuran seperti arum jeram, berputar menuruni slider yang panjangnya tidak kurang dari 17 meter.</p>
+                            <br>
+                        
+        </div>
+		<div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+         <center>
                             <h3 class="datatx">Aquatube</h3>
                             <img src="gallery_wt/aq.jpg" alt="" class="img-circle" width="150" height="150">
+							
+							</center>
+							<br>
+							<br>
                             <p>Seluncuran air dengan dengan kecepatan yang relatif menengah. Dengan tinggi 14,5 meter melintasi areal sepanjang 115 m. Di wahana yang satu ini pengunjung ditwarkan 3 tube yang berbeda, ada yang tertutup, setengah tertutup
                                 dan sepenuhnya terbuka. Buat yang lebih suka tantangan tentu tabung yang tertutup akan sangat memacu adrenalin. Namun buat yang menyukai seluncur sambil menikmati keindahan lanscape sekita waterpark bisa mencoba seluncur
                                 yang terbuka.</p>
                             <br>
-                        </center>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="dropdown301">
-                        <center>
-                            <h3 class="datatx">Speed Slide</h3>
-                            <img src="gallery_wt/sp.jpg" alt="" class="img-circle" width="150" height="150">
-                            <p>Dengan rata-rata kecepatan meluncur bebas 70km per jam dipastikan akan memompa adrenalin. Tinggi wahana ini mencapai 20 meter lebih dengan panjang lintasan 118 meter. Terdiri atas 2 wahana yang masing-masing mempunyai keunikan.
-                            </p>
-                            <br>
-                        </center>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="dropdown302">
-                        <center>
-                            <h3 class="datatx">Hairpin</h3>
-                            <img src="gallery_wt/hp.jpg" alt="" class="img-circle" width="150" height="150">
-                            <p>Seluncuran air yang dinamai hairpin atau tusuk konde karena bentuknya yang memang menyerupai benda tersebut. Mencoba wahana ini dengan menggunakan kapal-kapalan yang berkapasitas 4 orang. Serunya wahana ini karena pengunjung
-                                bisa menikmati seluncuran seperti arum jeram, berputar menuruni slider yang panjangnya tidak kurang dari 17 meter.</p>
-                            <br>
-                        </center>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="dropdown303">
-                        <center>
+                        
+        </div>
+		<div role="tabpanel" class="tab-pane fade" id="dropdown4" aria-labelledby="dropdown4-tab">
+          <center>
                             <h3 class="datatx">Twitzler</h3>
                             <img src="gallery_wt/tw.jpg" alt="" class="img-circle" width="150" height="150">
+							</center>
+							<br>
+							<br>
                             <p>Bentuknya yang menyerupai terowongan raksasa dengan panjang 90 meter akan membawa pengunjung berputar-putar mengelingi wahana ini.</p>
 
                             <br>
-                        </center>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="dropdown304">
-                        <center>
+                        
+        </div>
+		<div role="tabpanel" class="tab-pane fade" id="dropdown5" aria-labelledby="dropdown5-tab">
+          <center>
                             <h3 class="datatx">The Whizzard</h3>
                             <img src="gallery_wt/wz.jpg" alt="" class="img-circle" width="150" height="150">
+							</center>
+							<br>
+							<br>
                             <p>Seluncuran kembar sejajar dengan lintasan berbentuk terowongan, berbelok sekali, turun bergelombang dan berhenti di lintasan terbuka. Peluncur menggunakan mat (matras) sebagai alat untuk meluncur.</p>
                             <br>
-                        </center>
-
-                    </div>
-
-                </div>
-            </div>
+                        
         </div>
+
+      </div>
+    </div>
+  </div>
+</div>
     </body>
 
 </html>

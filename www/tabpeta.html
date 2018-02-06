@@ -10,6 +10,8 @@
   <center><div id="map" style="width: 540px; height: 400px;"></div>
 </center>
   <script>
+
+
             // Define your locations: HTML content for the info window, latitude, longitude
             var locations = [
                         ['<p id="ko"><center>Kota Tua<br><img src="images/ko.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Lada, Pinangsia, Tamansari, RT.7/RW.7, Pinangsia<br><a href="kotu">Details Kota Tua</a></p>', -6.1377363, 106.8112781, 1],
@@ -26,7 +28,7 @@
                         ['<p id="kr">Museum Seni rupa dan Keramik<br><img src="images/kq.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Pos Kota, RT.9/RW.2, Daerah Khusus Ibukota Jakarta, Jakarta Barat, West Jakarta City, Jakarta 11110<br><a href="kramik">Details Museum Seni rupa dan Keramik</a></p>', -6.1342199, 106.8122277, 12],
                         ['<p id="bi">Museum Bank Indonesia<br><img src="images/bank1.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Kebon Sirih No.22 Blok H Lt.IX No.53Jakarta Pusat<br><a href="bank">Details Museum Bank Indonesia</a></p>', -6.137103, 106.8108123, 13],
                         ['<p id="mt">Museum Tekstil<br><img src="images/t11.jpg" alt="" class="img-circle" width="150" height="150"><br>Jl. Aipda Ks Tubun No.2-4, Tanah Abang, Petamburan, RT.6/RW.1, Kota Bambu Sel, Palmerah, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 10260<br><a href="tekstil">Details Museum Bank Indonesia</a></p>', -6.1879814, 106.8074588, 14],
-                        ['<p id="mg">Taman Alam Mangrove<br><img src="images/mang.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Garden House, Kamal Muara, Penjaringan, RT.8/RW.1,Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14470<br><a href="mangrove">Details Hutan Mangrove</a></p>', -6.1053344, 106.7333955, 15],
+                        ['<p id="mg">Taman Alam Mangrove<br><img src="images/mang.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Garden House, Kamal Muara, Penjaringan, RT.8/RW.1,Kota Jkt Utara, Daerah Khusus Ibukota Ja1karta 14470<br><a href="mangrove">Details Hutan Mangrove</a></p>', -6.1053344, 106.7333955, 15],
                         ['<p id="wi">Taman Bunga Wiladatika<br><img src="images/bunga1.jpg" alt="" class="img-circle" width="150" height="150"><br>Jalan Jambore No.1 RT. 03 / RW.03, Harjamukti, Ciracas, Jakarta Timur 13720</a></p>', -6.3711578, 106.8909645, 16],
                         ['<p id="wb">Waterboom Jakarta<br><img src="images/wat.jpg" alt="" class="img-circle" width="150" height="150"><br>pantai indah kapuk, Jalan Pantai Indah Barat No.1, RT.7/RW.2, Kamal Muara, Penjaringan, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14470<br><a href="water">Details Waterboom Jakarta</a></p>',-6.1138299, 106.7458027, 17],
                         ['<p id="pt">Planetarium<br><img src="images/pl.jpg" alt="" class="img-circle" width="150" height="150"><br>JL.Taman Ismail Marzuki No.73, Jalan Cikini Raya, Menteng, Jakarta Pusat. <br><a href="planet">Details Planetarium</a></p>', -6.190171, 106.8369473, 18],
@@ -63,17 +65,22 @@
     ]
     var iconsLength = icons.length;
 
+    
+
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
       center: new google.maps.LatLng(-6.1932165,106.8829794),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      mapTypeControl: false,
-      streetViewControl: false,
-      panControl: false,
+      mapTypeControl: true,
+      streetViewControl: true,
+      panControl: true,
       zoomControlOptions: {
-         position: google.maps.ControlPosition.LEFT_BOTTOM
+         position: google.maps.ControlPosition.RIGHT_BOTTOM
+
       }
     });
+
+    
 
     var infowindow = new google.maps.InfoWindow({
       maxWidth: 160
@@ -107,6 +114,7 @@
       }
     }
 
+
     function autoCenter() {
       //  Create a new viewpoint bound
       var bounds = new google.maps.LatLngBounds();
@@ -118,6 +126,10 @@
       map.fitBounds(bounds);
     }
     autoCenter();
+var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+    
+
   </script> 
 </body>
 </html>

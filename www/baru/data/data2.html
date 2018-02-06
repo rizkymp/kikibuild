@@ -190,13 +190,7 @@
 									</p>
 									<p></p>
 
-									<p style="text-align:justify;">
-									</p>
-									<h3 class="datatx"><b>Koleksi Kebun Binatang Ragunan</b></h3>
-									<br>
-									<p class="datatx">Kebun binatang seluas 140 hektare ini didirikan pada tahun 1864. Di dalamnya, terdapat berbagai koleksi yang terdiri dari 295 spesies dan 4040 spesimen.
-									</p>
-									<p></p>
+						
 
 								</div>
 								<div role="tabpanel" class="tab-pane" id="lokasi7">
@@ -352,366 +346,1248 @@
 			</div>
 			<br>
 
-			<style>
-				.nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
-				                .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%); }
-				                .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-				                .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-				                .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
-				                .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
-								.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
-								.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-								.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-								.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
-								.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
-				                .tab-pane { padding: 5px 0; }
-				                .asd{
-				                height:400px;
-				                overflow-y:scroll;
-				                width:100%;
-				                }
-				                .tab-content{padding:3px}
-				                .nav-tabs2 > li  {width:100%; text-align:center;}
-				                .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
-								
-					.row{
-    margin-top:40px;
-    padding: 0 10px;
+			<div class="wrapper">
+    <style type="text/css">
+        
+        /**
+ * Responsive Bootstrap Tabs by @hayatbiralem
+ * 15 May 2015
+ */
+
+@mixin ellipsis(){
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
 }
 
-.clickable{
-    cursor: pointer;   
+@mixin icon-styles(){
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.panel-heading span {
-	margin-top: -20px;
-	font-size: 15px;
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
 }
-				          
-			</style>
+
+@media screen and (max-width: 479px) {
+  .nav-tabs-responsive {
+    > li {
+      display: none;
+      width: 23%;
+      > a {
+        @include ellipsis();
+        width: 100%;
+        text-align: center;
+        vertical-align: top;
+      }
+      &.active {
+        width: 54%;
+        &:first-child {
+          margin-left: 23%;
+        }
+      }
+      &.active,
+      &.prev,
+      &.next {
+        display: block;
+      }
+      &.prev,
+      &.next {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+      &.next > a,
+      &.prev > a {
+        -webkit-transition: none;
+        transition: none;
+        .text {
+          display: none;
+        }
+        &:after,
+        &:after {
+          @include icon-styles();
+        }
+      }
+      &.prev > a:after {
+        content: "\e079";
+      }
+      &.next > a:after {
+        content: "\e080";
+      }
+      &.dropdown {
+        > a > .caret {
+          display: none;
+        }
+        > a:after {
+          content: "\e114";
+        }
+        &.active > a {
+          &:after {
+            display: none;
+          }
+          > .caret {
+            display: inline-block;
+          }
+        }
+
+        .dropdown-menu {
+          &.pull-xs-left {
+            left: 0;
 			
-			<script>
-			$(document).on('click', '.panel-heading span.clickable', function(e){
-    var $this = $(this);
-	if(!$this.hasClass('panel-collapsed')) {
-		$this.parents('.panel').find('.panel-body').slideUp();
-		$this.addClass('panel-collapsed');
-		$this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-	} else {
-		$this.parents('.panel').find('.panel-body').slideDown();
-		$this.removeClass('panel-collapsed');
-		$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-	}
-})
+			
+			
+            right: auto;
+          }
+          &.pull-xs-center {
+            right: auto;
+            left: 50%;
+            @include transform(translateX(-50%));
+          }
+          &.pull-xs-right {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Demo Styles
+ */
+
+.wrapper {
+  padding: 15px 0;
+}
+
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 479px) {
+  #narrow-browser-alert {
+    display: none;
+  }
+}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+    </style>
+<script type="text/javascript">
+    
+(function($) {
+
+  'use strict';
+
+  $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function(e) {
+    var $target = $(e.target);
+    var $tabs = $target.closest('.nav-tabs-responsive');
+    var $current = $target.closest('li');
+    var $parent = $current.closest('li.dropdown');
+        $current = $parent.length > 0 ? $parent : $current;
+    var $next = $current.next();
+    var $prev = $current.prev();
+    var updateDropdownMenu = function($el, position){
+      $el
+        .find('.dropdown-menu')
+        .removeClass('pull-xs-left pull-xs-center pull-xs-right')
+        .addClass( 'pull-xs-' + position );
+    };
+
+    $tabs.find('>li').removeClass('next prev');
+    $prev.addClass('prev');
+    $next.addClass('next');
+    
+    updateDropdownMenu( $prev, 'left' );
+    updateDropdownMenu( $current, 'center' );
+    updateDropdownMenu( $next, 'right' );
+  });
+
+})(jQuery);
+
 </script>
-
-			<div id="exTab2" class="container">
-				<center>
-					<img src="images/zoo.jpg" width="100%" height="30%">
-				</center>
-					<div class="row">
-		<div class="col-md-6">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<ul class="nav nav-tabs2">
-
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Aneka Satwa <b class="caret"></b></a>
-					<span class="pull-right clickable"></span>
+  <div class="container">
+   
+    
+    <div class="bs-example bs-example-tabs card" role="tabpanel" data-example-id="togglable-tabs">
+      <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+            <span class="text">Koleksi Binatang</span>
+          </a>
+        </li>
+        
+        <li role="presentation" class="dropdown">
+          <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">
+            <span class="text">Mamalia</span>
+            <span class="caret">
+            </span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+            <li>
+              <a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">
+                <span>Harimau</span>
+              </a>
+            </li>
+            <li>
+              <a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">
+                <span>Beruang Madu</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown3" tabindex="-1" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="dropdown3">
+                <span>Orang Utan</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown4" tabindex="-1" role="tab" id="dropdown4-tab" data-toggle="tab" aria-controls="dropdown4">
+                <span>Singa</span>
+              </a>
+            </li>
+		
+			<li>
+              <a href="#dropdown6" tabindex="-1" role="tab" id="dropdown6-tab" data-toggle="tab" aria-controls="dropdown6">
+                <span>Monyet Kokah</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown7" tabindex="-1" role="tab" id="dropdown7-tab" data-toggle="tab" aria-controls="dropdown7">
+                <span>Anoa</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown8" tabindex="-1" role="tab" id="dropdown8-tab" data-toggle="tab" aria-controls="dropdown8">
+                <span>Simpanse</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown9" tabindex="-1" role="tab" id="dropdown9-tab" data-toggle="tab" aria-controls="dropdown9">
+                <span>Gajah</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown10" tabindex="-1" role="tab" id="dropdown10-tab" data-toggle="tab" aria-controls="dropdown10">
+                <span>Macan</span>
+              </a>
+            </li>
 				
+          </ul>
+		  <!-- dropdown pertama-->
+		  
+        </li><li role="presentation" class="dropdown">
+          <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">
+            <span class="text">Aves</span>
+            <span class="caret">
+            </span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+            <li>
+              <a href="#dropdown11" tabindex="-1" role="tab" id="dropdown11-tab" data-toggle="tab" aria-controls="dropdown11">
+                <span>Burung Elang</span>
+              </a>
+            </li>
+            <li>
+              <a href="#dropdown12" tabindex="-1" role="tab" id="dropdown12-tab" data-toggle="tab" aria-controls="dropdown12">
+                <span>Burung Pelikan</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown13" tabindex="-1" role="tab" id="dropdown13-tab" data-toggle="tab" aria-controls="dropdown13">
+                <span>Burung Flamingo</span>
+              </a>
+            </li>
+			<li>
+              <a href="#dropdown14" tabindex="-1" role="tab" id="dropdown14-tab" data-toggle="tab" aria-controls="dropdown14">
+                <span>Burung Merak Biru</span>
+              </a>
+            </li>
 			
-				
-						<ul class="dropdown-menu">
-							<li><a href="#dropdown501" data-toggle="tab">Harimau</a>
-							</li>
-							<li><a href="#dropdown502" data-toggle="tab">Beruang</a>
-							</li>
-							<li><a href="#dropdown503" data-toggle="tab">Orang Utan</a>
-							</li>
-							<li><a href="#dropdown504" data-toggle="tab">Singa</a>
-							</li>
-							<li><a href="#dropdown505" data-toggle="tab">Gorilla</a>
-							</li>
-							<li><a href="#dropdown506" data-toggle="tab">Monyet Kokah</a>
-							</li>
-							<li><a href="#dropdown507" data-toggle="tab">Anoa</a>
-							</li>
-							<li><a href="#dropdown508" data-toggle="tab">Simpanse</a>
-							</li>
-							<li><a href="#dropdown509" data-toggle="tab">Gajah</a>
-							</li>
-							<li><a href="#dropdown510" data-toggle="tab">Macan</a>
-							</li>
-							<li><a href="#dropdown511" data-toggle="tab">Komodo</a>
-							</li>
-							<li><a href="#dropdown512" data-toggle="tab">Biawak</a>
-							</li>
-							<li><a href="#dropdown513" data-toggle="tab">Burung Pelikan</a>
-							</li>
-							<li><a href="#dropdown514" data-toggle="tab">Burung Flamingo</a>
-							</li>
-							<li><a href="#dropdown515" data-toggle="tab">Burung Merak Biru</a>
-							</li>
-							<li><a href="#dropdown516" data-toggle="tab">Burung Elang</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<div class="panel-body">Panel content
-				<div class="tab-content ">
-					<div class="tab-pane fade" id="dropdown501">
-						<center>
-							<h3 class="datatx"><b>Harimau</b></h3>
-							<img src="gallery_rg/harimau.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							
-							<p style="text-align:justify;">Harimau sumatera (Panthera tigris sumatrae) adalah subspesies harimau yang habitat aslinya di pulau Sumatera. memiliki ciri kulit loreng coklat kekuning-kuningan dengan garis-garis hitam vertikal dari kepala sampai ekor. Tinggi dapat mencapai 60
+          </ul>
+        </li>
+		
+		<li role="presentation" class="dropdown">
+          <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">
+            <span class="text">Reptilia</span>
+            <span class="caret">
+            </span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+            <li>
+              <a href="#dropdown15" tabindex="-1" role="tab" id="dropdown15-tab" data-toggle="tab" aria-controls="dropdown15">
+                <span>Komodo</span>
+              </a>
+            </li>
+			
+            <li>
+              <a href="#dropdown16" tabindex="-1" role="tab" id="dropdown16-tab" data-toggle="tab" aria-controls="dropdown16">
+                <span>Biawak</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+		
+		 <li role="presentation">
+          <a href="#samsa" role="tab" id="samsa-tab" data-toggle="tab" aria-controls="samsa">
+            <span class="text">Pusat Primata</span>
+          </a>
+        </li>
+       
+      </ul>
+	  
+      <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+		<h3><b>Koleksi Kebun Binatang Ragunan</b></h3>
+          <p>
+            Kebun binatang seluas 140 hektare ini didirikan pada tahun 1864. Di dalamnya, terdapat berbagai koleksi yang terdiri dari 295 spesies dan 4040 spesimen.
+          </p>
+        </div>
+       
+        <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+          <p>
+		  <center>
+          <h3 class="datatx"><b>Harimau</b></h3>
+			<img src="gallery_rg/harimau.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Harimau sumatera (Panthera tigris sumatrae) adalah subspesies harimau yang habitat aslinya di pulau Sumatera. memiliki ciri kulit loreng coklat kekuning-kuningan dengan garis-garis hitam vertikal dari kepala sampai ekor. Tinggi dapat mencapai 60
 								cm, dengan panjang 250 cm. Merupakan sub spesies Harimau terakhir yang ada di Indonesia.
-							</p>
-							<br>
-							<center>
-								<h3><b>Lokasi Harimau</b></h3>
-								<iframe src="harimau.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-					<div class="tab-pane fade" id="dropdown502">
-						<center>
-							<h3 class="datatx"><b>Beruang Madu</b></h3>
-							<img src="gallery_rg/beruang.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
+									<div class="container">
 
-							<p style="text-align:justify;">Beruang madu (Helarctos malayanus) memiliki seluruh tubuh berwarna hitam mengkilap, ekor sangat pendek, moncong abu-abu. Dada atas ada bercak putih kekuningan membentuk huruf “V” atau “C”. Berat tubuh dapat mencapai 60 kg.</p>
-							<br>
-							<center>
-								<h3><b>Lokasi Beruang Madu</b></h3>
-								<iframe src="beruang.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          Lokasi Harimau
+        </a>
+      </h4>
+												</div>
+												<div id="collapse2" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="harimau.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
 
-					<div class="tab-pane fade" id="dropdown503">
-						<center>
-							<h3 class="datatx"><b>Orang Utan</b></h3>
-							<img src="gallery_rg/orgutan.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		
+		
+        <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Beruang Madu</b></h3>
+			<img src="gallery_rg/beruang.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Beruang madu (Helarctos malayanus) memiliki seluruh tubuh berwarna hitam mengkilap, ekor sangat pendek, moncong abu-abu. Dada atas ada bercak putih kekuningan membentuk huruf “V” atau “C”. Berat tubuh dapat mencapai 60 kg.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-							<p style="text-align:justify;">Orangutan adalah sejenis kera besar dengan lengan panjang dan berbulu kemerahan atau cokelat, yang hidup di hutan tropika Indonesia dan Malaysia, khususnya di Pulau Kalimantan dan Sumatera. Orangutan memiliki tubuh yang gemuk dan besar, berleher
-								besar, lengan yang panjang dan kuat, kaki yang pendek dan tertunduk, dan tidak mempunyai ekor.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Orang Utan</b></h3>
-								<iframe src="orgutan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<div class="container">
 
-					<div class="tab-pane fade" id="dropdown504">
-						<center>
-							<h3 class="datatx"><b>Singa</b></h3>
-							<img src="gallery_rg/singa.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Singa (Panthera leo) adalah spesies hewan dari keluarga felidae atau jenis kucing. Singa merupakan hewan yang hidup berkelompok. Biasanya terdiri dari seekor jantan dan banyak betina. Kelompok ini menjaga daerah kekuasaannya.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Singa</b></h3>
-								<iframe src="singa.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          Lokasi Beruang
+        </a>
+      </h4>
+												</div>
+												<div id="collapse3" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="beruang.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
 
-					<div class="tab-pane fade" id="dropdown505">
-						<center>
-							<h3 class="datatx"><b>Gorilla</b></h3>
-							<img src="gallery_rg/gorilla.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Gorila adalah jenis primata yang terbesar. Gorila berasal dari hutan tropis di Afrika. 97-98% DNA gorila identik dengan DNA manusia. Gorila adalah spesies kedua setelah simpanse yang terdekat dengan manusia. Ada dua spesies dalam genus gorila,
-								yaitu gorila timur (eastern gorila) dan gorilla barat (western gorila).</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Gorilla</b></h3>
-								<iframe src="gorilla.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown3" aria-labelledby="dropdown3-tab">
+          <p>
+		  <center>
+          <h3 class="datatx"><b>Orang Utan</b></h3>
+			<img src="gallery_rg/orgutan.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Orangutan adalah sejenis kera besar dengan lengan panjang dan berbulu kemerahan atau cokelat, yang hidup di hutan tropika Indonesia dan Malaysia, khususnya di Pulau Kalimantan dan Sumatera. Orangutan memiliki tubuh yang gemuk dan besar, berleher
+								besar, lengan yang panjang dan kuat, kaki yang pendek dan tertunduk, dan tidak mempunyai ekor.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-					<div class="tab-pane fade" id="dropdown506">
-						<center>
-							<h3 class="datatx"><b>Monyet Kokah</b></h3>
-							<img src="gallery_rg/kokah.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Monyet Kokah (Presbytis siamensis) adalah spesies primata dalam keluarga Cercopithecidae. Mereka tersebar di Thailand-Semenanjung Malaya, Kepulauan Riau dan Sumatra. Empat subspesies, siamensis (mencalonkan), Kana, paenulata dan rhionis, diakui
-								di sini, tapi taxonomyis sengketa dan membutuhkan tinjauan, dan sudah termasuk P. natunae sebagai subspesies, atau alternatif keduanya telah dianggap subspesies dari P. femoralis.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Monyet Kokah</b></h3>
-								<iframe src="kokah.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<div class="container">
 
-					<div class="tab-pane fade" id="dropdown507">
-						<center>
-							<h3 class="datatx"><b>Anoa</b></h3>
-							<img src="gallery_rg/anoa.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Anoa adalah hewan endemik Sulawesi, sekaligus maskot provinsi Sulawesi Tenggara. Anoa biasa disebut sapihutan adalah subgenus dari Bubalus terdiri dari dua spesies asli Indonesia. Mereka hidup di hutan hujan, semak, dan rawa.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Anoa</b></h3>
-								<iframe src="anoa.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          Lokasi Orang Utan
+        </a>
+      </h4>
+												</div>
+												<div id="collapse4" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="orgutan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
 
-					<div class="tab-pane fade" id="dropdown508">
-						<center>
-							<h3 class="datatx"><b>Simpanse</b></h3>
-							<img src="gallery_rg/simpanse.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Simpanse (Pan troglodytes) adalah anggota dari keluarga Hominidae, bersama dengan gorila, manusia, dan orangutan. Simpanse terpisah dengan manusia dalam ranting keluarga sekitar 4 – 6 juta tahun lalu. Dua spesies simpanse di atas adalah kerabat
-								terdekat manusia, semuanya anggota dari suku Hominini (berikut dengan spesies yang punah dari sub-suku Hominina). Simpanse satu-satunya anggota yang diketahui dari sub-suku Panina. Kedua spesies Pan tersebut terpisah sekitar 1 juta tahun lalu.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Simpanse</b></h3>
-								<iframe src="simpanse.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown4" aria-labelledby="dropdown4-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Singa</b></h3>
+			<img src="gallery_rg/singa.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Singa (Panthera leo) adalah spesies hewan dari keluarga felidae atau jenis kucing. Singa merupakan hewan yang hidup berkelompok. Biasanya terdiri dari seekor jantan dan banyak betina. Kelompok ini menjaga daerah kekuasaannya.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-					<div class="tab-pane fade" id="dropdown509">
-						<center>
-							<h3 class="datatx"><b>Gajah Sumatera</b></h3>
-							<img src="gallery_rg/gajah.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Gajah sumatera adalah subspesies dari gajah asia yang hanya berhabitat di pulau Sumatera. Gajah sumatera berpostur lebih kecil daripada subspesies gajah india. Populasinya semakin menurun dan menjadi spesies yang sangat terancam.</p>
-							<br>
-							<h3 class="datatx"><b>Lokasi Gajah</b></h3>
-							<center>
-								<h3><b>Lokasi Gajah Sumatera</b></h3>
-								<iframe src="gajah.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<div class="container">
 
-					<div class="tab-pane fade" id="dropdown510">
-						<center>
-							<h3 class="datatx"><b>Macan Tutul</b></h3>
-							<img src="gallery_rg/macan.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Macan tutul (Panthera pardus) adalah salah satu dari lima kucing besar dalam genus Panthera. Ini adalah anggota dari keluarga Felidae dengan berbagai di beberapa bagian sub-Sahara Afrika, Asia Barat, Timur Tengah, Asia Selatan dan Asia Tenggara
-								ke Siberia.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Macan Tutul</b></h3>
-								<iframe src="macan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+          Lokasi Singa
+        </a>
+      </h4>
+												</div>
+												<div id="collapse5" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="orgutan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
 
-					<div class="tab-pane fade" id="dropdown511">
-						<center>
-							<h3 class="datatx"><b>Komodo</b></h3>
-							<img src="gallery_rg/komodo.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Komodo adalah spesies kadal besar yang ditemukan di pulau-pulau Indonesia Komodo, Rinca, Flores, Gili Motang, dan Padar. Merupakan anggota keluarga biawak (Varanidae), dan spesies kadal terbesar yang masih hidup, panjang maksimalnya dalap mencapai
-								3 meter (10 kaki) dan beratnya bisa mencapai 70 kilogram.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Komodo</b></h3>
-								<iframe src="komodo.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
 
-					<div class="tab-pane fade" id="dropdown512">
-						<center>
-							<h3 class="datatx"><b>Biawak</b></h3>
-							<img src="gallery_rg/biawak.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Biawak Salvador (Varanus salvator) merupakan salah satu kadal terbesar di Asia Selatan dan Tenggara. Spesies biawak ini banyak ditemukan di Bangladesh, Sri Lanka and India, Semenanjung Malaya, dan berbagai pulau di Indonesia. Habitat biawak ini
-								tinggal di daerah dekat dengan air.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Biawak</b></h3>
-								<iframe src="biawak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+		<div role="tabpanel" class="tab-pane fade" id="dropdown6" aria-labelledby="dropdown6-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Monyet Kokah</b></h3>
+			<img src="gallery_rg/kokah.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Monyet Kokah (Presbytis siamensis) adalah spesies primata dalam keluarga Cercopithecidae. Mereka tersebar di Thailand-Semenanjung Malaya, Kepulauan Riau dan Sumatra. Empat subspesies, siamensis (mencalonkan), Kana, paenulata dan rhionis, diakui
+								di sini, tapi taxonomyis sengketa dan membutuhkan tinjauan, dan sudah termasuk P. natunae sebagai subspesies, atau alternatif keduanya telah dianggap subspesies dari P. femoralis.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-					<div class="tab-pane fade" id="dropdown513">
-						<center>
-							<h3 class="datatx"><b>Burung Pelikan</b></h3>
-							<img src="gallery_rg/pelikan.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Burung undan atau pelikan adalah burung air yang memiliki kantung di bawah paruhnya, dan merupakan bagian dari keluarga burung Pelecanidae. Bersama burung pecuk, pecuk ular, gannet, angsa batu, dan cikalang, mereka membentuk ordo Pelecaniformes.
-								Pelikan modern ditemukan di semua benua kecuali Antartika. Mereka hidup umumnya di wilayah hangat, dan mereka tidak dijumpai di wilayah kutub, laut dalam, kepulauan samudra, dan benua Amerika Selatan.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Burung Pelikan</b></h3>
-								<iframe src="pelikan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+									<div class="container">
 
-					<div class="tab-pane fade" id="dropdown514">
-						<center>
-							<h3 class="datatx"><b>Burung Flamingo</b></h3>
-							<img src="gallery_rg/flamingo.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Flamingo adalah spesies burung berkaki jenjang yang hidup berkelompok. Mereka berasal dari genus Phoenicopterus dan familia Phoenicopteridae. Burung ini ditemukan di belahan bumi barat dan timur, namun lebih banyak terdapat di belahan timur. Terdapat
-								4 spesies flamingo di Amerika dan 2 jenis flamingo di Dunia Lama</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Burung Flamingo</b></h3>
-								<iframe src="flamingo.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+          Lokasi Monyet Kokah
+        </a>
+      </h4>
+												</div>
+												<div id="collapse6" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="kokah.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
 
-					<div class="tab-pane fade" id="dropdown515">
-						<center>
-							<h3 class="datatx"><b>Burung Merak Biru</b></h3>
-							<img src="gallery_rg/merak.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Merak biru (Pavo cristatus) adalah burung besar dan berwarna cerah dari keluarga asli burung dari Asia Selatan, namun diperkenalkan di banyak bagian lain dunia seperti Amerika Serikat, Meksiko, Honduras, Kolombia, Guyana, Suriname, Brazil, Uruguay,
-								Argentina, Afrika Selatan, Madagaskar, Papua, dan Australia.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Burung Merak Biru</b></h3>
-								<iframe src="merak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown7" aria-labelledby="dropdown7-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Anoa</b></h3>
+			<img src="gallery_rg/anoa.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Anoa adalah hewan endemik Sulawesi, sekaligus maskot provinsi Sulawesi Tenggara. Anoa biasa disebut sapihutan adalah subgenus dari Bubalus terdiri dari dua spesies asli Indonesia. Mereka hidup di hutan hujan, semak, dan rawa.
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-							</center>
-						</center>
-					</div>
+									<div class="container">
 
-					<div class="tab-pane fade" id="dropdown516">
-						<center>
-							<h3 class="datatx"><b>Burung Elang Bondol</b></h3>
-							<img src="gallery_rg/elang.jpg" alt="" class="img-circle" width="150" height="150">
-							<br>
-							<p style="text-align:justify;">Elang bondol atau dalam nama ilmiahnya adalah Haliastur Indus adalah spesies dari genus dari Haliastur. Burung Elang Bondol berukuran sedang (45 cm), berwarna putih dan coklat pirang. Elang bondol yang remaja berkarakter seluruh tubuh kecoklatan
-								dengan coretan pada dada. Warna berubah putih keabu-abuan pada tahun kedua, dan mencapai bulu dewasa sepenuhnya pada tahun ketiga. Ujung ekor bundar. Iris coklat, paruh dan sera abu-abu kehijauan, kaki dan tungkai kuning suram.</p>
-							<br>
-							<center>
-								<h3 class="datatx"><b>Lokasi Burung Elang Bondol</b></h3>
-								<iframe src="elang.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
-							</center>
-						</center>
-					</div>
-					</div>
-					</div>
-					
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+          Lokasi Anoa
+        </a>
+      </h4>
+												</div>
+												<div id="collapse7" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="anoa.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
 
-					<!-- end tab ragunan-->
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown8" aria-labelledby="dropdown8-tab">
+          <p>
+		  <center>
+          <h3 class="datatx"><b>Simpanse</b></h3>
+			<img src="gallery_rg/simpanse.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Simpanse (Pan troglodytes) adalah anggota dari keluarga Hominidae, bersama dengan gorila, manusia, dan orangutan. Simpanse terpisah dengan manusia dalam ranting keluarga sekitar 4 – 6 juta tahun lalu. Dua spesies simpanse di atas adalah kerabat
+								terdekat manusia, semuanya anggota dari suku Hominini (berikut dengan spesies yang punah dari sub-suku Hominina). Simpanse satu-satunya anggota yang diketahui dari sub-suku Panina. Kedua spesies Pan tersebut terpisah sekitar 1 juta tahun lalu.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+          Lokasi Simpanse
+        </a>
+      </h4>
+												</div>
+												<div id="collapse8" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="simpanse.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown9" aria-labelledby="dropdown9-tab">
+          <p>
+		  <center>
+          <h3 class="datatx"><b>Gajah Sumatera</b></h3>
+			<img src="gallery_rg/gajah.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Gajah sumatera adalah subspesies dari gajah asia yang hanya berhabitat di pulau Sumatera. Gajah sumatera berpostur lebih kecil daripada subspesies gajah india. Populasinya semakin menurun dan menjadi spesies yang sangat terancam.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+          Lokasi Gajah Sumatera
+        </a>
+      </h4>
+												</div>
+												<div id="collapse9" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="gajah.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown10" aria-labelledby="dropdown10-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Macan Tutul</b></h3>
+			<img src="gallery_rg/macan.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Macan tutul (Panthera pardus) adalah salah satu dari lima kucing besar dalam genus Panthera. Ini adalah anggota dari keluarga Felidae dengan berbagai di beberapa bagian sub-Sahara Afrika, Asia Barat, Timur Tengah, Asia Selatan dan Asia Tenggara
+								ke Siberia.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+          Lokasi Macan Tutul
+        </a>
+      </h4>
+												</div>
+												<div id="collapse10" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="macan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown11" aria-labelledby="dropdown11-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Burung Elang Bondol</b></h3>
+			<img src="gallery_rg/elang.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Elang bondol atau dalam nama ilmiahnya adalah Haliastur Indus adalah spesies dari genus dari Haliastur. Burung Elang Bondol berukuran sedang (45 cm), berwarna putih dan coklat pirang. Elang bondol yang remaja berkarakter seluruh tubuh kecoklatan
+								dengan coretan pada dada. Warna berubah putih keabu-abuan pada tahun kedua, dan mencapai bulu dewasa sepenuhnya pada tahun ketiga. Ujung ekor bundar. Iris coklat, paruh dan sera abu-abu kehijauan, kaki dan tungkai kuning suram.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse15">
+          Lokasi Burung Elang Bondol
+        </a>
+      </h4>
+												</div>
+												<div id="collapse15" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="elang.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown12" aria-labelledby="dropdown12-tab">
+          <p>
+		  <center>
+          <h3 class="datatx"><b>Burung Pelikan</b></h3>
+			<img src="gallery_rg/pelikan.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Burung undan atau pelikan adalah burung air yang memiliki kantung di bawah paruhnya, dan merupakan bagian dari keluarga burung Pelecanidae. Bersama burung pecuk, pecuk ular, gannet, angsa batu, dan cikalang, mereka membentuk ordo Pelecaniformes.
+								Pelikan modern ditemukan di semua benua kecuali Antartika. Mereka hidup umumnya di wilayah hangat, dan mereka tidak dijumpai di wilayah kutub, laut dalam, kepulauan samudra, dan benua Amerika Selatan.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+          Lokasi Burung Pelikan
+        </a>
+      </h4>
+												</div>
+												<div id="collapse12" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="pelikan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown13" aria-labelledby="dropdown13-tab">
+        <p>
+		  <center>
+          <h3 class="datatx"><b>Burung Flamingo</b></h3>
+			<img src="gallery_rg/flamingo.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Flamingo adalah spesies burung berkaki jenjang yang hidup berkelompok. Mereka berasal dari genus Phoenicopterus dan familia Phoenicopteridae. Burung ini ditemukan di belahan bumi barat dan timur, namun lebih banyak terdapat di belahan timur. Terdapat
+								4 spesies flamingo di Amerika dan 2 jenis flamingo di Dunia Lama.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse14">
+          Lokasi Burung Flamingo
+        </a>
+      </h4>
+												</div>
+												<div id="collapse14" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="flamingo.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown14" aria-labelledby="dropdown14-tab">
+         <p>
+		  <center>
+          <h3 class="datatx"><b>Burung Merak Biru</b></h3>
+			<img src="gallery_rg/merak.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Merak biru (Pavo cristatus) adalah burung besar dan berwarna cerah dari keluarga asli burung dari Asia Selatan, namun diperkenalkan di banyak bagian lain dunia seperti Amerika Serikat, Meksiko, Honduras, Kolombia, Guyana, Suriname, Brazil, Uruguay,
+								Argentina, Afrika Selatan, Madagaskar, Papua, dan Australia.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse13">
+          Lokasi Burung Merak Biru
+        </a>
+      </h4>
+												</div>
+												<div id="collapse13" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="merak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown15" aria-labelledby="dropdown15-tab">
+
+		 <p>
+		  <center>
+          <h3 class="datatx"><b>Komodo</b></h3>
+			<img src="gallery_rg/komodo.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Komodo adalah spesies kadal besar yang ditemukan di pulau-pulau Indonesia Komodo, Rinca, Flores, Gili Motang, dan Padar. Merupakan anggota keluarga biawak (Varanidae), dan spesies kadal terbesar yang masih hidup, panjang maksimalnya dalap mencapai
+								3 meter (10 kaki) dan beratnya bisa mencapai 70 kilogram.
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse16">
+          Lokasi Komodo
+        </a>
+      </h4>
+												</div>
+												<div id="collapse16" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="komodo.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="dropdown16" aria-labelledby="dropdown16-tab">
+     
+		
+		 <p>
+		  <center>
+          <h3 class="datatx"><b>Biawak</b></h3>
+			<img src="gallery_rg/biawak.jpg" alt="" class="img-circle" width="150" height="150">
+			<br>
+				<br>			
+			<p style="text-align:justify;">Biawak Salvador (Varanus salvator) merupakan salah satu kadal terbesar di Asia Selatan dan Tenggara. Spesies biawak ini banyak ditemukan di Bangladesh, Sri Lanka and India, Semenanjung Malaya, dan berbagai pulau di Indonesia. Habitat biawak ini
+								tinggal di daerah dekat dengan air
+			</p>
+          </p>
+		  </center>
+		  <br>
+		  <br>
+		  <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+          Lokasi Biawak
+        </a>
+      </h4>
+												</div>
+												<div id="collapse11" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="biawak.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+		<div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
+		<center>
+		<h3><b>Pusat Primata Schmutzer </h3></b>
+		<img src="gallery_rg/primata.jpg" alt="" class="img-circle" width="150" height="150">
+		</center>
+		<br>
+		<br>
+          <p>
+            Pusat Primata Schmutzer adalah salah satu pusat primata berkelas internasional yang mempunyai peranan dalam konservasi primata Indonesia dan sekaligus sebagai Jendela Informasi Primata.
+          </p>
+		  <p>Berbagai jenis primata Indonesia terwakili di sini dengan beberapa primata eksotisnya antara lain: orangutan, gorilla, simpanse, dan jenis-jenis primata langka dari dalam dan luar negeri lainnya. Kompleks seluas 13 ha dirancang dengan konsep open zoo dimana satwa yang tinggal di dalamnya seolah-olah berada di habitat aslinya.</p>
+        
+		 <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse110">
+          Lokasi Primata Schmutzer 
+        </a>
+      </h4>
+												</div>
+												<div id="collapse110" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="gorilla.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscreen=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+											
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse111">
+         Harga Tiket 
+        </a>
+      </h4>
+												</div>
+												<div id="collapse111" class="panel-collapse collapse">
+													<div class="panel-body">
+														<br>
+														<p><b>Selasa - Jum'at</b>
+															<br>Rp 6.000
+														</p>
+													</div>
+													<div class="panel-body">
+														<br>
+														<p><b>Sabtu - Minggu (Hari Libur)</b>
+															<br>Rp 7.500
+														</p>
+													</div>
+												</div>
+											</div>
+											
+											
+										
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+		
+        </div>
+		</div>
+		
+        <!--end dropdown-->
+		
+      </div>
+    </div>
+  </div>
+</div>
 
 				</div>
-			</div>
-			</div>
-		</div>
-
-		</div>
 	</body>
 
 </html>

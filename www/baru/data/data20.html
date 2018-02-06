@@ -339,126 +339,537 @@
             <br>
             <br>
 
-            <style>
-                .nav-tabs2 > li.active > a, .nav-tabs2 > li.active > a:focus, .nav-tabs2 > li.active > a:hover { border-width: 0; }
-                    .nav-tabs2 > li > a { border: none; color: #ffffff;background: linear-gradient(to bottom left, #cc99ff 8%, #ccccff 81%); }
-                    .nav-tabs2 > li.active > a, .nav-tabs2 > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-                    .nav-tabs2 > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-                    .nav-tabs2 > li.active > a::after, .nav-tabs2 > li:hover > a::after { transform: scale(1); }
-                    .tab-nav2 > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
-    				.dropdown-menu > li > a { border: none; color: #ffffff;background: #99ccff; }
-    				.dropdown-menu > li.active > a, .dropdown-menu > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
-    				.dropdown-menu > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
-    				.dropdown-menu > li.active > a::after, .dropdown-menu > li:hover > a::after { transform: scale(1); }
-    				.dropdown > li > a { border: none; color: #ffffff;background: #ccddff; }
-                    .tab-pane { padding: 15px 0; }
-                    .asd{
-                    height:400px;
-                    overflow-y:scroll;
-                    width:100%;
-                    }
-                    .tab-content{padding:30px}
-                    .nav-tabs2 > li  {width:100%; text-align:center;}
-                    .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
-                    
-                    }
-            </style>
+            <div class="wrapper">
+    <style type="text/css">
+        
+        /**
+ * Responsive Bootstrap Tabs by @hayatbiralem
+ * 15 May 2015
+ */
 
-            <div id="exTab2" class="container">
-                <center>
-                    <img src="images/col.jpg" width="100%" height="30%">
-                </center>
-                <ul class="nav nav-tabs2">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"> Objek Wisata <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#dropdown1" data-toggle="tab">Dunia Fantasi</a>
-                            </li>
-                            <li><a href="#dropdown2" data-toggle="tab">Sea World</a>
-                            </li>
-                            <li><a href="#dropdown3" data-toggle="tab">Atlantis Waterpark</a>
-                            </li>
-                            <li><a href="#dropdown4" data-toggle="tab">Gelanggang Samudra</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="tab-content ">
-                    <div class="tab-pane fade" id="dropdown1">
-                        <h3 class="datatx">Dunia Fantasi</h3>
+@mixin ellipsis(){
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
+}
+
+@mixin icon-styles(){
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin transform($transform){
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@media screen and (max-width: 479px) {
+  .nav-tabs-responsive {
+    > li {
+      display: none;
+      width: 23%;
+      > a {
+        @include ellipsis();
+        width: 100%;
+        text-align: center;
+        vertical-align: top;
+      }
+      &.active {
+        width: 54%;
+        &:first-child {
+          margin-left: 23%;
+        }
+      }
+      &.active,
+      &.prev,
+      &.next {
+        display: block;
+      }
+      &.prev,
+      &.next {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+      &.next > a,
+      &.prev > a {
+        -webkit-transition: none;
+        transition: none;
+        .text {
+          display: none;
+        }
+        &:after,
+        &:after {
+          @include icon-styles();
+        }
+      }
+      &.prev > a:after {
+        content: "\e079";
+      }
+      &.next > a:after {
+        content: "\e080";
+      }
+      &.dropdown {
+        > a > .caret {
+          display: none;
+        }
+        > a:after {
+          content: "\e114";
+        }
+        &.active > a {
+          &:after {
+            display: none;
+          }
+          > .caret {
+            display: inline-block;
+          }
+        }
+
+        .dropdown-menu {
+          &.pull-xs-left {
+            left: 0;
+			
+			
+			
+            right: auto;
+          }
+          &.pull-xs-center {
+            right: auto;
+            left: 50%;
+            @include transform(translateX(-50%));
+          }
+          &.pull-xs-right {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Demo Styles
+ */
+
+.wrapper {
+  padding: 15px 0;
+}
+
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 479px) {
+  #narrow-browser-alert {
+    display: none;
+  }
+}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+    </style>
+<script type="text/javascript">
+    
+(function($) {
+
+  'use strict';
+
+  $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function(e) {
+    var $target = $(e.target);
+    var $tabs = $target.closest('.nav-tabs-responsive');
+    var $current = $target.closest('li');
+    var $parent = $current.closest('li.dropdown');
+        $current = $parent.length > 0 ? $parent : $current;
+    var $next = $current.next();
+    var $prev = $current.prev();
+    var updateDropdownMenu = function($el, position){
+      $el
+        .find('.dropdown-menu')
+        .removeClass('pull-xs-left pull-xs-center pull-xs-right')
+        .addClass( 'pull-xs-' + position );
+    };
+
+    $tabs.find('>li').removeClass('next prev');
+    $prev.addClass('prev');
+    $next.addClass('next');
+    
+    updateDropdownMenu( $prev, 'left' );
+    updateDropdownMenu( $current, 'center' );
+    updateDropdownMenu( $next, 'right' );
+  });
+
+})(jQuery);
+
+</script>
+  <div class="container">
+    
+    <div class="bs-example bs-example-tabs card" role="tabpanel" data-example-id="togglable-tabs">
+      <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+            <span class="text">Wisata Ancol</span>
+          </a>
+        </li>
+        
+        <li role="presentation" class="dropdown">
+          <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">
+            <span class="text">Objek Wisata</span>
+            <span class="caret">
+            </span>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+            <li>
+              <a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">
+                <span>Dunia Fantasi</span>
+              </a>
+            </li>
+            <li>
+              <a href="#dropdown3" tabindex="-1" role="tab" id="dropdown3-tab" data-toggle="tab" aria-controls="dropdown3">
+                <span>Sea World</span>
+              </a>
+            </li>
+			 <li>
+              <a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2S">
+                <span>Atlantis Waterpark</span>
+              </a>
+            </li>
+			 <li>
+              <a href="#dropdown4" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown4">
+                <span>Ocean Dream Samudera</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+		
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+          <h3>Objek Wisata Ancol</h3>
+		  <p>
+            Ada beberapa fasilitas hiburan yang terdapat di taman impian jaya ancol, tentunya dengan segala objek wisata tempat hiburan.
+          </p>
+        </div>
+ 
+        <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+          <center><h3 class="datatx">Dunia Fantasi</h3>
+		  <img src="gallery_an/dufan4.jpg" alt="" class="img-circle" width="150" height="150">
+		  <br>
+							<br>
+							</center>
                         <p>Dunia Fantasi mempunyai maskot berupa kera bekantan yang diberi nama Dufan (singkatan dari Dunia Fantasi). Dipilih kera sebagai karakter adalah untuk mengingatkan bahwa Ancol dahulu adalah kawasan kera. Pemilihan kera bekantan
                             adalah semata-mata untuk mengenalkan jenis satwa langka yang kini dilindungi. Di area objek wisata Dufan, terdapat berbagai macam wahana bermain dengan sentuhan teknologi tinggi, baik untuk anak-anak maupun dewasa. Beberapa
                             wahana permainan bahkan benar-benar memacu adrenalin, sehingga membuat para peserta berteriak ketakutan. Dufan merupakan theme park pertama dan terbesar di Indonesia, dan telah mendapatkan ISO 9001:2008 sejak 2009.</p>
                         <br>
-                        <h3 class="datatx">Harga Tiket Masuk</h3>
-                        <p class="datatx">Rp 200.000</p>
-                        <br>
+						
+						
+				 <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-                        <h3 class="datatx">Petunjuk Arah</h3>
-                        <p>
-                            <iframe src="dufan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe>
-                        </p>
+									<div class="container">
 
-                    </div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse110">
+          Lokasi Dunia Fantasi
+        </a>
+      </h4>
+												</div>
+												<div id="collapse110" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="dufan.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+											
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse114">
+         Harga Tiket 
+        </a>
+      </h4>
+												</div>
+												<div id="collapse114" class="panel-collapse collapse">
+													<div class="panel-body">
+														<br>
+														<p><b>Seenin - Jum'at</b>
+															<br>Rp 200.000
+														</p>
+													</div>
+													<div class="panel-body">
+														<br>
+														<p><b>Sabtu - Minggu (Hari Libur)</b>
+															<br>Rp 295.000
+														</p>
+													</div>
+												</div>
+											</div>
+									<!-- end container -->
 
-                    <div class="tab-pane fade" id="dropdown2">
-                        <h3 class="datatx">Sea World</h3>
-                        <p>Area Seaworld seluas 3 hektare dengan luas bangunan utama 4.500 m2 berisi berbagai macam akuarium, lorong Antasena (lorong bawah air), perpustakaan, museum, terapi ikan dokter, glow theatre, komputer edukatif layar sentuh berisi
-                            informasi berbagai spesies di Seaworld dan bermacam fasilitas pelengkap untuk pengunjung seperti tempat makan, toko suvenir, dan ruang serba guna.</p>
-                        <p>Akuarium utama memelihara ribuan satwa laut Indonesia. Sebanyak 35.500 ekor ikan laut Indonesia dari 35 spesies yang berbeda dipelihara disini. Ukuran akuarium ini mencapai 38 x 24 m dengan kedalaman yang bervariasi dari 4.5 hingga
-                            6 m dan menyimpan 5 juta liter air laut. Karena besarnya akuarium utama ini tercatat sebagai akuarium air laut terbesar kedua di Asia Tenggara.</p>
-                        <br>
-                        <h3 class="datatx">Harga Tiket Masuk</h3>
-                        <p>Rp 85.000</p>
-                        <br>
-
-                        <h3 class="datatx">Petunjuk Arah</h3>
-                        <p class="box a32">
-                            <iframe src="sea.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe>
-                        </p>
-                    </div>
-
-                    <div class="tab-pane fade" id="dropdown3">
-                        <h3 class="datatx">Atlantis Waterpark</h3>
+									<!-- Latest compiled and minified JavaScript -->
+									</div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
+         <center><h3 class="datatx">Atlantis Waterpark</h3>
+		 <img src="gallery_an/atlantis.jpg" alt="" class="img-circle" width="150" height="150">
+		 <br>
+							<br>
+							</center>
                         <p class="datatx">Water park ini berdiri di atas lahan seluas lima hektar. Mulanya taman permainan air itu bernama Taman Rekreasi Air Gelanggang Renang Ancol. Setelah direvitaslisai, namanya berubah sesuai tema yang diusung yakni peradaban Yunani
                             yang hilang atau Atlantis. Atlantis Water Adventure memiliki delapan kolam utama. Seluruh kolam dinamai sesuai tokoh-tokoh yang kerap muncul dalam legenda Yunani yaitu Poseidon, Antila, Plaza Atlas, dan Aquarius. Ada pula kolam
                             yang disebut Octopus, Atlantean, dan Kiddy Pool.</p>
                         <p class="datatx">Tempat wisata ini juga dilengkapi dengan kolam arus. Di wahana tersebut pengunjung bisa bersantai sambil menikmati seluruh pemandangan wahana water park tanpa harus lelah menjelajah. Anda cukup duduk di atas perahu karet yang bergerak
-                            mengkuti di kolam yang mengelilingi taman permainan air.</p>
-                        <br>
-                        <h3 class="datatx">Harga Tiket Masuk</h3>
-                        <p class="datatx">Rp 95.000</p>
-                        <br>
-                        <h3 class="datatx">Petunjuk Arah</h3>
-                        <p>
-                            <iframe src="atlantis.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe>
-                        </p>
-                    </div>
+                            mengkuti di kolam yang mengelilingi taman permainan air.</p></center>
+						
+				 <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-                    <div class="tab-pane fade" id="dropdown4">
-                        <h3 class="datatx">Gelanggang Samudra</h3>
-                        <p class="datatx">Gelanggang Samudra Ancol merupakan sebuah oseanarium atau oceanarium. Oseanarium merupakan taman mamalia laut dan mahluk laut lainnya. Selain menikmati rekreasi bersama keluarga, di sini Anda akan mendapatkan berbagai pengetahuan
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse115">
+          Lokasi Atlantis Waterpark
+        </a>
+      </h4>
+												</div>
+												<div id="collapse115" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="atlantis.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+											
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse116">
+         Harga Tiket 
+        </a>
+      </h4>
+												</div>
+												<div id="collapse116" class="panel-collapse collapse">
+													<div class="panel-body">
+														<br>
+														<p><b>Seenin - Jum'at</b>
+															<br>Rp 95.000
+														</p>
+													</div>
+													<div class="panel-body">
+														<br>
+														<p><b>Sabtu - Minggu (Hari Libur)</b>
+															<br>Rp 130.000
+														</p>
+													</div>
+												</div>
+											</div>
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+									</div>
+        </div>
+		<div role="tabpanel" class="tab-pane fade" id="dropdown3" aria-labelledby="dropdown3-tab">
+          <center><h3 class="datatx">Sea World</h3>
+		  <img src="gallery_an/sea.jpg" alt="" class="img-circle" width="150" height="150">
+		  <br>
+							<br>
+							</center>
+                        <p>Area Seaworld seluas 3 hektare dengan luas bangunan utama 4.500 m2 berisi berbagai macam akuarium, lorong Antasena (lorong bawah air), perpustakaan, museum, terapi ikan dokter, glow theatre, komputer edukatif layar sentuh berisi
+                            informasi berbagai spesies di Seaworld dan bermacam fasilitas pelengkap untuk pengunjung seperti tempat makan, toko suvenir, dan ruang serba guna.</p>
+                        <p>Akuarium utama memelihara ribuan satwa laut Indonesia. Sebanyak 35.500 ekor ikan laut Indonesia dari 35 spesies yang berbeda dipelihara disini. Ukuran akuarium ini mencapai 38 x 24 m dengan kedalaman yang bervariasi dari 4.5 hingga
+                            6 m dan menyimpan 5 juta liter air laut. Karena besarnya akuarium utama ini tercatat sebagai akuarium air laut terbesar kedua di Asia Tenggara.</p></center>
+						
+				 <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+									<div class="container">
+
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse113">
+          Lokasi Sea World
+        </a>
+      </h4>
+												</div>
+												<div id="collapse113" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="sea.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+											
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse112">
+         Harga Tiket 
+        </a>
+      </h4>
+												</div>
+												<div id="collapse112" class="panel-collapse collapse">
+													<div class="panel-body">
+														<br>
+														<p><b>Seenin - Jum'at</b>
+															<br>Rp 85.000
+														</p>
+													</div>
+													<div class="panel-body">
+														<br>
+														<p><b>Sabtu - Minggu (Hari Libur)</b>
+															<br>Rp 105.000
+														</p>
+													</div>
+												</div>
+											</div>
+									<!-- end container -->
+
+									<!-- Latest compiled and minified JavaScript -->
+									</div>
+        </div>
+		<div role="tabpanel" class="tab-pane fade" id="dropdown4" aria-labelledby="dropdown4-tab">
+          <center><h3 class="datatx">Ocean Dream Samudera</h3>
+		  <img src="gallery_an/ocean.jpg" alt="" class="img-circle" width="150" height="150">
+		  <br>
+							<br>
+							</center>
+                        <p class="datatx">Gelanggang Samudra atau Ocean Dream Samudera Ancol merupakan sebuah oseanarium atau oceanarium. Oseanarium merupakan taman mamalia laut dan mahluk laut lainnya. Selain menikmati rekreasi bersama keluarga, di sini Anda akan mendapatkan berbagai pengetahuan
                             yang menarik mengenai mamalia laut seperti lumba-lumba, paus, singa laut, dan binatang laut lainnya. Gelanggang Samudra Ancol juga menjadi sarana konservasi satwa laut.</p>
                         <p class="datatx">Ada 4 wahana utama yang terdapat di Gelanggang Samudra, Ancol. Pertama, adalah wahana pertunjukan Aneka Satwa, wahana pertunjukan Singa Laut, wahana pertunjukan Lumba-Lumba dan Paus Putih, serta wahana Sinema 4D atau 4D Theatre.
                             Dalam 1 hari ada 3 kali pementasan untuk masing-masing wahana, atau di hari libur akan ditambahkan jumlah pementasan untuk setiap wahana. Agar tidak terlewat, Anda dapat melihat jam pertunjukan yang ada di depan wahana. Setelah
                             selesai menyaksikan satu pertunjukan, petugas akan menganjurkan Anda untuk menyaksikan perunjukan berikutnya. Bila Anda ingin menyaksikan semua pertunjukan, sebaiknya mengikuti petunjuk tersebut agar Anda tidak tertinggal sehingga
-                            harus menunggu lebih lama.</p>
-                        <br>
-                        <h3 class="datatx">Harga Tiket Masuk</h3>
-                        <p>Rp 95.000</p>
-                        <br>
+                            harus menunggu lebih lama.</p></center>
+							
+						
+				 <style>
+										.panel-heading .accordion-toggle:after {
+										      /* symbol for "opening" panels */
+										      font-family: "Glyphicons Halflings"; /* essential for enabling glyphicon */
+										      content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+										      float: right; /* adjust as needed */
+										      color: grey; /* adjust as needed */
+										    }
+										    .panel-heading .accordion-toggle.collapsed:after {
+										      /* symbol for "collapsed" panels */
+										      content: "\e080"; /* adjust as needed, taken from bootstrap.css */
+										    }
+									</style>
+									<!-- Latest compiled and minified Bootstrap CSS -->
+									<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-                        <h3 class="datatx">Petunjuk Arah</h3>
-                        <p>
-                            <iframe src="samudra.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe>
-                        </p>
+									<div class="container">
 
-                    </div>
+										<div class="panel-group" id="accordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse117">
+          Lokasi Ocean Dream Samudra
+        </a>
+      </h4>
+												</div>
+												<div id="collapse117" class="panel-collapse collapse">
+													<div class="panel-body">
+														<center> <iframe src="samudra.html" width="100%" height="400px" frameborder="80" style="border:0" allowfullscrene=""></iframe></center>
+													</div>
+												</div>
+											</div>
+											</div>
+											
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse118">
+         Harga Tiket 
+        </a>
+      </h4>
+												</div>
+												<div id="collapse118" class="panel-collapse collapse">
+													<div class="panel-body">
+														<br>
+														<p><b>Seenin - Jum'at</b>
+															<br>Rp 95.000
+														</p>
+													</div>
+													<div class="panel-body">
+														<br>
+														<p><b>Sabtu - Minggu (Hari Libur)</b>
+															<br>Rp 130.000
+														</p>
+													</div>
+												</div>
+											</div>
+									<!-- end container -->
 
-                </div>
-            </div>
+									<!-- Latest compiled and minified JavaScript -->
+									</div>
         </div>
-
+        
+      </div>
+    </div>
+  </div>
+</div>
     </body>
 
 </html>
