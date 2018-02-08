@@ -189,8 +189,13 @@
          return false;
     });
         /* button  #bck-peta */
-    
-
+    $(document).on("click", "#back-map", function(evt)
+    {
+         /*global activate_subpage */
+         window.open("#mainpage"); 
+         return false;
+    });
+     
 
     /*Exit Modals */
      
