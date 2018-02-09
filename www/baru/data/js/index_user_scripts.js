@@ -9,7 +9,7 @@
  {
  
         /* button  .uib_w_65 */
-    $(document).on("click", ".uib_w_65", function(evt)
+    $(document).on("click", "#bck-mulai", function(evt)
     {
         window.open("../../index.html");
          return false;

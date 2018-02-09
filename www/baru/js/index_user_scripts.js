@@ -66,7 +66,7 @@ $('#exit').on('click', function () {
     $(document).on("click", "#bck-mulai", function(evt)
     {
          /*global activate_page */
-         activate_page("#mainpage"); 
+         window.open("../index.html"); 
          return false;
     });
      
@@ -383,6 +383,30 @@ $$('#list-data20').on('click', function () {
         activate_page("#pemuda"); 
          return false;
     }); 
+ 
+        /* button  .uib_w_65 */
+    $(document).on("click", "#bck-mulai", function(evt)
+    {
+        window.open("../index.html");
+         return false;
+    });
+    
+
+
+
+/*START BACK BUTTON ACTION ALL PAGE*/
+
+document.addEventListener("backbutton",function(e){
+        
+         if($("#mainpage").is(":visible")){
+             e.preventDefault();
+             $(".uib_w_5").modal();
+         }
+        
+     },false);
+
+/*END BACK BUTTON ACTION ALL PAGE*/
+
 	
 	
     }
